@@ -1,0 +1,24 @@
+.contactPage .contactOptionsContainer {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.contactPage .contactOptionsItem {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contactPage .formSection {
+    display: flex;
+    justify-content: center;
+}
+
+.contactPage .form {
+    max-width: min(800px, 80vw);
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: var(--big-gap);
+
+}

@@ -1,0 +1,25 @@
+.footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--small-gap);
+    border-top: 1px solid black;
+}
+
+.footerContactsContainer {
+    display: flex;
+    gap: var(--small-gap);
+}
+
+.footerMenuContainer {
+    display: flex;
+    gap: var(--small-gap);
+}
+
+.footerMenuItem {
+    list-style: none;
+}
+
+.footerMenuLink {
+    text-decoration: none;
+}

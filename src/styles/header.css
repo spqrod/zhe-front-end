@@ -1,0 +1,21 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: var(--header-height);
+    border-bottom: 1px solid black;
+}
+
+.header .headerMenuContainer {
+    display: flex;
+    align-items: center;
+    gap: var(--small-gap);
+}
+
+.header .headerMenuItem {
+    list-style: none;
+}
+
+.header .headerMenuLink {
+    text-decoration: none;
+}

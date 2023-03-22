@@ -1,0 +1,51 @@
+:root {
+    --header-height: 10vh;
+    --max-content-width: 1000px;
+    --big-gap: 32px;
+    --small-gap: 16px;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+
+    /* border: 1px solid grey; */
+}
+
+h1, h2, p, span, a, div {
+    font-family: Arial, Helvetica, sans-serif;
+    color: black;
+    line-height: 1.5;
+}
+
+h1 {
+    font-size: 38px;
+    text-align: center;
+    padding-bottom: var(--big-gap);
+}
+
+h2 {
+    font-size: 28px;
+    text-align: center;
+    padding-bottom: var(--big-gap);
+}
+
+p, a, span, div {
+    font-size: 18px;
+}
+
+.main, main {
+    /* Calculates padding to set max content width for wide screens */
+    padding: 0 max(5vw, calc((100vw - var(--max-content-width)) / 2));
+}
+
+.footer, .header {
+    padding-top: var(--big-gap);
+    padding-bottom: var(--big-gap);
+}
+
+section {
+    padding-bottom: var(--big-gap);
+    padding-top: var(--big-gap);
+}

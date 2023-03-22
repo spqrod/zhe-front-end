@@ -1,0 +1,13 @@
+.teamContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: var(--big-gap);
+}
+
+.teamMemberContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 300px;
+}
