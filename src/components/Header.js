@@ -17,11 +17,11 @@ export default function Header() {
                         Психологические заметки
                     </Link>
                 </li>
-                <li className="headerMenuItem">
+                {/* <li className="headerMenuItem">
                     <Link className="headerMenuLink" to="/consultations">
                         Консультации
                     </Link>
-                </li>
+                </li> */}
                 <li className="headerMenuItem">
                     <Link className="headerMenuLink" to="/contact">
                         Связаться

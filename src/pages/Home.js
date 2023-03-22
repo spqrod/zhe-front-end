@@ -68,6 +68,33 @@ export default function Home() {
                 </div>
                 
             </section>
+            <section className="educationSection">
+                <h1 className="sectionName">Образование</h1>
+                <h2>Моё образование</h2>
+                <div className="educationsContainer">
+                    <div className="educationContainer">
+                            <h3>Образование 1</h3>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae sint commodi architecto incidunt mollitia nemo eos harum rem quae aspernatur.</p>
+                    </div>
+                    <div className="educationContainer">
+                            <h3>Образование 2</h3>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae sint commodi architecto incidunt mollitia nemo eos harum rem quae aspernatur.</p>
+                    </div>
+                    <div className="educationContainer">
+                            <h3>Образование 3</h3>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae sint commodi architecto incidunt mollitia nemo eos harum rem quae aspernatur.</p>
+                    </div>
+                    <div className="educationContainer">
+                            <h3>Образование 4</h3>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae sint commodi architecto incidunt mollitia nemo eos harum rem quae aspernatur.</p>
+                    </div>
+                    <div className="educationContainer">
+                            <h3>Образование 5</h3>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae sint commodi architecto incidunt mollitia nemo eos harum rem quae aspernatur.</p>
+                    </div>
+                </div>
+                
+            </section>
             <section className="formatSection">
                 <h1 className="sectionName">Формат работы</h1>
                 <h2>Формат консультаций</h2>

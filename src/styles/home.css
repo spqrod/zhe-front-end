@@ -41,6 +41,13 @@
     font-size: 100px;
 }
 
+.homePage .educationsContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;    
+    gap: var(--big-gap);
+
+}
+
 .homePage .formatIcon {
     font-size: 200px;
     float: left;
