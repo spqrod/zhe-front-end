@@ -3,9 +3,7 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Home from "./pages/Home";
 import Contact from "./pages/Contact";
-import Rooms from "./pages/Rooms";
-import Restaurant from "./pages/Restaurant";
-import ThingsToDoInLusaka from "./pages/ThingsToDoInLusaka";
+import Blog from "./pages/Blog";
 import About from "./pages/About";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsOfService from "./pages/TermsOfService";
@@ -17,10 +15,8 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/rooms" element={<Rooms />} />
-        <Route path="/restaurant" element={<Restaurant />} />
         <Route path="/contact" element={<Contact />} />
-        <Route path="/things-to-do-in-lusaka" element={<ThingsToDoInLusaka />} />
+        <Route path="/blog" element={<Blog />} />
         <Route path="/about" element={<About />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/terms-of-service" element={<TermsOfService />} />
