@@ -7,7 +7,7 @@ export default function Home() {
     return (
         <main className="homePage">
             <section className="heroSection">
-                <h1>Hero Section 1</h1>
+                <h1>Hero Section 2</h1>
                 <div className="roomsInfoContainer">
                     <h1>Welcome To The Sunningdale House</h1>
                     <h2>A place of peaceful rest and exquisite cousine in the heart of Lusaka</h2>
