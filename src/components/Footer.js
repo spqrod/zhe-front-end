@@ -1,5 +1,7 @@
 import { Link } from "react-router-dom";
-import LocalDiningIcon from '@mui/icons-material/LocalDining';
+import Button from '@mui/material/Button';
+import SocialLinks from "./SocialLinks";
+
 import "../styles/footer.css";
 
 export default function Footer() {
@@ -7,63 +9,56 @@ export default function Footer() {
     return (
         <footer className="footer main">
             <div className="footerContactsContainer">
-                <div className="footerContactsItem">
-                    Phone
-                </div>
-                <div className="footerContactsItem">
-                    Address
-                </div>
-                <div className="footerContactsItem">
-                    Email
-                </div>
-                <div className="footerContactsItem">
-                    WhatsApp
+                <SocialLinks />
+                <div className="footerButtonContainer">
+                    <Button variant="contained" size="large" href="/book-consultation"
+                        sx={{
+                            backgroundColor: "white",
+                            color: "black",
+                            border: "1px solid black"
+                        }}>Записаться на консультацию
+                    </Button>
                 </div>
             </div>
             <ul className="footerMenuContainer">
                 <li className="footerMenuItem">
                     <Link className="footerMenuLink" to="/">
-                        Home
+                        Домой
                     </Link>
                 </li>
                 <li className="footerMenuItem">
                     <Link className="footerMenuLink" to="/rooms">
-                        Rooms
+                        Психологические заметки
                     </Link>
                 </li>
                 <li className="footerMenuItem">
-                    <Link className="footerMenuLink" to="/restaurant">
-                        Restaurant
+                    <Link className="footerMenuLink" to="/consultations">
+                        Консультации
                     </Link>
                 </li>
                 <li className="footerMenuItem">
                     <Link className="footerMenuLink" to="/contact">
-                        Contact
-                    </Link>
-                </li>
-                <li className="footerMenuItem">
-                    <Link className="footerMenuLink" to="/things-to-do-in-lusaka">
-                        Things To Do In Lusaka
+                        Связаться
                     </Link>
                 </li>
                 <li className="footerMenuItem">
                     <Link className="footerMenuLink" to="/about">
-                        About
+                        Обо мне
                     </Link>
                 </li>
                 <li className="footerMenuItem">
                     <Link className="footerMenuLink" to="/privacy-policy">
-                        Privacy Policy
+                        Политика конфиденциальности
                     </Link>
                 </li>
                 <li className="footerMenuItem">
                     <Link className="footerMenuLink" to="/terms-of-service">
-                        Terms Of Service
+                        Условия использования
                     </Link>
                 </li>
             </ul>
-            <p>
-                The Sunningdale House © { year }. All Rights Reserved
+            <p className="footerAllRightsReservedLine">
+                Психолог Дарья Жеребцова © { year }. Все права защищены
             </p>
         </footer>
     );

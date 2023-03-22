@@ -1,12 +1,9 @@
-.contactPage .contactOptionsContainer {
-    display: flex;
-    justify-content: space-evenly;
+* {
+    /* border: 1px solid black; */
 }
 
-.contactPage .contactOptionsItem {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.contactPage .socialLinksContainer {
+    justify-content: space-evenly;
 }
 
 .contactPage .formSection {

@@ -1,13 +1,19 @@
-.teamContainer {
+.aboutPage .generalInfoSection {
     display: flex;
-    justify-content: center;
     align-items: center;
     gap: var(--big-gap);
 }
 
-.teamMemberContainer {
+.aboutPage .personalLifeSection {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    max-width: 300px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.aboutPage .personalLifeSection h2 {
+    width: 80vw;
+}
+
+.aboutPage .personalLifeSection p {
+    flex: 1;
 }

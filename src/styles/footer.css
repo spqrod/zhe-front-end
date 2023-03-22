@@ -1,18 +1,14 @@
 .footer {
     display: flex;
     flex-direction: column;
-    align-items: center;
     gap: var(--small-gap);
     border-top: 1px solid black;
 }
 
-.footerContactsContainer {
-    display: flex;
-    gap: var(--small-gap);
-}
-
 .footerMenuContainer {
     display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
     gap: var(--small-gap);
 }
 
@@ -22,4 +18,13 @@
 
 .footerMenuLink {
     text-decoration: none;
+}
+
+.footerContactsContainer {
+    display: flex;
+    justify-content: space-between;
+}
+
+.footerAllRightsReservedLine {
+    text-align: center;
 }
