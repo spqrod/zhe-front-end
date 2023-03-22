@@ -7,49 +7,80 @@ export default function Home() {
     return (
         <main className="homePage">
             <section className="heroSection">
-                <h1>Hero Section 2</h1>
+                <h1 className="sectionName">Главная</h1>
                 <div className="roomsInfoContainer">
-                    <h1>Welcome To The Sunningdale House</h1>
-                    <h2>A place of peaceful rest and exquisite cousine in the heart of Lusaka</h2>
-                    <p>Beautiful photos in the background</p>
+                    <h1>Психолог Дарья Жеребцова</h1>
+                    <h2>Онлайн консультации для здоровья по последним методикам</h2>
+                    <p>Портрет на фоне</p>
                 </div>
             </section>
-            <section className="restaurantSection">
-                <h2>Restaurant Section</h2>
-                <div className="restaurantPhotoContainer">
-                    <PhotoOutlinedIcon sx={{fontSize: "300px"}} />
+            <section className="problemsSection">
+                <h1 className="sectionName">Проблемы</h1>
+                <h2>С чем я могу помочь</h2>
+                <div className="problemsContainer">
+                    <div className="problem">Проблема 1</div>
+                    <div className="problem">Проблема 2</div>
+                    <div className="problem">Проблема 3</div>
+                    <div className="problem">Проблема 4</div>
+                    <div className="problem">Проблема 5</div>
+                    <div className="problem">Проблема 6</div>
                 </div>
-                <div className="restaurantInfoContainer">
-                    <h2>The Sunningdale House Restaurant</h2>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae sint ut omnis voluptas beatae voluptatibus laboriosam, sed consequuntur. In, perferendis?</p>
-                    <Button variant="contained" size="large" href="/restaurant"
-                            sx={{
-                                backgroundColor: "white",
-                                color: "black",
-                                border: "1px solid black"
-                            }}>See Our Menu
-                    </Button>
+            </section>
+            <section className="solutionsSection">
+                <h1 className="sectionName">Решения</h1>
+                <h2>Мои методики</h2>
+                <div className="methodsContainer">
+                    <div className="methodContainer">
+                        <PhotoOutlinedIcon className="methodIcon" />
+                        <div className="methodInfoContainer">
+                            <h3>Метод 1</h3>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae sint commodi architecto incidunt mollitia nemo eos harum rem quae aspernatur.</p>
+                        </div>
+                    </div>
+                    <div className="methodContainer">
+                        <PhotoOutlinedIcon className="methodIcon" />
+                        <div className="methodInfoContainer">
+                            <h3>Метод 2</h3>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae sint commodi architecto incidunt mollitia nemo eos harum rem quae aspernatur.</p>
+                        </div>
+                    </div>
+                    <div className="methodContainer">
+                        <PhotoOutlinedIcon className="methodIcon" />
+                        <div className="methodInfoContainer">
+                            <h3>Метод 3</h3>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae sint commodi architecto incidunt mollitia nemo eos harum rem quae aspernatur.</p>
+                        </div>
+                    </div>
+                    <div className="methodContainer">
+                        <PhotoOutlinedIcon className="methodIcon" />
+                        <div className="methodInfoContainer">
+                            <h3>Метод 4</h3>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae sint commodi architecto incidunt mollitia nemo eos harum rem quae aspernatur.</p>
+                        </div>
+                    </div>
+                    <div className="methodContainer">
+                        <PhotoOutlinedIcon className="methodIcon" />
+                        <div className="methodInfoContainer">
+                            <h3>Метод 5</h3>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae sint commodi architecto incidunt mollitia nemo eos harum rem quae aspernatur.</p>
+                        </div>
+                    </div>
                 </div>
-            </section>``
-            <section className="roomsSection">
-                <h2>Rooms Section</h2>
-                <div className="roomsInfoContainer">
-                    <h2>The Sunningdale House Hotel</h2>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae sint ut omnis voluptas beatae voluptatibus laboriosam, sed consequuntur. In, perferendis?</p>
-                    <Button variant="contained" size="large" href="/rooms"
-                            sx={{
-                                backgroundColor: "white",
-                                color: "black",
-                                border: "1px solid black"
-                            }}>See Our Rooms
-                    </Button>
-                </div>
-                <div className="roomsPhotoContainer">
-                    <PhotoOutlinedIcon sx={{fontSize: "300px"}} />
+                
+            </section>
+            <section className="formatSection">
+                <h1 className="sectionName">Формат работы</h1>
+                <h2>Формат консультаций</h2>
+                <div className="formatInfoContainer">
+                    <PhotoOutlinedIcon className="formatIcon" />
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis, expedita laudantium. Fugit similique commodi cumque quia sunt veniam eius fugiat distinctio corporis! Ipsa atque omnis optio provident ex praesentium eius?
+                    </p><br />
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Itaque, facere. Ab, odit ex. Ducimus dolorum incidunt totam eligendi nesciunt dolore amet, distinctio repellendus aperiam harum ex aut sed iure tenetur!</p>
                 </div>
             </section>
             <section className="reviewsSection">
-                <h2>What Our Guests Say Section</h2>
+                <h1 className="sectionName">Отзывы</h1>
+                <h2>Отзывы</h2>
                 <div className="reviewsContainer">
                     <div className="reviewContainer">
                         <PersonIcon sx={{fontSize: "100px"}} />
@@ -81,35 +112,48 @@ export default function Home() {
                     </div>
                 </div>
             </section>
+            <section className="priceSection">
+                <h1 className="sectionName">Цены</h1>
+                <h2>Стоимость услуг</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius quos ea rerum sint nobis deleniti quam impedit, aut reiciendis voluptatem quo! Quibusdam quos excepturi cupiditate architecto. A modi ex cumque.</p>
+                
+            </section>
             <section className="blogSection">
-                <h2>Things To Do In Lusaka Section</h2>
+                <h1 className="sectionName">Блог</h1>
+                <h2>Психологические заметки</h2>
                 <div className="blogPostsContainer">
                     <div className="blogPostContainer">
-                        <PhotoOutlinedIcon sx={{fontSize: "100px"}} />
-                        <p className="blogPostName">Top 10 Places To Dine In Lusaka</p>
+                        <PhotoOutlinedIcon className="blogPostIcon" />
+                        <p className="blogPostName">Заметка 1</p>
                     </div>
                     <div className="blogPostContainer">
-                        <PhotoOutlinedIcon sx={{fontSize: "100px"}} />
-                        <p className="blogPostName">Top 10 Places To Stay In Lusaka</p>
+                        <PhotoOutlinedIcon className="blogPostIcon" />
+                        <p className="blogPostName">Заметка 2</p>
                     </div>
                     <div className="blogPostContainer">
-                        <PhotoOutlinedIcon sx={{fontSize: "100px"}} />
-                        <p className="blogPostName">Top Shopping Places In Lusaka</p>
+                        <PhotoOutlinedIcon className="blogPostIcon" />
+                        <p className="blogPostName">Заметка 3</p>
                     </div>
                     <div className="blogPostContainer">
-                        <PhotoOutlinedIcon sx={{fontSize: "100px"}} />
-                        <p className="blogPostName">Top 10 Safaris In Lusaka</p>
+                        <PhotoOutlinedIcon className="blogPostIcon" />
+                        <p className="blogPostName">Заметка 4</p>
                     </div>
                 </div>
                 <Button variant="contained" size="large" href="/things-to-do-in-lusaka"
-                            sx={{
-                                backgroundColor: "white",
-                                color: "black",
-                                border: "1px solid black"
-                            }}>Read More
-                    </Button>
+                    sx={{
+                        backgroundColor: "white",
+                        color: "black",
+                        border: "1px solid black"
+                    }}>Смотреть все заметки
+                </Button>
             </section>
-            
+            <section className="bookSection">
+                <h1 className="sectionName">Запись</h1>
+                <h2>Записаться на консультацию</h2>
+                <div className="bookForm">
+                    Запись
+                </div>
+            </section>
         </main>
     );
 }

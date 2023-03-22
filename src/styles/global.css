@@ -36,6 +36,18 @@ p, a, span, div {
     font-size: 18px;
 }
 
+section {
+    position: relative;
+    border: 1px solid grey;
+}
+
+.sectionName {
+    color: grey;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
 .main, main {
     /* Calculates padding to set max content width for wide screens */
     padding: 0 max(5vw, calc((100vw - var(--max-content-width)) / 2));
