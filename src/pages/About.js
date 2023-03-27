@@ -8,7 +8,12 @@ export default function About() {
             <section className='generalInfoSection'>
                 <PersonIcon sx={{fontSize: "260px"}}/>
                 <p>
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quibusdam aspernatur dolor sit alias asperiores. Id perspiciatis saepe delectus blanditiis, voluptate consequuntur reprehenderit odio. Illo, eius iure fugiat eveniet, error modi laudantium distinctio, delectus veritatis quae earum accusamus ad rerum quia? Optio numquam enim, quia veritatis exercitationem sit ut alias harum itaque! Odit, aspernatur maxime quasi ab repudiandae quod ullam, sunt provident a veniam dicta beatae saepe obcaecati soluta iste consectetur nesciunt quidem ratione quam eum in? Modi soluta quam adipisci distinctio, maxime aut dolore labore! Illo excepturi sit in et reiciendis? Sed culpa possimus sunt harum, eos distinctio amet animi!
+                    Обо мне Меня зовут Дарья! Дипломированный психолог-консультант. Имею высшее психологическое образование по специальности «Психолог». Участвовала во многих тренингах и семинарах. Проходила дополнительные обучения в клиент-центрированном подходе. Постоянно обучаюсь на различных курсах по повышению квалификации, развиваюсь и совершенствуюсь.
+                </p>
+            </section>
+            <section>
+                <p>
+                    Время от времени нам всем нужна поддержка и тот самый искренний диалог. В нашем быстро меняющимся мире очень важно заботиться о себе и о своём ментальном здоровье. Узнать и понять самого важного человека в вашей жизни - себя! Наши консультации про удовольствие и спокойствие, а не только про достигаторство и постоянное стремление к реализации своего внутреннего потенциала. Наши с вами встречи - это точка входа в ощущение удовольствия от себя и от своей жизни. Вас ждет открытый, искренний диалог, в котором вы можете быть честным с самим собой. 
                 </p>
             </section>
             <section className='EducationSection'>
@@ -19,7 +24,15 @@ export default function About() {
             <section className='personalLifeSection'>
                 <h2>Личная жизнь</h2>
                 <p>
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quibusdam aspernatur dolor sit alias asperiores. Id perspiciatis saepe delectus blanditiis, voluptate consequuntur reprehenderit odio. Illo, eius iure fugiat eveniet, error modi laudantium distinctio, delectus veritatis quae earum accusamus ad rerum quia? Optio numquam enim, quia veritatis exercitationem sit ut alias harum itaque! Odit, aspernatur maxime quasi ab repudiandae quod ullam, sunt provident a veniam dicta beatae saepe obcaecati soluta iste consectetur nesciunt quidem ratione quam eum in? Modi soluta quam adipisci distinctio, maxime aut dolore labore! Illo excepturi sit in et reiciendis? Sed culpa possimus sunt harum, eos distinctio amet animi!
+                    Душа  и наше тело едины, поэтому я люблю активный образ жизни и спорт. Он делает меня более сильной и дисциплинированной. Дает возможность высвободить свои эмоции и переживания продуктивным путем. <br /><br />
+
+                    Также природа является моим вдохновением, поэтому походы являются частью моей жизни. В природе, на мой взгляд, можно найти ответы на все внутренние вопросы. Это прекрасный ментальный отдых и перезагрузка.<br /><br />
+
+                    Книги и фильмы это еще одно мое большое увлечение. Правильно подобранная литература или кино, для меня являются террапевтичными. Мне нравится  возможность опредметить свои переживания, эмоции и прожить их с главным героем вместе. <br /><br />
+
+                    Конечно же я очень люблю путешествовать, а кто не любит? <br /><br />
+
+                    Увиденное новое всегда меняет меня, расширяет собственные границы. Наполняет и вдохновляет. После путешествий в голову приходят самые важные жизненные инсайты
                 </p>
                 <PersonIcon sx={{fontSize: "260px"}}/>
             </section>
