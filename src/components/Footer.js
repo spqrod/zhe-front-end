@@ -32,8 +32,8 @@ export default function Footer() {
                     </Link>
                 </li>
                 <li className="footerMenuItem">
-                    <Link className="footerMenuLink" to="/consultations">
-                        Консультации
+                    <Link className="footerMenuLink" to="/methods">
+                        Методы
                     </Link>
                 </li>
                 <li className="footerMenuItem">

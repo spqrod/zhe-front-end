@@ -17,11 +17,11 @@ export default function Header() {
                         Психологические заметки
                     </Link>
                 </li>
-                {/* <li className="headerMenuItem">
-                    <Link className="headerMenuLink" to="/consultations">
-                        Консультации
+                <li className="headerMenuItem">
+                    <Link className="headerMenuLink" to="/methods">
+                        Методы
                     </Link>
-                </li> */}
+                </li>
                 <li className="headerMenuItem">
                     <Link className="headerMenuLink" to="/contact">
                         Связаться
@@ -33,6 +33,13 @@ export default function Header() {
                     </Link>
                 </li>
             </ul>
+            <Button variant="contained" size="large" href="/book-consultation"
+                sx={{
+                    backgroundColor: "white",
+                    color: "black",
+                    border: "1px solid black"
+                }}>Запись
+            </Button>
         </header>
     );
 }
