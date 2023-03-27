@@ -8,12 +8,14 @@
 .homePage .problemsContainer {
     display: flex;
     justify-content: space-evenly;
+    flex-wrap: wrap;
+    gap: var(--small-gap);
 }
 
 .homePage .problem {
-    width: 120px;
-    height: 120px;
-    border: 1px solid black;
+    width: 180px;
+    height: 180px;
+    border: 1px solid rgb(212, 195, 195);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -30,7 +32,6 @@
 
 .homePage .methodContainer {
     width: 500px;
-    height: 200px;
     border: 1px solid grey;
     display: flex;
     justify-content: center;
@@ -45,12 +46,15 @@
     display: grid;
     grid-template-columns: 1fr 1fr;    
     gap: var(--big-gap);
-
 }
 
 .homePage .formatIcon {
     font-size: 200px;
     float: left;
+}
+
+.homePage .formatInfoContainer {
+    height: 200px;
 }
 
 .homePage .reviewsContainer {
