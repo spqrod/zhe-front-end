@@ -14,10 +14,8 @@ export default function BookConsultation({consultationPrice, consultationLength}
     return (
         <main className="bookConsultationPage">
             <section className="processSection">
-                <div className="processesContainer">
-                    <h1>Как попасть на консультацию?</h1>
-                    <ConsultationBookingProcess consultationPrice={consultationPrice} consultationLength={consultationLength} />
-                </div>
+                <h1>Как попасть на консультацию?</h1>
+                <ConsultationBookingProcess consultationPrice={consultationPrice} consultationLength={consultationLength} />
             </section>
             <section className="bookingSection">
                 <h2>Записаться на бесплатную ознакомительную беседу</h2>

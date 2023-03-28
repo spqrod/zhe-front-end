@@ -1,14 +1,9 @@
 
-.bookConsultationPage .processesContainer {
-    display: flex;
+.bookConsultationPage .processSection {
+    /* display: flex;
     flex-direction: column;
     align-items: center;
-    gap: var(--small-gap);
-}
-
-.bookConsultationPage .processContainer {
-    width: 400px;
-    border: 1px solid black
+    gap: var(--small-gap); */
 }
 
 .bookConsultationPage .socialLinksContainer {

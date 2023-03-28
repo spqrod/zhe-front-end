@@ -2,7 +2,7 @@ import "../styles/consultationBookingProcess.css"
 
 export default function ConsultationBookingProcess({consultationPrice, consultationLength}) {
     return (
-        <div>
+        <div className="processesContainer">
             <div className="processContainer">
                 <h3>Запись</h3>
                 <p>Вы записываетесь на бесплатную 15-ти минутную беседу</p>
