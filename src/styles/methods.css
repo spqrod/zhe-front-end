@@ -1,0 +1,18 @@
+.methodsPage .methodsContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: var(--small-gap);
+}
+
+.methodsPage .methodContainer {
+    border: 1px solid grey;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.methodsPage .methodIcon {
+    font-size: 100px;
+}

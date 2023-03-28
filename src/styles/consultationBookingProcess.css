@@ -1,0 +1,12 @@
+
+.processesContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--small-gap);
+}
+
+.processContainer {
+    width: 400px;
+    border: 1px solid black
+}

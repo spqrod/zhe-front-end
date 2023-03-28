@@ -2,8 +2,10 @@ import "../styles/home.css";
 import Button from "@mui/material/Button"
 import PhotoOutlinedIcon from "@mui/icons-material/PhotoOutlined";
 import PersonIcon from '@mui/icons-material/Person';
+import ConsultationBookingProcess from "../components/ConsultationBookingProcess"
+import { Link } from "react-router-dom";
 
-export default function Home() {
+export default function Home({consultationPrice, consultationLength}) {
     return (
         <main className="homePage">
             <section className="heroSection">
@@ -148,18 +150,15 @@ export default function Home() {
             </section>
             <section className="formatSection">
                 <h1 className="sectionName">Формат</h1>
-                <h2>Формат консультаций</h2>
-                <div className="formatInfoContainer">
-                    <PhotoOutlinedIcon className="formatIcon" />
-                    <p>Я провожу консультации как онлайн – в любом удобном мессенджере.</p>
-                    <p>Так и оффлайн – при личной встрече.</p>
-                    <p>Длительность консультации от 40 до 80 минут.</p>
-                </div>
-            </section>
-            <section className="priceSection">
-                <h1 className="sectionName">Цены</h1>
-                <h2>Стоимость услуг</h2>
-                <p>Цена 1200 руб за 40 мин</p>
+                <h2>Как попасть на консультацию?</h2>
+                <ConsultationBookingProcess consultationPrice={consultationPrice} consultationLength={consultationLength} />
+                <Button component={Link} to="/book-consultation" variant="contained" size="large" 
+                sx={{
+                    backgroundColor: "white",
+                    color: "black",
+                    border: "1px solid black"
+                }}>Записаться
+            </Button>
             </section>
             <section className="afterSection">
                 <h1 className="sectionName">После консультаций</h1>

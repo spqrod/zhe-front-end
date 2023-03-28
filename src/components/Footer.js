@@ -11,7 +11,7 @@ export default function Footer() {
             <div className="footerContactsContainer">
                 <SocialLinks />
                 <div className="footerButtonContainer">
-                    <Button variant="contained" size="large" href="/book-consultation"
+                    <Button component={Link} to="/book-consultation" variant="contained" size="large"
                         sx={{
                             backgroundColor: "white",
                             color: "black",
