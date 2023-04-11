@@ -11,13 +11,15 @@ export default function Footer() {
             <div className="footerContactsContainer">
                 <SocialLinks />
                 <div className="footerButtonContainer">
-                    <Button component={Link} to="/book-consultation" variant="contained" size="large"
-                        sx={{
-                            backgroundColor: "white",
-                            color: "black",
-                            border: "1px solid black"
-                        }}>Записаться на консультацию
-                    </Button>
+                    <button className="button">
+                        <Link className="buttonLink" to="">
+                            Записаться
+                        </Link>
+                        <div className="buttonBorder"></div>
+                        <div className="buttonBorder"></div>
+                        <div className="buttonBorder"></div>
+                        <div className="buttonBorder"></div>
+                    </button>
                 </div>
             </div>
             <ul className="footerMenuContainer">

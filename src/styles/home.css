@@ -7,15 +7,22 @@
 
 .homePage .problemsContainer {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
     flex-wrap: wrap;
-    gap: var(--small-gap);
+    gap: var(--big-gap);
 }
 
 .homePage .problem {
     width: 180px;
     height: 180px;
-    border: 1px solid rgb(212, 195, 195);
+    padding: var(--small-gap);
+
+    border: var(--border);
+    border-radius: var(--border-radius);
+
+    background-color: var(--surface);
+    color: var(--on-surface);
+
     display: flex;
     align-items: center;
     justify-content: center;
@@ -27,12 +34,20 @@
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    gap: var(--small-gap);
+    gap: var(--big-gap);
 }
 
 .homePage .methodContainer {
     width: 500px;
-    border: 1px solid grey;
+
+    padding: var(--small-gap);
+
+    border: var(--border);
+    border-radius: var(--border-radius);
+
+    background-color: var(--surface);
+    color: var(--on-surface);
+
     display: flex;
     justify-content: center;
     align-items: center;

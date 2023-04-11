@@ -152,13 +152,15 @@ export default function Home({consultationPrice, consultationLength}) {
                 <h1 className="sectionName">Формат</h1>
                 <h2>Как попасть на консультацию?</h2>
                 <ConsultationBookingProcess consultationPrice={consultationPrice} consultationLength={consultationLength} />
-                <Button component={Link} to="/book-consultation" variant="contained" size="large" 
-                sx={{
-                    backgroundColor: "white",
-                    color: "black",
-                    border: "1px solid black"
-                }}>Записаться
-            </Button>
+                <button className="button">
+                    <Link className="buttonLink" to="">
+                        Записаться
+                    </Link>
+                    <div className="buttonBorder"></div>
+                    <div className="buttonBorder"></div>
+                    <div className="buttonBorder"></div>
+                    <div className="buttonBorder"></div>
+                </button>
             </section>
             <section className="afterSection">
                 <h1 className="sectionName">После консультаций</h1>
@@ -201,13 +203,15 @@ export default function Home({consultationPrice, consultationLength}) {
                         <p className="blogPostName">Заметка 4</p>
                     </div>
                 </div>
-                <Button variant="contained" size="large" href="/things-to-do-in-lusaka"
-                    sx={{
-                        backgroundColor: "white",
-                        color: "black",
-                        border: "1px solid black"
-                    }}>Смотреть все заметки
-                </Button>
+                <button className="button">
+                    <Link className="buttonLink" to="">
+                        Записаться
+                    </Link>
+                    <div className="buttonBorder"></div>
+                    <div className="buttonBorder"></div>
+                    <div className="buttonBorder"></div>
+                    <div className="buttonBorder"></div>
+                </button>
             </section>
             <section className="bookSection">
                 <h1 className="sectionName">Запись</h1>

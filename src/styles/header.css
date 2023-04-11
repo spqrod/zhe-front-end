@@ -4,6 +4,22 @@
     align-items: center;
     height: var(--header-height);
     border-bottom: 1px solid black;
+
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+.header .logoContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header .logoLink {
+    font-family: var(--font-family-1);
+    font-size: 22px;
+    text-decoration: none;
 }
 
 .header .headerMenuContainer {
@@ -18,4 +34,8 @@
 
 .header .headerMenuLink {
     text-decoration: none;
+}
+
+.header .button {
+    width: 209px;
 }

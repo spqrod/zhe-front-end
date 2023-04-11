@@ -1,21 +1,39 @@
 :root {
     --header-height: 10vh;
-    --max-content-width: 1000px;
     --big-gap: 32px;
-    --small-gap: 16px;
+    --medium-gap: 16px;
+    --small-gap: 8px;
+    --max-content-width: 1200px;
+    --side-padding-for-sections: max(5vw, calc((100vw - var(--max-content-width)) / 2));
+
+    --primary: #95416d;
+    --on-primary: #ffffff;
+    --primary-container: #ffd8e7;
+    --on-primary-container: #3d0026;
+    --background: #fffbff;
+    --on-background: #1f1a1c;
+    --surface: #fffbff;
+    --on-surface: #1f1a1c;
+    --outline: #827378;
+    --surface-variant: #f1dee3;
+    --on-surface-variant: #504348;
+
+    --border: 1px solid var(--outline);
+    --border-radius: 16px;
+
+    --font-family-1: 'Yeseva One', cursive;
+    --font-family-2: 'Jost', sans-serif;
 }
 
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-
-    /* border: 1px solid grey; */
 }
 
 h1, h2, p, span, a, div {
     font-family: Arial, Helvetica, sans-serif;
-    color: black;
+    color: var(--on-background);
     line-height: 1.5;
 }
 
@@ -24,21 +42,23 @@ h1 {
     text-align: center;
     padding-top: var(--big-gap);
     padding-bottom: var(--big-gap);
+    font-family: var(--font-family-1);
 }
 
 h2 {
     font-size: 28px;
     text-align: center;
     padding-bottom: var(--big-gap);
+    font-family: var(--font-family-2);
 }
 
 p, a, span, div {
-    font-size: 18px;
+    font-size: 20px;
+    font-family: var(--font-family-2);
 }
 
 section {
     position: relative;
-    border: 1px solid grey;
 }
 
 .sectionName {
@@ -46,19 +66,92 @@ section {
     position: absolute;
     top: 0;
     left: 0;
+    display: none;
 }
 
-.main, main {
-    /* Calculates padding to set max content width for wide screens */
-    padding: 0 max(5vw, calc((100vw - var(--max-content-width)) / 2));
+.footer, .header, section {
+    padding: var(--big-gap) var(--side-padding-for-sections);
+    background-color: var(--background);
 }
 
-.footer, .header {
-    padding-top: var(--big-gap);
-    padding-bottom: var(--big-gap);
+
+
+
+
+
+
+
+
+  
+.button {
+    min-width: 150px;
+    height: 50px;
+    padding: var(--small-gap);
+    position: relative;
+
+    display: flex;
+    background: none;
+    background-color: var(--primary-container);
+    color: var(--on-primary-container);
+
+    border: none;
+    cursor: pointer;
 }
 
-section {
-    padding-bottom: var(--big-gap);
-    padding-top: var(--big-gap);
+.buttonLink {
+    text-decoration: none;
+    font-weight: 500;
+    letter-spacing: 3px;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+  
+.buttonBorder{
+    position:absolute;
+    background:none;
+    transition:all .5s ease-in-out;
+}
+
+.buttonBorder:nth-of-type(1){
+    top:0;
+    left:0;
+    width:0;
+    height:0;
+    border-top:1px solid var(--primary);
+}
+  
+.buttonBorder:nth-of-type(2){
+    top:0;
+    right:0;
+    width:10px;
+    height:0;
+    border-right:1px solid var(--primary);
+}
+  
+.buttonBorder:nth-of-type(3){
+    bottom:0;
+    right:0;
+    width:0;
+    height:0;
+    border-bottom:1px solid var(--primary);
+}
+
+.buttonBorder:nth-of-type(4){
+    bottom:0;
+    left:0;
+    width:0;
+    height:0;
+    border-left:1px solid var(--primary);
+}
+
+.button:hover .buttonBorder:nth-of-type(1n){
+    width:100%;
+}
+
+.button:hover .buttonBorder:nth-of-type(2n){
+    height:100%;
 }

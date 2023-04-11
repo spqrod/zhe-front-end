@@ -15,6 +15,8 @@ function App() {
   const consultationPrice = 1200;
   const consultationLength = 40;
 
+
+
   return (
     <div>
       <Header />
@@ -30,6 +32,7 @@ function App() {
       </Routes>
       <Footer />
     </div>
+
   );
 }
 

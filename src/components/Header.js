@@ -7,8 +7,8 @@ export default function Header() {
     return (
         <header className="header main">
             <div className="logoContainer">
-                <Link to="/">
-                    <BedroomBabyIcon />
+                <Link className="logoLink" to="/">
+                    Дарья Жеребцова
                 </Link>
             </div>
             <ul className="headerMenuContainer">
@@ -33,13 +33,17 @@ export default function Header() {
                     </Link>
                 </li>
             </ul>
-            <Button component={Link} to="/book-consultation" variant="contained" size="large" 
-                sx={{
-                    backgroundColor: "white",
-                    color: "black",
-                    border: "1px solid black"
-                }}>Запись
-            </Button>
+
+            <button className="button">
+                <Link className="buttonLink" to="">
+                    Записаться
+                </Link>
+                <div className="buttonBorder"></div>
+                <div className="buttonBorder"></div>
+                <div className="buttonBorder"></div>
+                <div className="buttonBorder"></div>
+            </button>
+
         </header>
     );
 }
