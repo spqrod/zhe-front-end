@@ -3,7 +3,7 @@
     justify-content: space-between;
     align-items: center;
     height: var(--header-height);
-    border-bottom: 1px solid black;
+    border-bottom: var(--border);
 
     position: sticky;
     top: 0;

@@ -5,7 +5,7 @@ import PersonIcon from '@mui/icons-material/Person';
 import ConsultationBookingProcess from "../components/ConsultationBookingProcess"
 import { Link } from "react-router-dom";
 
-export default function Home({consultationPrice, consultationLength}) {
+export default function Home({consultationPrice, consultationLength, whatsAppLink}) {
     return (
         <main className="homePage">
             <section className="heroSection">
@@ -151,7 +151,7 @@ export default function Home({consultationPrice, consultationLength}) {
             <section className="formatSection">
                 <h1 className="sectionName">Формат</h1>
                 <h2>Как попасть на консультацию?</h2>
-                <ConsultationBookingProcess consultationPrice={consultationPrice} consultationLength={consultationLength} />
+                <ConsultationBookingProcess consultationPrice={consultationPrice} consultationLength={consultationLength} whatsAppLink={whatsAppLink}/>
                 <button className="button">
                     <Link className="buttonLink" to="">
                         Записаться

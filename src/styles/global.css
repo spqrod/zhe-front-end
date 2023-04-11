@@ -8,9 +8,9 @@
 
     --primary: #95416d;
     --on-primary: #ffffff;
-    --primary-container: #ffd8e7;
+    --primary-container: #facae0;
     --on-primary-container: #3d0026;
-    --background: #fffbff;
+    --background: #faf3fa;
     --on-background: #1f1a1c;
     --surface: #fffbff;
     --on-surface: #1f1a1c;
@@ -38,7 +38,7 @@ h1, h2, p, span, a, div {
 }
 
 h1 {
-    font-size: 38px;
+    font-size: 42px;
     text-align: center;
     padding-top: var(--big-gap);
     padding-bottom: var(--big-gap);
@@ -46,10 +46,10 @@ h1 {
 }
 
 h2 {
-    font-size: 28px;
+    font-size: 34px;
     text-align: center;
     padding-bottom: var(--big-gap);
-    font-family: var(--font-family-2);
+    font-family: var(--font-family-1);
 }
 
 p, a, span, div {
@@ -74,17 +74,13 @@ section {
     background-color: var(--background);
 }
 
+li {
+    list-style-type: circle;
+    list-style-position: inside;
+}
 
-
-
-
-
-
-
-
-  
 .button {
-    min-width: 150px;
+    min-width: 209px;
     height: 50px;
     padding: var(--small-gap);
     position: relative;
@@ -121,7 +117,7 @@ section {
     left:0;
     width:0;
     height:0;
-    border-top:1px solid var(--primary);
+    border-top: var(--border);
 }
   
 .buttonBorder:nth-of-type(2){
@@ -129,7 +125,7 @@ section {
     right:0;
     width:10px;
     height:0;
-    border-right:1px solid var(--primary);
+    border-right: var(--border);
 }
   
 .buttonBorder:nth-of-type(3){
@@ -137,7 +133,7 @@ section {
     right:0;
     width:0;
     height:0;
-    border-bottom:1px solid var(--primary);
+    border-bottom: var(--border);
 }
 
 .buttonBorder:nth-of-type(4){
@@ -145,7 +141,7 @@ section {
     left:0;
     width:0;
     height:0;
-    border-left:1px solid var(--primary);
+    border-left: var(--border);
 }
 
 .button:hover .buttonBorder:nth-of-type(1n){

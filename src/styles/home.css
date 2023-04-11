@@ -18,7 +18,6 @@
     padding: var(--small-gap);
 
     border: var(--border);
-    border-radius: var(--border-radius);
 
     background-color: var(--surface);
     color: var(--on-surface);
@@ -43,7 +42,6 @@
     padding: var(--small-gap);
 
     border: var(--border);
-    border-radius: var(--border-radius);
 
     background-color: var(--surface);
     color: var(--on-surface);
