@@ -1,7 +1,5 @@
 import { Link } from "react-router-dom";
 import "../styles/header.css";
-import Button from "@mui/material/Button";
-import BedroomBabyIcon from '@mui/icons-material/BedroomBaby';
 
 export default function Header() {
     return (

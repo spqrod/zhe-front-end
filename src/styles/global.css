@@ -23,6 +23,8 @@
 
     --font-family-1: 'Yeseva One', cursive;
     --font-family-2: 'Jost', sans-serif;
+
+    --transition: all .5s ease-in-out;
 }
 
 * {
@@ -109,7 +111,7 @@ li {
 .buttonBorder{
     position:absolute;
     background:none;
-    transition:all .5s ease-in-out;
+    transition: var(--transition);
 }
 
 .buttonBorder:nth-of-type(1){

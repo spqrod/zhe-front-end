@@ -8,8 +8,9 @@ export default function ConsultationBookingProcess({consultationPrice, consultat
         const pathLength = path.getTotalLength();
         path.style.strokeDasharray = pathLength + " " + pathLength;
         path.style.strokeDashoffset = pathLength;
-
         const processesContainer = document.querySelector(".processesContainer");
+        let height = processesContainer.getBoundingClientRect().height;
+        path.setAttribute("d", `m 0 0 l 0 ${height}`);
 
         function processScroll() {
             const rect = processesContainer.getBoundingClientRect();
@@ -20,6 +21,7 @@ export default function ConsultationBookingProcess({consultationPrice, consultat
     
                 if (percentageOfSectionScrolled > 1) {
                     window.removeEventListener("scroll", processScroll);
+                    path.style.strokeDashoffset = "0";
                 }
             }
         }
@@ -30,7 +32,7 @@ export default function ConsultationBookingProcess({consultationPrice, consultat
     return (
         <div className="processesContainer">
             <svg className="processContainerSVG">
-                <path className="myPath" d="m 0 0 l 0 900"/>
+                <path className="myPath" d="m 0 0 l 0 1000"/>
             </svg>
             <div className="processContainer">
                 <h3>1. Запись</h3>

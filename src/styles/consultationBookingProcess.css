@@ -10,14 +10,15 @@
 .processContainerSVG {
     position: absolute;
     left: -50px;
+    top: 0px;
     height: 100%;
     width: 3px;
 }
 
-
 .myPath {
     stroke-width: 1px;
-    stroke: var(--outline)
+    stroke: var(--outline);
+    /* stroke-dashoffset: 0; */
 }
 
 
