@@ -11,9 +11,15 @@ export default function Contact() {
         <main className="contactPage">
             <section>
                 <h1>Поговорим?</h1>
+                <h2>
+                    Свяжитесь со мной в социальных сетях
+                </h2>
                 <SocialLinks />
             </section>
             <section className="formSection">
+                <h2>
+                    Или заполните онлайн-форму
+                </h2>
                 <form className="form">
                     {/* <div className="inputContainer"> */}
                     <input className="inputField" type="text" placeholder="Имя" name="name" />

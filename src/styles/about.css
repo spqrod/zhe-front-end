@@ -1,19 +1,25 @@
-.aboutPage .generalInfoSection {
+.aboutPage .infoContainer {
+    background-color: var(--surface);
+    border: var(--border);
+    padding: var(--big-gap);
+}
+
+.aboutPage .generalInfoContainer {
     display: flex;
     align-items: center;
     gap: var(--big-gap);
 }
 
-.aboutPage .personalLifeSection {
+.aboutPage .personalLifeContainer {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
 }
 
-.aboutPage .personalLifeSection h2 {
+.aboutPage .personalLifeContainer h2 {
     width: 80vw;
 }
 
-.aboutPage .personalLifeSection p {
+.aboutPage .personalLifeContainer p {
     flex: 1;
 }

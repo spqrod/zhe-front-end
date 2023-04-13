@@ -4,13 +4,7 @@
     justify-content: space-evenly;
 }
 
-.contactPage .formSection {
-    display: flex;
-    justify-content: center;
-}
-
 .contactPage .form {
-    /* max-width: min(800px, 80vw); */
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
