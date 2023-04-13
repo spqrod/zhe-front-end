@@ -19,7 +19,7 @@
     --on-surface-variant: #504348;
 
     --border: 1px solid var(--outline);
-    --border-radius: 16px;
+    --border-radius: 0;
 
     --font-family-1: 'Yeseva One', cursive;
     --font-family-2: 'Jost', sans-serif;
@@ -27,14 +27,13 @@
     --transition: all .5s ease-in-out;
 }
 
-* {
+*, *::after, *::before {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
 h1, h2, p, span, a, div {
-    font-family: Arial, Helvetica, sans-serif;
     color: var(--on-background);
     line-height: 1.5;
 }
@@ -80,6 +79,60 @@ li {
     list-style-type: circle;
     list-style-position: inside;
 }
+
+/* Input fields */
+
+input[type=text], input[type=tel], input[type=email], textarea {
+    padding: var(--small-gap);
+    font-size: 20px;
+    font-family: var(--font-family-2);
+    color: var(--on-background);
+    line-height: 1.5;
+}
+
+input {
+    /* position: relative; */
+}
+
+input, input:focus, textarea, textarea:focus {
+    border-radius: var(--border-radius);
+    background-color: var(--surface);
+    border: var(--border);
+    outline: 0;
+    transition: var(--transition);
+}
+
+input:focus, textarea:focus {
+    background-color: var(--surface-variant);
+    color: var(--on-surface-variant)
+}
+
+textarea {
+    width: 100%;
+    min-height: 200px;
+}
+
+.inputContainer {
+    /* position: relative; */
+}
+
+.inputContainer::after {
+    /* position: absolute;
+    top: 0;
+    left: 0;
+    content: "";
+    width: 0;
+    height: 100%;
+    border-bottom: 1px solid var(--primary);
+    transition: var(--transition); */
+}
+
+
+.inputContainer:has(input:focus)::after {
+    /* width: 100%; */
+}
+
+/* Button */
 
 .button {
     min-width: 209px;

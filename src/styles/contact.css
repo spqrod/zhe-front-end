@@ -1,6 +1,4 @@
-* {
-    /* border: 1px solid black; */
-}
+
 
 .contactPage .socialLinksContainer {
     justify-content: space-evenly;
@@ -12,10 +10,14 @@
 }
 
 .contactPage .form {
-    max-width: min(800px, 80vw);
+    /* max-width: min(800px, 80vw); */
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
     gap: var(--big-gap);
 
+}
+
+.contactPage .inputField {
+    flex: 1;
 }

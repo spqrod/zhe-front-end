@@ -1,6 +1,6 @@
 import TelegramIcon from '@mui/icons-material/Telegram';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
-import EmailIcon from '@mui/icons-material/Email';
+import EmailIcon from '@mui/icons-material/MailOutlineSharp';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import "../styles/socialLinks.css";
 
