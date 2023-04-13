@@ -7,7 +7,7 @@ export default function Methods() {
             <section>
                 <h1>Методы</h1>
                 <div className="methodsContainer">
-                    <div className="methodContainer">
+                    <div className="methodContainer" >
                         <PhotoOutlinedIcon className="methodIcon" />
                         <div className="methodInfoContainer">
                             <h3>Клиент-центрированная терапия</h3>
