@@ -3,11 +3,13 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: var(--small-gap);
+    gap: var(--big-gap);
 }
 
 .methodsPage .methodContainer {
-    border: 1px solid grey;
+    border: var(--border);
+    background-color: var(--surface);
+    padding: var(--big-gap);
     display: flex;
     justify-content: center;
     align-items: center;
