@@ -6,7 +6,7 @@
 }
 
 .homePage .heroInfoContainer {
-    flex-basis: 40%;
+    flex-basis: 60%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -58,7 +58,7 @@
 }
 
 .homePage .heroPhotoContainer {
-    flex-basis: 40%;
+    flex-basis: 30%;
     display: flex;
     position: relative;
 }

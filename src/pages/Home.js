@@ -4,7 +4,6 @@ import PersonIcon from '@mui/icons-material/Person';
 import ConsultationBookingProcess from "../components/ConsultationBookingProcess"
 import { Link } from "react-router-dom";
 import image1 from "../images/3.JPG";
-import ExpandMoreSharpIcon from '@mui/icons-material/ExpandMoreSharp';
 import { useEffect } from "react";
 
 export default function Home({consultationPrice, consultationLength, whatsAppLink}) {
@@ -27,7 +26,7 @@ export default function Home({consultationPrice, consultationLength, whatsAppLin
             <section className="heroSection">
                 <div className="heroInfoContainer">
                     <h1>Психолог Дарья Жеребцова</h1>
-                    <p>Провожу онлайн консультации для тех, кому трудно. И для тех, кто хочет спокойствия, гармонии и понимания.</p>
+                    <p>Провожу онлайн консультации для тех, кому трудно, кто запутался и не знает, как быть дальше. <br></br>И для тех, кто хочет спокойствия, гармонии и понимания.</p>
                     <button className="button">
                         <Link className="buttonLink">
                             С чем я могу помочь
@@ -95,20 +94,6 @@ export default function Home({consultationPrice, consultationLength, whatsAppLin
                     </div>
                 </div>
             </section>
-            <section className="aboutSection">
-            <h1 className="sectionName">Обо мне</h1>
-                <p>
-                    Меня зовут Дарья! Дипломированный психолог-консультант. 
-                    Имею высшее психологическое образование по специальности «Психолог». Участвовала во многих тренингах и семинарах. Проходила дополнительные обучения в клиент-центрированном подходе. Постоянно обучаюсь на различных курсах по повышению квалификации, развиваюсь и совершенствуюсь. 
-                </p>
-                <p>
-                    В нашем быстро меняющимся мире очень важно заботиться о себе и о своём ментальном здоровье. Узнать и понять самого важного человека в вашей жизни - себя! Время от времени нам всем нужна поддержка и тот самый искренний диалог. 
-                </p>
-                <p>
-                    Я как раз помогаю ответить на эти вопросы.
-                </p>
-            </section>
-
             <section className="methodsSection">
                 <h1 className="sectionName">Решения</h1>
                 <h2>Методы работы</h2>
@@ -253,6 +238,19 @@ export default function Home({consultationPrice, consultationLength, whatsAppLin
                         </p>
                     </div>
                 </div>
+            </section>
+            <section className="aboutSection">
+            <h1 className="sectionName">Пару слов обо мне</h1>
+                <p>
+                    Меня зовут Дарья! Дипломированный психолог-консультант. 
+                    Имею высшее психологическое образование по специальности «Психолог». Участвовала во многих тренингах и семинарах. Проходила дополнительные обучения в клиент-центрированном подходе. Постоянно обучаюсь на различных курсах по повышению квалификации, развиваюсь и совершенствуюсь. 
+                </p>
+                <p>
+                    В нашем быстро меняющимся мире очень важно заботиться о себе и о своём ментальном здоровье. Узнать и понять самого важного человека в вашей жизни - себя! Время от времени нам всем нужна поддержка и тот самый искренний диалог. 
+                </p>
+                <p>
+                    Я как раз помогаю ответить на эти вопросы.
+                </p>
             </section>
             <section className="blogSection">
                 <h1 className="sectionName">Блог</h1>
