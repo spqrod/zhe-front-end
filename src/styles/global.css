@@ -12,7 +12,7 @@
     --on-primary-container: #3d0026;
     --background: #faf3fa;
     --on-background: #1f1a1c;
-    --surface: #fffbff;
+    --surface: #ffffff;
     --on-surface: #1f1a1c;
     --outline: #827378;
     --surface-variant: #f1dee3;
@@ -25,6 +25,7 @@
     --font-family-2: 'Jost', sans-serif;
 
     --transition: all .5s ease-in-out;
+    --transition-slow: all 1.5s ease-in-out;
 }
 
 *, *::after, *::before {
@@ -41,8 +42,8 @@ h1, h2, p, span, a, div {
 h1 {
     font-size: 42px;
     text-align: center;
-    padding-top: var(--big-gap);
-    padding-bottom: var(--big-gap);
+    /* padding-top: var(--big-gap); */
+    /* padding-bottom: var(--big-gap); */
     font-family: var(--font-family-1);
 }
 

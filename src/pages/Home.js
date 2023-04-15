@@ -1,34 +1,47 @@
 import "../styles/home.css";
-import Button from "@mui/material/Button"
 import PhotoOutlinedIcon from "@mui/icons-material/PhotoOutlined";
 import PersonIcon from '@mui/icons-material/Person';
 import ConsultationBookingProcess from "../components/ConsultationBookingProcess"
 import { Link } from "react-router-dom";
+import image1 from "../images/3.JPG";
+import ExpandMoreSharpIcon from '@mui/icons-material/ExpandMoreSharp';
+import { useEffect } from "react";
 
 export default function Home({consultationPrice, consultationLength, whatsAppLink}) {
+    useEffect(() => {
+
+        setTimeout(animatePhotoOutlineAfterLoad, 1000);
+        
+        function animatePhotoOutlineAfterLoad() {
+            const heroPhotoOutline = document.querySelector(".heroPhotoOutline");
+            heroPhotoOutline.classList.add("heroPhotoOutlineAfterLoad");
+            setTimeout(() => 
+                heroPhotoOutline.style.transition = "var(--transition)",
+                1500
+            );
+        }
+    });
+
     return (
         <main className="homePage">
             <section className="heroSection">
-                <h1 className="sectionName">Главная</h1>
-                <div className="roomsInfoContainer">
+                <div className="heroInfoContainer">
                     <h1>Психолог Дарья Жеребцова</h1>
-                    <h2>Онлайн консультации для здоровья по последним методикам</h2>
-                    <p>Cо мной вы можете быть СОБОЙ
-                    Не важно с каким запросом  вы пришли, важны ВЫ</p>
+                    <p>Провожу онлайн консультации для тех, кому трудно. И для тех, кто хочет спокойствия, гармонии и понимания.</p>
+                    <button className="button">
+                        <Link className="buttonLink">
+                            С чем я могу помочь
+                        <svg className="arrowIconSVG">
+                            <path className="arrowIconPath" d="M 0 0 L 25 25 L 50 0"/>
+                        </svg>
+                        </Link>
+                    </button>
                 </div>
-            </section>
-            <section className="aboutSection">
-            <h1 className="sectionName">Обо мне</h1>
-                <p>
-                    Меня зовут Дарья! Дипломированный психолог-консультант. 
-                    Имею высшее психологическое образование по специальности «Психолог». Участвовала во многих тренингах и семинарах. Проходила дополнительные обучения в клиент-центрированном подходе. Постоянно обучаюсь на различных курсах по повышению квалификации, развиваюсь и совершенствуюсь. 
-                </p>
-                <p>
-                    В нашем быстро меняющимся мире очень важно заботиться о себе и о своём ментальном здоровье. Узнать и понять самого важного человека в вашей жизни - себя! Время от времени нам всем нужна поддержка и тот самый искренний диалог. 
-                </p>
-                <p>
-                    Я как раз помогаю ответить на эти вопросы.
-                </p>
+                <div className="heroPhotoContainer">
+                    <img className="heroPhoto" src={image1} alt="" />
+                    <div className="heroPhotoOutline"></div>
+
+                </div>
             </section>
             <section className="problemsSection">
                 <h1 className="sectionName">Проблемы</h1>
@@ -45,6 +58,20 @@ export default function Home({consultationPrice, consultationLength, whatsAppLin
                     <div className="problem">Потеря близкого человека</div>
                 </div>
             </section>
+            <section className="aboutSection">
+            <h1 className="sectionName">Обо мне</h1>
+                <p>
+                    Меня зовут Дарья! Дипломированный психолог-консультант. 
+                    Имею высшее психологическое образование по специальности «Психолог». Участвовала во многих тренингах и семинарах. Проходила дополнительные обучения в клиент-центрированном подходе. Постоянно обучаюсь на различных курсах по повышению квалификации, развиваюсь и совершенствуюсь. 
+                </p>
+                <p>
+                    В нашем быстро меняющимся мире очень важно заботиться о себе и о своём ментальном здоровье. Узнать и понять самого важного человека в вашей жизни - себя! Время от времени нам всем нужна поддержка и тот самый искренний диалог. 
+                </p>
+                <p>
+                    Я как раз помогаю ответить на эти вопросы.
+                </p>
+            </section>
+
             <section className="methodsSection">
                 <h1 className="sectionName">Решения</h1>
                 <h2>Методы работы</h2>
@@ -165,22 +192,30 @@ export default function Home({consultationPrice, consultationLength, whatsAppLin
             <section className="afterSection">
                 <h1 className="sectionName">После консультаций</h1>
                 <h2>Что будет после консультаций?</h2>
-                <p>
-                    Консультации как уборки. Помогают все непонятное упорядочить, разложить по своим местам. 
-                    <br></br>
-                    Ведь в этой жизни все стремится к хаосу. Что будет, если перестать убирать дома, поливать цветы, проводить осмотр автомобиля? Конечно, всё запылиться, завянет и заскрипит.
-                    <br></br>
-                    То же самое и с нашим ментальным здоровьем. Поэтому, чтобы было принято жить эту жизнь, уборки лучше проводить регулярно. 
-                </p>
-                <p>
-                    После консультаций вы не станете супер героем, психологически непобедимым. Но репертуар того, что вы принимаете в себе и в жизни станет гораздо шире. Жить будет спокойнее и счастливее. 
-                    <br></br>
-                    В мире где мы настроены получить результат здесь и сейчас, психологическое сопровождение предлагают другой исход.
-                    <br></br>
-                    Исход - это отложенного вознаграждения, которое заключается в том, что хороший результат достигается через время. Время затраченное на работу над собой. 
-                    <br></br>
-                    Нужно быть к этому готовым.  
-                </p>
+                <div className="afterInfoContainer">
+                    <div className="afterInfoItem">
+                        <p>
+                            <strong>Консультации как уборки.</strong> Помогают все непонятное упорядочить, разложить по своим местам& Ведь в этой жизни все стремится к хаосу. Что будет, если перестать убирать дома, поливать цветы, проводить осмотр автомобиля? Конечно, всё запылиться, завянет и заскрипит.
+                        </p>
+                    </div>
+                    <div className="afterInfoItem">
+                        <p>
+                            То же самое и с нашим ментальным здоровьем. Поэтому, чтобы было принято жить эту жизнь, уборки лучше проводить регулярно. 
+                        </p>
+                    </div>
+                    <div className="afterInfoItem">
+                        <p>
+                            После консультаций вы не станете супер героем, психологически непобедимым. Но репертуар того, что вы принимаете в себе и в жизни станет гораздо шире. Жить будет <strong>спокойнее и счастливее</strong>. 
+                        </p>
+                    </div>
+                    <div className="afterInfoItem">
+                        <p>
+                            В мире где мы настроены получить результат здесь и сейчас, психологическое сопровождение предлагают другой исход.
+                            Исход - это отложенного вознаграждения, которое заключается в том, что хороший результат достигается через время. Время затраченное на работу над собой. 
+                            Нужно быть к этому готовым.  
+                        </p>
+                    </div>
+                </div>
             </section>
             <section className="blogSection">
                 <h1 className="sectionName">Блог</h1>
