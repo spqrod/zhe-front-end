@@ -241,20 +241,24 @@
 
 }
 
+.homePage .reviewsSection {
+    display: grid;
+    place-items: center;
+}
+
 .homePage .reviewsContainer {
-    display: flex;
-    justify-content: center;
-    gap: var(--small-gap);
-    flex-wrap: wrap;
+    max-width: min(100vw, 800px);
+    columns: 2;
+    column-gap: var(--big-gap);
 }
 
 .homePage .reviewContainer {
-    width: 400px;
-    display: grid;
-    grid-template-columns: 120px 1fr;
-    border: 1px solid black;
-    align-items: center;
-    justify-items: center;
+    break-inside: avoid;
+    margin-bottom: var(--big-gap);
+}
+
+.homePage .reviewImage {
+    width: 100%;
 }
 
 .homePage .blogSection {

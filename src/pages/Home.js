@@ -18,6 +18,10 @@ import crystal9 from "../images/crystal-9.png"
 // import crystal11 from "../images/crystal-11.png"
 // import crystal12 from "../images/crystal-12.png"
 import crystal13 from "../images/crystal-13.png"
+import review1 from "../images/review-1.png"
+import review2 from "../images/review-2.png"
+import review3 from "../images/review-3.png"
+import review4 from "../images/review-4.png"
  
 export default function Home({consultationPrice, consultationLength, whatsAppLink}) {
     useEffect(() => {
@@ -191,32 +195,16 @@ export default function Home({consultationPrice, consultationLength, whatsAppLin
                 <h2>Отзывы</h2>
                 <div className="reviewsContainer">
                     <div className="reviewContainer">
-                        <PersonIcon sx={{fontSize: "100px"}} />
-                        <div className="reviewInfoContainer">
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium atque quas facere officiis quasi, assumenda doloremque, laborum in.</p><br></br>
-                            <p>Arthur Conan Doyle</p>
-                        </div>
+                        <img className="reviewImage" src={review1} alt="" />
                     </div>
                     <div className="reviewContainer">
-                        <PersonIcon sx={{fontSize: "100px"}} />
-                        <div className="reviewInfoContainer">
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium atque quas facere officiis quasi, assumenda doloremque, laborum in.</p><br></br>
-                            <p>Winston Churchill</p>
-                        </div>
+                        <img className="reviewImage" src={review4} alt="" />
                     </div>
                     <div className="reviewContainer">
-                        <PersonIcon sx={{fontSize: "100px"}} />
-                        <div className="reviewInfoContainer">
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium atque quas facere officiis quasi, assumenda doloremque, laborum in.</p><br></br>
-                            <p>Mark Manson</p>
-                        </div>
+                        <img className="reviewImage" src={review3} alt="" />
                     </div>
                     <div className="reviewContainer">
-                        <PersonIcon sx={{fontSize: "100px"}} />
-                        <div className="reviewInfoContainer">
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium atque quas facere officiis quasi, assumenda doloremque, laborum in.</p><br></br>
-                            <p>William Shirer</p>
-                        </div>
+                        <img className="reviewImage" src={review2} alt="" />
                     </div>
                 </div>
             </section>

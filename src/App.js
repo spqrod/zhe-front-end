@@ -10,6 +10,7 @@ import BookConsultation from "./pages/BookConsultation";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsOfService from "./pages/TermsOfService";
 import "./styles/global.css";
+import { useEffect } from "react";
 
 function App() {
   const consultationPrice = 1200;
