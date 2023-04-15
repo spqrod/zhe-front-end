@@ -47,15 +47,52 @@ export default function Home({consultationPrice, consultationLength, whatsAppLin
                 <h1 className="sectionName">Проблемы</h1>
                 <h2>С чем я могу помочь</h2>
                 <div className="problemsContainer">
-                    <div className="problem">Проблемы с самооценкой</div>
-                    <div className="problem">Тревожные и депрессивные состояния</div>
-                    <div className="problem">Перфекционизм</div>
-                    <div className="problem">Недовольство собой и своими достижениями</div>
-                    <div className="problem">Раздражительность</div>
-                    <div className="problem">Негативные чувства: злость, вина, стыд</div>
-                    <div className="problem">Сложности в построении коммуникации с окружающими</div>
-                    <div className="problem">Трудности в построение отношений</div>
-                    <div className="problem">Потеря близкого человека</div>
+                    <div className="problemContainer irritation">
+                        <div className="problemContentContainer">
+                            Раздражительность
+                        </div>
+                    </div>
+                    <div className="problemContainer selfRespect">
+                        <div className="problemContentContainer">
+                            Проблемы с самооценкой
+                        </div>
+                    </div>
+                    <div className="problemContainer depression">
+                        <div className="problemContentContainer">
+                            Тревожные и депрессивные состояния
+                        </div>
+                    </div>
+                    <div className="problemContainer perfectionism">
+                        <div className="problemContentContainer">
+                            Перфекционизм
+                        </div>
+                    </div>
+                    <div className="problemContainer selfDissatisfaction">
+                        <div className="problemContentContainer">
+                            Недовольство собой и своими достижениями
+                        </div>
+                    </div>
+ 
+                    <div className="problemContainer negativeFeelings">
+                        <div className="problemContentContainer">
+                            Негативные чувства: злость, вина, стыд
+                        </div>
+                    </div>
+                    <div className="problemContainer communicationProblems">
+                        <div className="problemContentContainer">
+                            Сложности в построении коммуникации с окружающими
+                        </div>
+                    </div>
+                    <div className="problemContainer relationshipProblems">
+                        <div className="problemContentContainer">
+                            Трудности в построение отношений
+                        </div>
+                    </div>
+                    <div className="problemContainer loss">
+                        <div className="problemContentContainer">
+                            Потеря близкого человека
+                        </div>
+                    </div>
                 </div>
             </section>
             <section className="aboutSection">
