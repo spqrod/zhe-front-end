@@ -13,6 +13,10 @@
     gap: var(--big-gap);
 }
 
+.homePage h1 {
+    padding: 0;
+}
+
 .homePage .heroInfoContainer .button {
     width: max-content;
     padding: var(--medium-gap);

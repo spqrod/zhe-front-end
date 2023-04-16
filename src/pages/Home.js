@@ -9,16 +9,8 @@ import image2 from "../images/4.jpg";
 import { useEffect } from "react";
 import crystal1 from "../images/crystal-1.png"
 import crystal2 from "../images/crystal-2.png"
-// import crystal3 from "../images/crystal-3.png"
-// import crystal4 from "../images/crystal-4.png"
-// import crystal5 from "../images/crystal-5.png"
 import crystal6 from "../images/crystal-6.png"
-// import crystal7 from "../images/crystal-7.png"
-// import crystal8 from "../images/crystal-8.png"
 import crystal9 from "../images/crystal-9.png"
-// import crystal10 from "../images/crystal-10.png"
-// import crystal11 from "../images/crystal-11.png"
-// import crystal12 from "../images/crystal-12.png"
 import crystal13 from "../images/crystal-13.png"
 import review1 from "../images/review-1.png"
 import review2 from "../images/review-2.png"
@@ -113,7 +105,6 @@ export default function Home({consultationPrice, consultationLength, whatsAppLin
                 </div>
             </section>
             <section className="methodsSection">
-                <h1 className="sectionName">Решения</h1>
                 <h2>Методы работы</h2>
                 <div className="methodsContainer">
                     <div className="methodContainer">

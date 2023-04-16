@@ -12,8 +12,6 @@ import TermsOfService from "./pages/TermsOfService";
 import "./styles/global.css";
 import ScrollToTop from "./components/ScrollToTop";
 
-
-
 function App() {
   const consultationPrice = 1200;
   const consultationLength = 40;

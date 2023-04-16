@@ -43,6 +43,7 @@ h1 {
     font-size: 42px;
     text-align: center;
     font-family: var(--font-family-1);
+    padding-bottom: var(--big-gap);
 }
 
 h2 {
