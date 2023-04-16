@@ -14,7 +14,6 @@
 }
 
 .homePage .heroInfoContainer .button {
-    height: max-content;
     width: max-content;
     padding: var(--medium-gap);
     background: var(--surface);
@@ -49,11 +48,11 @@
 
 @keyframes heroArrowIconAnimation {
     0% {
-        top: -5px;
+        top: 0px;
     }
 
     100% {
-        top: 5px;
+        top: 10px;
     }
 }
 
@@ -295,8 +294,9 @@
 }
 
 .homePage .aboutInfoContainer {
-    display: grid;
-    place-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .homePage .blogSection {

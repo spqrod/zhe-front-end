@@ -3,6 +3,7 @@ import PhotoOutlinedIcon from "@mui/icons-material/PhotoOutlined";
 import PersonIcon from '@mui/icons-material/Person';
 import ConsultationBookingProcess from "../components/ConsultationBookingProcess"
 import { Link } from "react-router-dom";
+import { HashLink } from "react-router-hash-link";
 import image1 from "../images/3.JPG";
 import image2 from "../images/4.jpg";
 import { useEffect } from "react";
@@ -27,9 +28,9 @@ import review4 from "../images/review-4.png"
 export default function Home({consultationPrice, consultationLength, whatsAppLink}) {
     useEffect(() => {
 
-        setTimeout(animatePhotoOutlineAfterLoad, 1000);
+        setTimeout(animateHeroPhotoOutlineAfterLoad, 1000);
         
-        function animatePhotoOutlineAfterLoad() {
+        function animateHeroPhotoOutlineAfterLoad() {
             const heroPhotoOutline = document.querySelector(".heroPhotoOutline");
             heroPhotoOutline.classList.add("heroPhotoOutlineAfterLoad");
             setTimeout(() => 
@@ -45,21 +46,21 @@ export default function Home({consultationPrice, consultationLength, whatsAppLin
                 <div className="heroInfoContainer">
                     <h1>Психолог Дарья Жеребцова</h1>
                     <p>Провожу онлайн консультации для тех, кому трудно, кто запутался и не знает, как быть дальше. <br></br>И для тех, кто хочет спокойствия, гармонии и понимания.</p>
-                    <button className="button">
-                        <Link className="buttonLink">
+                    <HashLink className="buttonLink" smooth to="/#help">
+                        <button className="button">
                             С чем я могу помочь
+                        </button>
                         <svg className="arrowIconSVG">
                             <path className="arrowIconPath" d="M 0 0 L 25 25 L 50 0"/>
                         </svg>
-                        </Link>
-                    </button>
+                    </HashLink>
                 </div>
                 <div className="heroPhotoContainer">
                     <img className="heroPhoto" src={image1} alt="" />
                     <div className="heroPhotoOutline"></div>
                 </div>
             </section>
-            <section className="problemsSection">
+            <section className="problemsSection" id="help">
                 <h1 className="sectionName">Проблемы</h1>
                 <h2>С чем я могу помочь</h2>
                 <div className="problemsContainer">
@@ -254,10 +255,10 @@ export default function Home({consultationPrice, consultationLength, whatsAppLin
                         <p>
                             Меня зовут Дарья Жеребцова. Я дипломированный психолог-консультант. 
                             Имею высшее психологическое образование по специальности «Психолог». Постоянно обучаюсь на разных курсах по повышению квалификации, развиваюсь и совершенствуюсь.
-                        </p>
+                        </p><br />
                         <p>
                             Больше всего на свете меня поражает природа наших мыслей и чувств. Их глубина, разнообразие и развитие. В каждом из нас – огромный загадочный мир. И чем лучше мы его понимаем, тем приятней жить.
-                        </p>
+                        </p><br />
                         <p>
                             Моя миссия – помочь разобраться в самом важном человеке в Вашей жизни – себе!
                         </p>

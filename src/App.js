@@ -10,15 +10,19 @@ import BookConsultation from "./pages/BookConsultation";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsOfService from "./pages/TermsOfService";
 import "./styles/global.css";
-import { useEffect } from "react";
+import ScrollToTop from "./components/ScrollToTop";
+
+
 
 function App() {
   const consultationPrice = 1200;
   const consultationLength = 40;
   const whatsAppLink = "https://wa.me/79788110255";
 
+
   return (
     <div>
+      <ScrollToTop />
       <Header />
       <Routes>
         <Route path="/" element={<Home consultationPrice={consultationPrice} consultationLength={consultationLength} whatsAppLink={whatsAppLink}/>} />
