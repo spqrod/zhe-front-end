@@ -10,16 +10,17 @@
     gap: var(--big-gap);
 }
 
-.aboutPage .personalLifeContainer {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
+.aboutPage .generalInfoImageContainer {
+    flex: 0 0 400px;
 }
 
-.aboutPage .personalLifeContainer h2 {
-    width: 80vw;
+.aboutPage .generalInfoImage {
+    width: 100%;
 }
 
-.aboutPage .personalLifeContainer p {
-    flex: 1;
+.aboutPage .personalInfoImage {
+    width: 400px;
+    float: left;
+    padding-right: var(--big-gap);
+    padding-bottom: var(--big-gap);
 }
