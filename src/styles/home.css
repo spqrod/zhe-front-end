@@ -261,6 +261,44 @@
     width: 100%;
 }
 
+.homePage .aboutContainer {
+    display: flex;
+    gap: var(--big-gap);
+}
+
+.homePage .aboutImageContainer {
+    flex: 0 0 400px;
+    position: relative;
+    display: flex;
+}
+
+.homePage .aboutImage {
+    width: 100%;
+    position: relative;
+    z-index: 1;
+}
+
+.homePage .aboutImageOutline {
+    border: var(--border);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    transition: var(--transition);
+    top: 14px;
+    left: -14px;
+    z-index: 0;
+}
+
+.homePage .aboutImageContainer:hover .aboutImageOutline  {
+    top: 24px;
+    left: -24px;
+}
+
+.homePage .aboutInfoContainer {
+    display: grid;
+    place-items: center;
+}
+
 .homePage .blogSection {
     display: flex;
     justify-content: center;

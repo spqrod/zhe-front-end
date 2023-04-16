@@ -4,6 +4,7 @@ import PersonIcon from '@mui/icons-material/Person';
 import ConsultationBookingProcess from "../components/ConsultationBookingProcess"
 import { Link } from "react-router-dom";
 import image1 from "../images/3.JPG";
+import image2 from "../images/4.jpg";
 import { useEffect } from "react";
 import crystal1 from "../images/crystal-1.png"
 import crystal2 from "../images/crystal-2.png"
@@ -56,7 +57,6 @@ export default function Home({consultationPrice, consultationLength, whatsAppLin
                 <div className="heroPhotoContainer">
                     <img className="heroPhoto" src={image1} alt="" />
                     <div className="heroPhotoOutline"></div>
-
                 </div>
             </section>
             <section className="problemsSection">
@@ -209,7 +209,6 @@ export default function Home({consultationPrice, consultationLength, whatsAppLin
                 </div>
             </section>
             <section className="formatSection">
-                <h1 className="sectionName">Формат</h1>
                 <h2>Как попасть на консультацию?</h2>
                 <ConsultationBookingProcess consultationPrice={consultationPrice} consultationLength={consultationLength} whatsAppLink={whatsAppLink}/>
                 <button className="button">
@@ -245,17 +244,25 @@ export default function Home({consultationPrice, consultationLength, whatsAppLin
                 </div>
             </section>
             <section className="aboutSection">
-            <h1 className="sectionName">Пару слов обо мне</h1>
-                <p>
-                    Меня зовут Дарья! Дипломированный психолог-консультант. 
-                    Имею высшее психологическое образование по специальности «Психолог». Участвовала во многих тренингах и семинарах. Проходила дополнительные обучения в клиент-центрированном подходе. Постоянно обучаюсь на различных курсах по повышению квалификации, развиваюсь и совершенствуюсь. 
-                </p>
-                <p>
-                    В нашем быстро меняющимся мире очень важно заботиться о себе и о своём ментальном здоровье. Узнать и понять самого важного человека в вашей жизни - себя! Время от времени нам всем нужна поддержка и тот самый искренний диалог. 
-                </p>
-                <p>
-                    Я как раз помогаю ответить на эти вопросы.
-                </p>
+                <h2>Пару слов обо мне</h2>
+                <div className="aboutContainer">
+                    <div className="aboutImageContainer">
+                        <img className="aboutImage" src={image2} alt="" />
+                        <div className="aboutImageOutline"></div>
+                    </div>
+                    <div className="aboutInfoContainer">
+                        <p>
+                            Меня зовут Дарья Жеребцова. Я дипломированный психолог-консультант. 
+                            Имею высшее психологическое образование по специальности «Психолог». Постоянно обучаюсь на разных курсах по повышению квалификации, развиваюсь и совершенствуюсь.
+                        </p>
+                        <p>
+                            Больше всего на свете меня поражает природа наших мыслей и чувств. Их глубина, разнообразие и развитие. В каждом из нас – огромный загадочный мир. И чем лучше мы его понимаем, тем приятней жить.
+                        </p>
+                        <p>
+                            Моя миссия – помочь разобраться в самом важном человеке в Вашей жизни – себе!
+                        </p>
+                    </div>
+                </div>
             </section>
             <section className="blogSection">
                 <h1 className="sectionName">Блог</h1>
