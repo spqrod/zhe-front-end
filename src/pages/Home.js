@@ -278,8 +278,8 @@ export default function Home({consultationPrice, consultationLength, whatsAppLin
                     </div>
                 </div>
                 <button className="button">
-                    <Link className="buttonLink" to="">
-                        Записаться
+                    <Link className="buttonLink" to="/blog">
+                        Смотреть все заметки
                     </Link>
                     <div className="buttonBorder"></div>
                     <div className="buttonBorder"></div>

@@ -1,7 +1,4 @@
 import "../styles/contact.css";
-import PhoneIcon from '@mui/icons-material/Phone';
-import PlaceIcon from '@mui/icons-material/Place';
-import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 import SocialLinks from "../components/SocialLinks";
 import { Link } from "react-router-dom";
 
