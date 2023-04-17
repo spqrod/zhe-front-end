@@ -1,0 +1,216 @@
+:root {
+    --header-height: 10vh;
+    --big-gap: 32px;
+    --medium-gap: 16px;
+    --small-gap: 8px;
+    --max-content-width: 1200px;
+    --side-padding-for-sections: max(5vw, calc((100vw - var(--max-content-width)) / 2));
+
+    --primary: #95416d;
+    --on-primary: #ffffff;
+    --primary-container: #facae0;
+    --on-primary-container: #3d0026;
+    --background: #faf3fa;
+    --on-background: #1f1a1c;
+    --surface: #ffffff;
+    --on-surface: #1f1a1c;
+    --outline: #827378;
+    --surface-variant: #f1dee3;
+    --on-surface-variant: #504348;
+
+    --border: 1px solid var(--outline);
+    --border-radius: 0;
+
+    --font-family-1: 'Yeseva One', cursive;
+    --font-family-2: 'Jost', sans-serif;
+
+    --transition: all .5s ease-in-out;
+    --transition-slow: all 1.5s ease-in-out;
+}
+
+*, *::after, *::before {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2, p, span, a, div {
+    color: var(--on-background);
+    line-height: 1.5;
+}
+
+h1 {
+    font-size: 42px;
+    text-align: center;
+    font-family: var(--font-family-1);
+    padding-bottom: var(--big-gap);
+}
+
+h2 {
+    font-size: 34px;
+    text-align: center;
+    padding-top: var(--big-gap);
+    padding-bottom: var(--big-gap);
+    font-family: var(--font-family-1);
+}
+
+p, a, span, div {
+    font-size: 20px;
+    font-family: var(--font-family-2);
+}
+
+section {
+    position: relative;
+}
+
+.sectionName {
+    color: grey;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: none;
+}
+
+.footer, .header, section {
+    padding: var(--big-gap) var(--side-padding-for-sections);
+    background-color: var(--background);
+}
+
+li {
+    list-style-type: circle;
+    list-style-position: inside;
+}
+
+/* Input fields */
+
+input[type=text], input[type=tel], input[type=email], textarea {
+    padding: var(--small-gap);
+    font-size: 20px;
+    font-family: var(--font-family-2);
+    color: var(--on-background);
+    line-height: 1.5;
+}
+
+input {
+    /* position: relative; */
+}
+
+input, input:focus, textarea, textarea:focus {
+    border-radius: var(--border-radius);
+    background-color: var(--surface);
+    border: var(--border);
+    outline: 0;
+    transition: var(--transition);
+}
+
+input:focus, textarea:focus {
+    background-color: var(--surface-variant);
+    color: var(--on-surface-variant)
+}
+
+textarea {
+    width: 100%;
+    min-height: 200px;
+}
+
+.inputContainer {
+    /* position: relative; */
+}
+
+.inputContainer::after {
+    /* position: absolute;
+    top: 0;
+    left: 0;
+    content: "";
+    width: 0;
+    height: 100%;
+    border-bottom: 1px solid var(--primary);
+    transition: var(--transition); */
+}
+
+
+.inputContainer:has(input:focus)::after {
+    /* width: 100%; */
+}
+
+/* Button */
+
+.button {
+    min-width: 209px;
+    height: 50px;
+    padding: var(--small-gap);
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: none;
+    background-color: var(--primary-container);
+    color: var(--on-primary-container);
+
+    border: none;
+    cursor: pointer;
+
+    font-family: var(--font-family-2);
+    letter-spacing: 3px;
+    font-size: 20px;
+
+}
+
+.buttonLink {
+    text-decoration: none;
+    font-weight: 500;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+}
+  
+.buttonBorder{
+    position:absolute;
+    background:none;
+    transition: var(--transition);
+}
+
+.buttonBorder:nth-of-type(1){
+    top:0;
+    left:0;
+    width:0;
+    height:0;
+    border-top: var(--border);
+}
+  
+.buttonBorder:nth-of-type(2){
+    top:0;
+    right:0;
+    width:10px;
+    height:0;
+    border-right: var(--border);
+}
+  
+.buttonBorder:nth-of-type(3){
+    bottom:0;
+    right:0;
+    width:0;
+    height:0;
+    border-bottom: var(--border);
+}
+
+.buttonBorder:nth-of-type(4){
+    bottom:0;
+    left:0;
+    width:0;
+    height:0;
+    border-left: var(--border);
+}
+
+.button:hover .buttonBorder:nth-of-type(1n){
+    width:100%;
+}
+
+.button:hover .buttonBorder:nth-of-type(2n){
+    height:100%;
+}

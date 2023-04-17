@@ -1,0 +1,348 @@
+.homePage .heroSection {
+    height: calc(100vh - var(--header-height));
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.homePage .heroInfoContainer {
+    flex-basis: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--big-gap);
+}
+
+.homePage h1 {
+    padding: 0;
+}
+
+.homePage .heroInfoContainer .button {
+    width: max-content;
+    padding: var(--medium-gap);
+    background: var(--surface);
+    color: var(--on-surface);
+    border: var(--border);
+}
+
+.homePage .heroInfoContainer .buttonLink {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: var(--small-gap);
+    position: relative;
+}
+
+.homePage .arrowIconSVG {
+    position: relative;
+    width: 50px;
+    height: 25px;
+    animation-name: heroArrowIconAnimation;
+    animation-duration: 1.5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-it;
+    animation-direction: alternate;
+}
+
+.homePage .arrowIconPath {
+    stroke: var(--outline);
+    stroke-width: 1px;
+    fill: none;
+}
+
+@keyframes heroArrowIconAnimation {
+    0% {
+        top: 0px;
+    }
+
+    100% {
+        top: 10px;
+    }
+}
+
+.homePage .heroPhotoContainer {
+    flex-basis: 30%;
+    display: flex;
+    position: relative;
+}
+
+.homePage .heroPhoto {
+    width: 100%;
+    z-index: 1;
+}
+
+.homePage .heroPhotoOutline {
+    border: var(--border);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 0;
+    transition: var(--transition-slow);
+    top: 0;
+    left: 0;
+}
+
+.homePage .heroPhotoOutlineAfterLoad {
+    top: 14px;
+    left: 14px;
+}
+
+.homePage .heroPhotoContainer:hover .heroPhotoOutline {
+    top: 24px;
+    left: 24px;
+}
+
+.homePage .problemsContainer {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: var(--big-gap);
+}
+.homePage .problemContentContainer {
+    color: white;
+    text-align: center;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    padding: var(--medium-gap);
+
+    width: 100%;
+    height: 100%;
+
+    backdrop-filter: grayscale(100%) brightness(70%);
+    transition: var(--transition);
+
+    z-index: 1;
+}
+
+.homePage .problemContainer {
+    width: 200px;
+    height: 200px;
+    
+    background-size: 300%;
+    
+    animation: backgroundAnimation 300s ease infinite;
+}
+
+.homePage .problemContentContainer:hover {
+    backdrop-filter: grayscale(30%) brightness(80%);
+}
+
+.homePage .problemContainer.selfRespect {
+    background-image: url("https://images.unsplash.com/photo-1569091923578-399adee3f634?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=735&q=80");
+}
+
+.homePage .problemContainer.depression {
+    background-image: url("https://images.unsplash.com/photo-1482881497185-d4a9ddbe4151?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=765&q=80");
+}
+
+.homePage .problemContainer.perfectionism {
+    background-image: url("https://images.unsplash.com/photo-1531309477293-c8a2f59310fa?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=765&q=80");
+}
+.homePage .problemContainer.selfDissatisfaction {
+    background-image: url("https://images.unsplash.com/photo-1425913397330-cf8af2ff40a1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1374&q=80");
+}
+.homePage .problemContainer.irritation {
+    background-image: url("https://images.unsplash.com/photo-1522046310824-b844b4b5806f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80");
+}
+.homePage .problemContainer.negativeFeelings {
+    background-image: url("https://images.unsplash.com/photo-1601232193692-28a2a69a2d3f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=715&q=80");
+}
+.homePage .problemContainer.communicationProblems {
+    background-image: url("https://images.unsplash.com/photo-1501630834273-4b5604d2ee31?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80");
+}
+.homePage .problemContainer.relationshipProblems {
+    background-image: url("https://images.unsplash.com/photo-1507179938544-5e9eada02714?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1632&q=80");
+}
+.homePage .problemContainer.loss {
+    background-image: url("https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1474&q=80");
+}
+
+@keyframes backgroundAnimation {
+    0% {
+        background-position: 0% 0%;
+    }
+    50% {
+        background-position: 100% 100%;
+    }
+    100% {
+        background-position: 25% 75%;
+    }
+}
+
+.homePage .methodsContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: var(--big-gap);
+}
+
+.homePage .methodContainer {
+    padding: var(--big-gap);
+
+    border: var(--border);
+
+    background-color: var(--surface);
+    color: var(--on-surface);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    gap: var(--big-gap);
+}
+
+.homePage .crystalImageContainer {
+    flex: 0 0 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.homePage .crystalImage {
+    max-width: 100%;
+    max-height: 200px;
+}
+
+.homePage .educationsContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;    
+    gap: var(--big-gap);
+}
+
+.homePage .formatIcon {
+    font-size: 200px;
+    float: left;
+}
+
+.homePage .formatSection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--big-gap);
+}
+
+.homePage .afterInfoContainer {
+    display: flex;
+    flex-direction: column;
+    gap: var(--big-gap);
+}
+
+.homePage .afterInfoItem {
+    max-width: 600px;
+    border: var(--border);
+    padding: var(--big-gap);
+    background-color: var(--surface);
+    color: var(--on-surface);
+}
+
+.homePage .afterInfoItem:nth-of-type(2n) {
+    align-self: end;
+
+}
+
+.homePage .reviewsSection {
+    display: grid;
+    place-items: center;
+}
+
+.homePage .reviewsContainer {
+    max-width: min(100vw, 800px);
+    columns: 2;
+    column-gap: var(--big-gap);
+}
+
+.homePage .reviewContainer {
+    break-inside: avoid;
+    margin-bottom: var(--big-gap);
+}
+
+.homePage .reviewImage {
+    width: 100%;
+}
+
+.homePage .aboutContainer {
+    display: flex;
+    gap: var(--big-gap);
+}
+
+.homePage .aboutImageContainer {
+    flex: 0 0 400px;
+    position: relative;
+    display: flex;
+}
+
+.homePage .aboutImage {
+    width: 100%;
+    position: relative;
+    z-index: 1;
+}
+
+.homePage .aboutImageOutline {
+    border: var(--border);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    transition: var(--transition);
+    top: 14px;
+    left: -14px;
+    z-index: 0;
+}
+
+.homePage .aboutImageContainer:hover .aboutImageOutline  {
+    top: 24px;
+    left: -24px;
+}
+
+.homePage .aboutInfoContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.homePage .blogSection {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: var(--small-gap);
+}
+
+.homePage .blogPostsContainer {
+    display: flex;
+    justify-content: center;
+    gap: var(--small-gap);
+    flex-wrap: wrap;
+}
+
+.homePage .blogPostContainer {
+    width: 280px;
+    height: 280px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+}
+
+.homePage .blogPostIcon {
+    font-size: 100px;
+}
+
+.homePage .blogPostName {
+    text-align: center;
+}
+
+.homePage .bookSection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.homePage .bookForm {
+    width: 300px;
+    height: 300px;
+    border: 1px solid black;
+}

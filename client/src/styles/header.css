@@ -1,0 +1,60 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: var(--header-height);
+    border-bottom: var(--border);
+
+    position: sticky;
+    top: 0;
+
+    z-index: 2;
+}
+
+.header .logoContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header .logoLink {
+    font-family: var(--font-family-1);
+    font-size: 22px;
+    text-decoration: none;
+}
+
+.header .headerMenuContainer {
+    display: flex;
+    align-items: center;
+    gap: var(--small-gap);
+}
+
+.header .headerMenuItem {
+    list-style: none;
+}
+
+.header .headerMenuLink {
+    text-decoration: none;
+    position: relative;
+}
+
+/* Link hover underline animation */
+
+.header .headerMenuLink::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: "";
+    width: 0;
+    height: 100%;
+    border-bottom: var(--border);
+    transition: var(--transition);
+}
+
+.header .headerMenuLink:hover::after {
+    width: 100%;
+}
+
+.header .button {
+    width: 209px;
+}

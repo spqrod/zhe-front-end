@@ -1,0 +1,35 @@
+
+.methodsPage .methodsContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: var(--big-gap);
+}
+
+.methodsPage .methodContainer {
+    padding: var(--big-gap);
+
+    border: var(--border);
+
+    background-color: var(--surface);
+    color: var(--on-surface);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    gap: var(--big-gap);
+}
+
+.methodsPage .crystalImageContainer {
+    flex: 0 0 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.methodsPage .crystalImage {
+    max-width: 100%;
+    max-height: 200px;
+}

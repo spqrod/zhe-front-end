@@ -1,0 +1,28 @@
+.blogPage .blogSection {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: var(--small-gap);
+}
+
+.blogPage .blogPostsContainer {
+    display: flex;
+    justify-content: center;
+    gap: var(--small-gap);
+    flex-wrap: wrap;
+}
+
+.blogPage .blogPostContainer {
+    width: 280px;
+    height: 280px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+}
+
+.blogPage .blogPostName {
+    text-align: center;
+}
+

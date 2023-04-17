@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "./static/css/main.4274fd93.css",
+    "main.js": "./static/js/main.1331e429.js",
+    "static/media/crystal-9.png": "./static/media/crystal-9.ca09d2f7c829d0080adf.png",
+    "static/media/crystal-2.png": "./static/media/crystal-2.24113eb1759da323118a.png",
+    "static/media/crystal-6.png": "./static/media/crystal-6.becc93070ad422c9bebf.png",
+    "static/media/crystal-13.png": "./static/media/crystal-13.af0428b57f6c5a0694a2.png",
+    "static/media/4.jpg": "./static/media/4.173f6230314b2f4ae755.jpg",
+    "static/media/crystal-1.png": "./static/media/crystal-1.9c829c9070e093025443.png",
+    "static/media/review-1.png": "./static/media/review-1.76ca756ccb4195736c88.png",
+    "static/media/review-3.png": "./static/media/review-3.5ea5adc2aa04e3482df5.png",
+    "static/media/3.JPG": "./static/media/3.ff03a1e364a984b996bf.JPG",
+    "static/media/review-2.png": "./static/media/review-2.874bea880be6c7723830.png",
+    "static/media/1.jpg": "./static/media/1.176d5fe271142cdec967.jpg",
+    "static/media/2.jpg": "./static/media/2.dc781f94a0c1a4384fd6.jpg",
+    "static/media/review-4.png": "./static/media/review-4.41cdc56d96e2a696436c.png",
+    "index.html": "./index.html",
+    "main.4274fd93.css.map": "./static/css/main.4274fd93.css.map",
+    "main.1331e429.js.map": "./static/js/main.1331e429.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.4274fd93.css",
+    "static/js/main.1331e429.js"
+  ]
+}

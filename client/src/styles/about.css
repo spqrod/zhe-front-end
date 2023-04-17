@@ -1,0 +1,26 @@
+.aboutPage .infoContainer {
+    background-color: var(--surface);
+    border: var(--border);
+    padding: var(--big-gap);
+}
+
+.aboutPage .generalInfoContainer {
+    display: flex;
+    align-items: center;
+    gap: var(--big-gap);
+}
+
+.aboutPage .generalInfoImageContainer {
+    flex: 0 0 400px;
+}
+
+.aboutPage .generalInfoImage {
+    width: 100%;
+}
+
+.aboutPage .personalInfoImage {
+    width: 400px;
+    float: left;
+    padding-right: var(--big-gap);
+    padding-bottom: var(--big-gap);
+}

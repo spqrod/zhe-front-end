@@ -1,0 +1,9 @@
+.socialLinksContainer {
+    display: flex;
+    justify-content: center;
+    gap: var(--small-gap);
+}
+
+.socialLink {
+    font-size: 40px !important;
+}
