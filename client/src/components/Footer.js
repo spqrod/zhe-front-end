@@ -12,7 +12,7 @@ export default function Footer() {
                 <SocialLinks />
                 <div className="footerButtonContainer">
                     <button className="button">
-                        <Link className="buttonLink" to="">
+                        <Link className="buttonLink" to="/book-consultation">
                             Записаться
                         </Link>
                         <div className="buttonBorder"></div>

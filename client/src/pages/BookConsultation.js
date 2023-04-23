@@ -13,31 +13,33 @@ import ConsultationBookingProcess from "../components/ConsultationBookingProcess
 export default function BookConsultation({consultationPrice, consultationLength}) {
     return (
         <main className="bookConsultationPage">
-            <section className="processSection">
-                <h1>Как попасть на консультацию?</h1>
-                <ConsultationBookingProcess consultationPrice={consultationPrice} consultationLength={consultationLength} />
-            </section>
             <section className="bookingSection">
-                <h2>Записаться на бесплатную ознакомительную беседу</h2>
+                <h1>Запись на консультацию</h1>
                 <form className="form">
                     <LocalizationProvider dateAdapter={AdapterDayjs}>
                         <DatePicker />
                     </LocalizationProvider>
-                    <TextField label="Имя" variant="outlined"/>
-                    <TextField label="Email" required variant="outlined" type="email"/>
-                    <TextField label="Телефон" required variant="outlined" type="tel"/>
-                    <Button className="formButton" variant="contained" size="large"
-                    sx={{
-                        backgroundColor: "white",
-                        color: "black",
-                        border: "1px solid black"
-                    }}>Записаться</Button>
+                    <input className="inputField" type="text" placeholder="Имя" name="name" />
+                    <input className="inputField" type="email" placeholder="E-mail" name="email" required />
+                    <input className="inputField" type="tel" placeholder="Телефон" name="phone" />
+                    <button className="button" type="submit">
+                        Записаться
+                        <div className="buttonBorder"></div>
+                        <div className="buttonBorder"></div>
+                        <div className="buttonBorder"></div>
+                        <div className="buttonBorder"></div>
+                    </button>
                 </form>
                 <div className="alternativeBookingMethodContainer">
-                    <p>Также можете записаться, просто написав мне в:</p>
+                    <p>Вы также можете записаться, просто написав мне в:</p>
                     <SocialLinks />
                 </div>
             </section>
+            <section className="processSection">
+                <h1>Как попасть на консультацию?</h1>
+                <ConsultationBookingProcess consultationPrice={consultationPrice} consultationLength={consultationLength} />
+            </section>
+
         </main>
     );
 }
