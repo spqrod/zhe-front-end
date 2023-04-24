@@ -1,13 +1,37 @@
 import "../styles/bookConsultation.css";
-import TextField from '@mui/material/TextField';
-import Button from "@mui/material/Button";
 import SocialLinks from "../components/SocialLinks";
-
+import dayjs from "dayjs";
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { DatePicker } from '@mui/x-date-pickers/DatePicker';
+
 import ConsultationBookingProcess from "../components/ConsultationBookingProcess";
 
+const tomorrow = dayjs().add(1, "day");
+const todayPlus30Days = dayjs().add(1, "month");
+
+const availableDays = [
+    dayjs().add(2, "days"),
+    dayjs().add(3, "days"),
+    dayjs().add(4, "days"),
+    dayjs().add(6, "days"),
+    dayjs().add(8, "days"),
+    dayjs().add(10, "days"),
+];
+console.clear();
+
+const isDateAvailable = (date) => {
+    const initialValue = true;
+    const result = availableDays.reduce((accumulator, currentValue) => {
+        if (dayjs(currentValue).isSame(date, "day")) {
+            accumulator = false;
+            return accumulator;
+        }
+        return accumulator;
+    }, initialValue);
+
+    return result;
+}
 
 
 export default function BookConsultation({consultationPrice, consultationLength}) {
@@ -17,7 +41,7 @@ export default function BookConsultation({consultationPrice, consultationLength}
                 <h1>Запись на консультацию</h1>
                 <form className="form">
                     <LocalizationProvider dateAdapter={AdapterDayjs}>
-                        <DatePicker />
+                        <DatePicker disablePast minDate={tomorrow} maxDate={todayPlus30Days} shouldDisableDate={isDateAvailable}/>
                     </LocalizationProvider>
                     <input className="inputField" type="text" placeholder="Имя" name="name" />
                     <input className="inputField" type="email" placeholder="E-mail" name="email" required />
