@@ -26,3 +26,16 @@
     gap: var(--small-gap);
 
 }
+
+.bookConsultationPage .inputField.time {
+    display: none;
+}
+
+.bookConsultationPage .inputField.time.revealed {
+    display: block;
+}
+
+.bookConsultationPage .timeInputPopUpDialog {
+    min-width: 300px;
+}
+
