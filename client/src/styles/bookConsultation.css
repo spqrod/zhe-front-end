@@ -39,3 +39,17 @@
     min-width: 300px;
 }
 
+
+
+.react-datepicker__time-list-item--disabled {
+    display: none;
+}
+
+.react-datepicker__time-list-item {
+    list-style: none;
+}
+
+.react-datepicker {
+    border: var(--border)!important;
+    border-radius: 0!important;
+}

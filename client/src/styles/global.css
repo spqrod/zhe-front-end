@@ -91,21 +91,18 @@ input[type=text], input[type=tel], input[type=email], textarea {
     line-height: 1.5;
 }
 
-input {
-    /* position: relative; */
-}
-
 input, input:focus, textarea, textarea:focus {
     border-radius: var(--border-radius);
     background-color: var(--surface);
     border: var(--border);
     outline: 0;
     transition: var(--transition);
+    min-width: 300px;
 }
 
 input:focus, textarea:focus {
-    background-color: var(--surface-variant);
-    color: var(--on-surface-variant)
+    /* background-color: var(--surface-variant);
+    color: var(--on-surface-variant) */
 }
 
 textarea {
@@ -244,7 +241,6 @@ dialog::backdrop {
     animation-duration: 1s;
     animation-fill-mode: forwards;
 }
-
 
 @keyframes backdropAnimation {
     0% {

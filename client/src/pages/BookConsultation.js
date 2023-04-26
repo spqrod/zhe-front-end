@@ -5,113 +5,101 @@ import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { MobileDatePicker } from '@mui/x-date-pickers/MobileDatePicker';
 import { StaticDatePicker } from '@mui/x-date-pickers/StaticDatePicker';
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
+import ru from 'date-fns/locale/ru';
 import { useEffect } from "react";
 import { useState } from "react";
 import CloseIcon from '@mui/icons-material/Close';
-
 import ConsultationBookingProcess from "../components/ConsultationBookingProcess";
 
 
 export default function BookConsultation({consultationPrice, consultationLength}) {
 
-    const tomorrow = dayjs().add(1, "day");
-const todayPlus30Days = dayjs().add(1, "month");
-
-const availableDays = [
-    dayjs().add(5, "days").hour(13).minute(15).second(0),
-    dayjs().add(2, "days").hour(14).minute(15).second(0),
-    dayjs().add(2, "days").hour(15).minute(30).second(0),
-    dayjs().add(3, "days").hour(9).minute(0).second(0),
-    dayjs().add(4, "days").hour(10).minute(0).second(0),
-    dayjs().add(4, "days").hour(16).minute(0).second(0),
-    dayjs().add(5, "days").hour(16).minute(0).second(0),
-    dayjs().add(5, "days").hour(17).minute(0).second(0),
-];
+    const today = new Date();
+    const tomorrow = new Date(today).setDate(today.getDate() + 1);
+    const todayPlus30Days = new Date(today).setDate(today.getDate() + 30);
 
 
-    const isDateAvailable = (date) => {
-        const initialValue = true;
-        const result = availableDays.reduce((accumulator, currentValue) => {
-            if (dayjs(currentValue).isSame(date, "day")) {
-                accumulator = false;
-                return accumulator;
-            }
-            return accumulator;
-        }, initialValue);
-    
-        return result;
-    }
-    
-    function handleDateSelection(newValue) {
-        setSelectedDate(newValue);
-        revealTimeInputField();
-        console.log(newValue);
-    }
+    const availableDays = [
+        new Date(2023, 3, 27, 11, 0),
+        new Date(2023, 3, 27, 12, 0),
+        new Date(2023, 3, 27, 13, 30),
 
-    function revealTimeInputField() {
-        const inputFieldTime = document.querySelector(".inputField.time");
-        inputFieldTime.classList.add("revealed");
-    }
-
-    const [selectedDate, setSelectedDate] = useState(availableDays[0]);
-
-    useEffect(() => {
-
-
-
+        new Date(2023, 3, 28, 9, 0),
+        new Date(2023, 3, 28, 10, 0),
+        new Date(2023, 3, 28, 11, 0),
+        new Date(2023, 3, 28, 11, 30),
         
+        new Date(2023, 3, 29, 10, 0),
+        
+        new Date(2023, 4, 2, 9, 0),
+        new Date(2023, 4, 7, 9, 0),
+        new Date(2023, 4, 15, 9, 0),
+    ];
 
-        const revealTimeInputPopUpDialog = () => {
 
-            const timeInputPopUpDialog = document.querySelector(".timeInputPopUpDialog");
-            timeInputPopUpDialog.removeAttribute("open");
-            timeInputPopUpDialog.showModal();
+    const [selectedDate, setSelectedDate] = useState();
 
-            const dialogCloseButton = document.querySelector(".dialogCloseButton");
-            dialogCloseButton.addEventListener("click", () => {
-                timeInputPopUpDialog.close();
-            });
-        }
+    const [availableTimes, setAvailableTimes] = useState([]);
 
-        const inputFieldTime = document.querySelector(".inputField.time");
-        inputFieldTime.addEventListener("click", revealTimeInputPopUpDialog);
+    function updateAvailableTimes(selectedDate) {
+        let newArray = [];
+        newArray = availableDays.filter(date => 
+            ((date.getFullYear() === selectedDate.getFullYear()) 
+            && (date.getMonth() === selectedDate.getMonth()) 
+            && (date.getDate() === selectedDate.getDate()))
+        );
+        setAvailableTimes(newArray);
+    }
 
-    });
+    function handleDateSelect(selectedDate) {
+        updateAvailableTimes(selectedDate);
+    }
+
+    function handleDateChange(date) {
+        setSelectedDate(date)
+    }
 
     return (
         <main className="bookConsultationPage">
             <section className="bookingSection">
                 <h1>Запись на консультацию</h1>
                 <form className="form">
-                    <LocalizationProvider dateAdapter={AdapterDayjs}>
-                        <MobileDatePicker 
-                            className="inputDatePicker"
-                            disablePast 
-                            minDate={tomorrow} 
-                            maxDate={todayPlus30Days} 
-                            shouldDisableDate={isDateAvailable}
-                            orientation="portrait"
-                            label="Выбери день"
-                            onAccept={newValue => handleDateSelection(newValue)}
-                        />
-                    </LocalizationProvider>
-                    <input className="inputField time" type="text" placeholder="Выбери время" name="time" />
+                    <DatePicker 
+                        withPortal
+                        minDate={tomorrow}
+                        maxDate={todayPlus30Days}
+                        includeDates={availableDays}
+                        includeTimes={availableTimes}
+                        locale={ru}
+                        showTimeSelect
+                        timeFormat="p"
+                        placeholderText="Выбрать день"
+                        onSelect={handleDateSelect}
+                        selected={selectedDate}
+                        onChange={handleDateChange}
+                        dateFormat="dd MMMM yyyy, h:mm"
+                        timeCaption="Время"
+                    />
+                    {/* <input className="inputField time" type="text" placeholder="Выбери время" name="time" />
                     <dialog className="timeInputPopUpDialog">
                         <button type="button" className="dialogCloseButton"> <CloseIcon /> </button>
                         <p>Доступное время:</p>
-                    </dialog>
-
-
-                    <ul>
+                        <ul>
                         {availableDays.map(availableDay => {
-                            if ((availableDay.year() == selectedDate.year())
-                            && (availableDay.month() == selectedDate.month())
-                            && (availableDay.day() == selectedDate.day())
+                            if ((availableDay.year() === selectedDate.year())
+                            && (availableDay.month() === selectedDate.month())
+                            && (availableDay.day() === selectedDate.day())
                             ) {
                                 return <li key={availableDay}>{availableDay.format("HH:mm")}</li>
                             }
                         })}
-                    </ul>
+                        </ul>
+                    </dialog> */}
+
+
+
 
 
                     <input className="inputField" type="text" placeholder="Имя" name="name" />
