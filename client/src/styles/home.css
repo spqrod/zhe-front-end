@@ -124,6 +124,8 @@
     background-size: 250%;
     
     animation: backgroundAnimationVariation1 300s ease-in-out infinite alternate;
+
+    border: var(--border);
 }
 
 .homePage .problemContentContainer:hover {
@@ -307,6 +309,11 @@
 .homePage .reviewContainer {
     break-inside: avoid;
     margin-bottom: var(--big-gap);
+    transition: var(--transition);
+}
+
+.homePage .reviewContainer:hover {
+    transform: scale(1.04);
 }
 
 .homePage .reviewImage {

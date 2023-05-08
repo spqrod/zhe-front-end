@@ -28,7 +28,9 @@ export default function About() {
             </section>
             <section className='personalLifeSection'>
                 <div className='infoContainer personalLifeContainer'>    
-                    <img className='personalInfoImage' src={image1} alt="" />
+                    <div className='personalInfoImageContainer'>
+                        <img className='personalInfoImage' src={image1} alt="" />
+                    </div>
                     <p>
                         Душа  и наше тело едины, поэтому я люблю активный образ жизни и спорт. Он делает меня более сильной и дисциплинированной. Дает возможность высвободить свои эмоции и переживания продуктивным путем. <br /><br />
 

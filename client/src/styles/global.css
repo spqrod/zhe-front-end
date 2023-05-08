@@ -26,6 +26,8 @@
 
     --transition: all .5s ease-in-out;
     --transition-slow: all 1.5s ease-in-out;
+
+    --shadow: 5px 5px 5px 5px black;
 }
 
 *, *::after, *::before {
@@ -97,12 +99,16 @@ input, input:focus, textarea, textarea:focus {
     border: var(--border);
     outline: 0;
     transition: var(--transition);
-    min-width: 300px;
+    /* min-width: 300px; */
 }
 
 input:focus, textarea:focus {
     /* background-color: var(--surface-variant);
     color: var(--on-surface-variant) */
+}
+
+.inputField {
+    width: 500px;
 }
 
 textarea {
@@ -130,6 +136,39 @@ textarea {
     /* width: 100%; */
 }
 
+
+.legalConsentCheckboxContainer {
+    display: flex;
+    gap: var(--medium-gap);
+}
+
+.legalConsentCheckbox {
+    width: 30px;
+    height: 30px;
+}
+
+.alternativeBookingMethodContainer {
+    padding-top: var(--big-gap);
+    border-top: var(--border);
+    display: flex;
+    flex-direction: column;
+    gap: var(--medium-gap);
+}
+
+.socialLinksContainer {
+    justify-content: center;
+    gap: var(--big-gap);
+}
+
+.form {
+    max-width: min(500px, 80vw);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--medium-gap);
+    padding-bottom: var(--big-gap);
+}
+
 /* Button */
 
 .button {
@@ -151,7 +190,6 @@ textarea {
     font-family: var(--font-family-2);
     letter-spacing: 3px;
     font-size: 20px;
-
 }
 
 .buttonLink {

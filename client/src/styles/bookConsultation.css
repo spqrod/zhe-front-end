@@ -1,55 +1,8 @@
 
-.bookConsultationPage .processSection {
-    /* display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: var(--small-gap); */
-}
-
-.bookConsultationPage .socialLinksContainer {
-    justify-content: space-evenly;
-}
 
 .bookConsultationPage .bookingSection {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: var(--big-gap);
-}
-
-.bookConsultationPage .form {
-    max-width: min(800px, 80vw);
-    display: flex;
-    flex-direction: column;
-    /* justify-content: space-between; */
-    /* flex-wrap: wrap; */
-    gap: var(--small-gap);
-
-}
-
-.bookConsultationPage .inputField.time {
-    display: none;
-}
-
-.bookConsultationPage .inputField.time.revealed {
-    display: block;
-}
-
-.bookConsultationPage .timeInputPopUpDialog {
-    min-width: 300px;
-}
-
-
-
-.react-datepicker__time-list-item--disabled {
-    display: none;
-}
-
-.react-datepicker__time-list-item {
-    list-style: none;
-}
-
-.react-datepicker {
-    border: var(--border)!important;
-    border-radius: 0!important;
+    /* gap: var(--big-gap); */
 }

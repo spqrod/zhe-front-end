@@ -17,7 +17,6 @@ function App() {
   const consultationLength = 40;
   const whatsAppLink = "https://wa.me/79788110255";
 
-
   return (
     <div>
       <ScrollToTop />
