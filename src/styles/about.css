@@ -16,11 +16,16 @@
 
 .aboutPage .generalInfoImage {
     width: 100%;
+    border: var(--border);
+}
+
+.aboutPage .personalLifeContainer {
+    display: flex;
+    gap: var(--big-gap);
+    align-items: center;
 }
 
 .aboutPage .personalInfoImage {
-    width: 400px;
-    float: left;
-    padding-right: var(--big-gap);
-    padding-bottom: var(--big-gap);
+    max-width: 400px;
+    border: var(--border);
 }

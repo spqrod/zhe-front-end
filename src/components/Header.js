@@ -33,7 +33,7 @@ export default function Header() {
             </ul>
 
             <button className="button">
-                <Link className="buttonLink" to="">
+                <Link className="buttonLink" to="/book-consultation">
                     Записаться
                 </Link>
                 <div className="buttonBorder"></div>

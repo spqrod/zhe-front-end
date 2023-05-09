@@ -16,6 +16,7 @@ import review1 from "../images/review-1.png"
 import review2 from "../images/review-2.png"
 import review3 from "../images/review-3.png"
 import review4 from "../images/review-4.png"
+import BookConsultationForm from "../components/BookConsultationForm";
  
 export default function Home({consultationPrice, consultationLength, whatsAppLink}) {
     useEffect(() => {
@@ -290,9 +291,7 @@ export default function Home({consultationPrice, consultationLength, whatsAppLin
             <section className="bookSection">
                 <h1 className="sectionName">Запись</h1>
                 <h2>Записаться на консультацию</h2>
-                <div className="bookForm">
-                    Запись
-                </div>
+                <BookConsultationForm />
             </section>
         </main>
     );

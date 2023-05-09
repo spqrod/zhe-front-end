@@ -1,17 +1,12 @@
-
-
-.contactPage .socialLinksContainer {
-    justify-content: space-evenly;
-}
-
-.contactPage .form {
+.contactPage .contactSection {
     display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
     gap: var(--big-gap);
-
 }
 
-.contactPage .inputField {
-    flex: 1;
+.contactPage .dividerLine {
+    width: 500px;
+    border-top: var(--border);
+    height: 1px;
 }

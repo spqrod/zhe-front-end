@@ -1,43 +1,31 @@
 import "../styles/bookConsultation.css";
-import TextField from '@mui/material/TextField';
-import Button from "@mui/material/Button";
-import SocialLinks from "../components/SocialLinks";
-
+import dayjs from "dayjs";
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
-import { DatePicker } from '@mui/x-date-pickers/DatePicker';
-import ConsultationBookingProcess from "../components/ConsultationBookingProcess";
+import { MobileDatePicker } from '@mui/x-date-pickers/MobileDatePicker';
+import { StaticDatePicker } from '@mui/x-date-pickers/StaticDatePicker';
+import "react-datepicker/dist/react-datepicker.css";
 
+import ConsultationBookingProcess from "../components/ConsultationBookingProcess";
+import BookConsultationForm from "../components/BookConsultationForm";
 
 
 export default function BookConsultation({consultationPrice, consultationLength}) {
+
+
     return (
         <main className="bookConsultationPage">
+            <section className="bookingSection">
+                <h1>Запись на 15-ти минутную беседу</h1>
+                <BookConsultationForm />
+            </section>
             <section className="processSection">
-                <h1>Как попасть на консультацию?</h1>
+                <h1>Как происходит работа?</h1>
                 <ConsultationBookingProcess consultationPrice={consultationPrice} consultationLength={consultationLength} />
             </section>
-            <section className="bookingSection">
-                <h2>Записаться на бесплатную ознакомительную беседу</h2>
-                <form className="form">
-                    <LocalizationProvider dateAdapter={AdapterDayjs}>
-                        <DatePicker />
-                    </LocalizationProvider>
-                    <TextField label="Имя" variant="outlined"/>
-                    <TextField label="Email" required variant="outlined" type="email"/>
-                    <TextField label="Телефон" required variant="outlined" type="tel"/>
-                    <Button className="formButton" variant="contained" size="large"
-                    sx={{
-                        backgroundColor: "white",
-                        color: "black",
-                        border: "1px solid black"
-                    }}>Записаться</Button>
-                </form>
-                <div className="alternativeBookingMethodContainer">
-                    <p>Также можете записаться, просто написав мне в:</p>
-                    <SocialLinks />
-                </div>
-            </section>
+
+
+
         </main>
     );
 }

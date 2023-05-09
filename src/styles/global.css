@@ -26,6 +26,8 @@
 
     --transition: all .5s ease-in-out;
     --transition-slow: all 1.5s ease-in-out;
+
+    --shadow: 5px 5px 5px 5px black;
 }
 
 *, *::after, *::before {
@@ -91,21 +93,22 @@ input[type=text], input[type=tel], input[type=email], textarea {
     line-height: 1.5;
 }
 
-input {
-    /* position: relative; */
-}
-
 input, input:focus, textarea, textarea:focus {
     border-radius: var(--border-radius);
     background-color: var(--surface);
     border: var(--border);
     outline: 0;
     transition: var(--transition);
+    /* min-width: 300px; */
 }
 
 input:focus, textarea:focus {
-    background-color: var(--surface-variant);
-    color: var(--on-surface-variant)
+    /* background-color: var(--surface-variant);
+    color: var(--on-surface-variant) */
+}
+
+.inputField {
+    width: 500px;
 }
 
 textarea {
@@ -133,6 +136,39 @@ textarea {
     /* width: 100%; */
 }
 
+
+.legalConsentCheckboxContainer {
+    display: flex;
+    gap: var(--medium-gap);
+}
+
+.legalConsentCheckbox {
+    width: 30px;
+    height: 30px;
+}
+
+.alternativeBookingMethodContainer {
+    padding-top: var(--big-gap);
+    border-top: var(--border);
+    display: flex;
+    flex-direction: column;
+    gap: var(--medium-gap);
+}
+
+.socialLinksContainer {
+    justify-content: center;
+    gap: var(--big-gap);
+}
+
+.form {
+    max-width: min(500px, 80vw);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--medium-gap);
+    padding-bottom: var(--big-gap);
+}
+
 /* Button */
 
 .button {
@@ -154,7 +190,6 @@ textarea {
     font-family: var(--font-family-2);
     letter-spacing: 3px;
     font-size: 20px;
-
 }
 
 .buttonLink {
@@ -213,4 +248,43 @@ textarea {
 
 .button:hover .buttonBorder:nth-of-type(2n){
     height:100%;
+}
+
+/* DIALOG */
+
+body:has(dialog[open]) {
+    overflow: hidden;
+}
+
+dialog[open] {
+    border: var(--border);
+    background-color: var(--surface);
+    padding: var(--medium-gap);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+dialog .dialogCloseButton {
+    position: absolute;
+    top: var(--medium-gap);
+    right: var(--medium-gap);
+    border: var(--border);
+    background-color: var(--surface);
+    display: flex;
+}
+
+dialog::backdrop {
+    animation-name: backdropAnimation;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes backdropAnimation {
+    0% {
+        background-color: rgba(255, 255, 255, 0);
+    }
+    100% {
+        background-color: rgba(93, 87, 93, 0.356);
+    }
 }

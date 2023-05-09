@@ -37,7 +37,7 @@ export default function ConsultationBookingProcess({consultationPrice, consultat
             <div className="processContainer">
                 <h3>1. Запись</h3>
                 <p>Вы записываетесь на бесплатную 15-ти минутную онлайн беседу.</p>
-                <p>Выбрать время можно <Link to="/book-consultation">онлайн</Link> или в <Link to={whatsAppLink}>WhatsApp</Link>.</p>
+                <p>Выбрать время можно <Link to="/book-consultation">онлайн</Link> или написав в <Link to={whatsAppLink}>WhatsApp</Link>.</p>
             </div>
             <div className="processContainer">
                 <h3>2. Ознакомительная беседа</h3>
