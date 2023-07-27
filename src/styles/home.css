@@ -92,16 +92,30 @@
     left: 24px;
 }
 
+
 .homePage .problemsContainer {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
     gap: var(--big-gap);
 }
+
+.homePage .problemContainer {
+    width: 200px;
+    height: 200px;
+    
+    background-size: 250%;
+    
+    animation: backgroundAnimationVariation1 300s ease-in-out infinite alternate;
+
+    /* border: var(--border); */
+    overflow: hidden;
+}
+
 .homePage .problemContentContainer {
     color: white;
     text-align: center;
-
+    
     display: flex;
     align-items: center;
     justify-content: center;
@@ -117,56 +131,57 @@
     z-index: 1;
 }
 
-.homePage .problemContainer {
-    width: 200px;
-    height: 200px;
-    
-    background-size: 250%;
-    
-    animation: backgroundAnimationVariation1 300s ease-in-out infinite alternate;
-
-    border: var(--border);
-}
 
 .homePage .problemContentContainer:hover {
     backdrop-filter: grayscale(30%) brightness(80%);
 }
 
+.homePage .problemContainer.irritation {
+    background-image: url("../images/desert.jpeg");
+    animation-direction: alternate-reverse;
+    border-radius: 49% 51% 40% 60% / 51% 33% 67% 49%;
+}
+
 .homePage .problemContainer.selfRespect {
     background-image: url("../images/waves.jpeg");
     animation-direction: alternate-reverse;
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
 }
 
 .homePage .problemContainer.depression {
     background-image: url("../images/desert-2.jpeg");
     animation-name: backgroundAnimationVariation2;
+    border-radius: 47% 53% 70% 30% / 78% 34% 66% 22%;
 }
 
 .homePage .problemContainer.perfectionism {
     background-image: url("../images/stars.jpeg");
+    border-radius: 19% 81% 54% 46% / 31% 23% 77% 69%;
 }
 .homePage .problemContainer.selfDissatisfaction {
     background-image: url("../images/forest.jpeg");
     animation-name: backgroundAnimationVariation2;
+    border-radius: 33% 67% 53% 47% / 63% 47% 53% 37%;
 }
-.homePage .problemContainer.irritation {
-    background-image: url("../images/desert.jpeg");
-    animation-direction: alternate-reverse;
-}
+
 .homePage .problemContainer.negativeFeelings {
     background-image: url("../images/rocks.jpeg");
     animation-name: backgroundAnimationVariation2;
     animation-direction: alternate-reverse;
+    border-radius: 22% 78% 50% 50% / 45% 42% 58% 55%;
 }
 .homePage .problemContainer.communicationProblems {
     background-image: url("../images/clouds.jpeg");
+    border-radius: 60% 40% 38% 62% / 47% 41% 59% 53%;
 }
 .homePage .problemContainer.relationshipProblems {
     background-image: url("../images/winter.jpeg");
     animation-direction: alternate-reverse;
+    border-radius: 65% 35% 21% 79% / 55% 64% 36% 45%;
 }
 .homePage .problemContainer.loss {
     background-image: url("../images/forest-2.jpeg");
+    border-radius: 62% 38% 37% 63% / 34% 51% 49% 66%;
 }
 
 @keyframes backgroundAnimationVariation1 {
