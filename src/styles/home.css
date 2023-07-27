@@ -249,9 +249,9 @@
 .homePage .methodContainer {
     padding: var(--big-gap);
 
-    border: var(--border);
+    /* border: var(--border); */
 
-    background-color: var(--surface);
+    /* background-color: var(--surface); */
     color: var(--on-surface);
 
     display: flex;
@@ -262,21 +262,82 @@
 }
 
 .homePage .crystalImageContainer {
-    flex: 0 0 200px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-shrink: 0;
+
+    border: var(--border);
 }
 
-.homePage .crystalImage {
-    max-width: 100%;
-    max-height: 200px;
+.homePage {
+    .crystalImageContainer {
+        animation-duration: 180s;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear; 
+        &.client {
+            width: 100px;
+            height: 100px;
+            animation-name: rotateShapeAlongZ;
+        }
+        &.dereflexy {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            animation-name: rotateShapeAlongVector;
+        }
+        &.intention {
+            width: 100px;
+            height: 70px;
+            transform: skew(20deg);
+            animation-name: rotateShapeAlongVector;
+            animation-direction: reverse;
+        }
+        &.art {
+            width: 100px;
+            height: 100px;
+            border-radius: 50px 50px 0 0;
+            animation-name: rotateShapeAlongZ;
+        }
+        &.positive {
+            width: 100px;
+            height: 33px;
+            animation-name: rotateShapeAlongVector;
+        }
+
+    }
+
+    .educationsContainer {
+        display: grid;
+        grid-template-columns: 1fr 1fr;    
+        gap: var(--big-gap);
+    }
 }
 
-.homePage .educationsContainer {
-    display: grid;
-    grid-template-columns: 1fr 1fr;    
-    gap: var(--big-gap);
+@keyframes rotateShapeAlongVector {
+    0% {
+        rotate: 0deg;
+    }
+    100% {
+        rotate: 0.3 0 1 360deg;
+        
+    }
+}
+
+@keyframes rotateShapeAlongZ {
+    0% {
+        rotate: 0deg;
+    }
+    100% {
+        rotate: 360deg;
+        
+    }
+}
+
+@keyframes rotateX {
+    0% {
+        rotate: x 0deg;
+    }
+    100% {
+        rotate: x 45deg;
+    }
 }
 
 .homePage .formatIcon {

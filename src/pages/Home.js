@@ -109,8 +109,8 @@ export default function Home({consultationPrice, consultationLength, whatsAppLin
                 <h2>Методы работы</h2>
                 <div className="methodsContainer">
                     <div className="methodContainer">
-                        <div className="crystalImageContainer">
-                            <img className="crystalImage" src={crystal1} alt="" />
+                        <div className="crystalImageContainer client">
+                            {/* <img className="crystalImage" src={crystal1} alt="" /> */}
                         </div>
                         <div className="methodInfoContainer">
                             <h3>Клиент-центрированная терапия</h3>
@@ -118,8 +118,8 @@ export default function Home({consultationPrice, consultationLength, whatsAppLin
                         </div>
                     </div>
                     <div className="methodContainer">
-                        <div className="crystalImageContainer">
-                            <img className="crystalImage" src={crystal6} alt="" />
+                        <div className="crystalImageContainer dereflexy">
+                            {/* <img className="crystalImage" src={crystal6} alt="" /> */}
                         </div>
                         <div className="methodInfoContainer">
                             <h3>Метод дерефлексии</h3>
@@ -127,8 +127,8 @@ export default function Home({consultationPrice, consultationLength, whatsAppLin
                         </div>
                     </div>
                     <div className="methodContainer">
-                        <div className="crystalImageContainer">
-                            <img className="crystalImage" src={crystal2} alt="" />
+                        <div className="crystalImageContainer intention">
+                            {/* <img className="crystalImage" src={crystal2} alt="" /> */}
                         </div>
                         <div className="methodInfoContainer">
                             <h3>Метод пародоксальной интенции</h3>
@@ -136,8 +136,8 @@ export default function Home({consultationPrice, consultationLength, whatsAppLin
                         </div>
                     </div>
                     <div className="methodContainer">
-                        <div className="crystalImageContainer">
-                            <img className="crystalImage" src={crystal9} alt="" />
+                        <div className="crystalImageContainer art">
+                            {/* <img className="crystalImage" src={crystal9} alt="" /> */}
                         </div>
                         <div className="methodInfoContainer">
                             <h3>Арт-терапия</h3>
@@ -145,8 +145,8 @@ export default function Home({consultationPrice, consultationLength, whatsAppLin
                         </div>
                     </div>
                     <div className="methodContainer">
-                        <div className="crystalImageContainer">
-                            <img className="crystalImage" src={crystal13} alt="" />
+                        <div className="crystalImageContainer positive">
+                            {/* <img className="crystalImage" src={crystal13} alt="" /> */}
                         </div>
                         <div className="methodInfoContainer">
                             <h3>Позитивная психология</h3>
