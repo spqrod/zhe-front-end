@@ -7,11 +7,6 @@ import { HashLink } from "react-router-hash-link";
 import image1 from "../images/3.JPG";
 import image2 from "../images/4.jpg";
 import { useEffect } from "react";
-import crystal1 from "../images/crystal-1.png"
-import crystal2 from "../images/crystal-2.png"
-import crystal6 from "../images/crystal-6.png"
-import crystal9 from "../images/crystal-9.png"
-import crystal13 from "../images/crystal-13.png"
 import review1 from "../images/review-1.png"
 import review2 from "../images/review-2.png"
 import review3 from "../images/review-3.png"
