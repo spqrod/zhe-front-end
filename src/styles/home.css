@@ -166,8 +166,6 @@
         }
 
         .methodContainer {
-            padding: var(--big-gap);
-
             color: var(--on-surface);
 
             display: flex;
@@ -344,12 +342,6 @@
                 height: 300px;
                 border: 1px solid black;
             }
-    }
-
-    .bookSection {
-        /* display: flex;
-        flex-direction: column;
-        justify-content: center; */
     }
     
 }

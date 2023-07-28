@@ -3,18 +3,29 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-}
 
-.bookConsultationForm .inputField.time {
-    display: none;
-}
+    .inputField.time {
+        display: none;
+    }
 
-.bookConsultationForm .inputField.time.revealed {
-    display: block;
-}
+    .inputField.time.revealed {
+        display: block;
+    }
 
-.bookConsultationForm .timeInputPopUpDialog {
-    min-width: 300px;
+    .timeInputPopUpDialog {
+        min-width: 300px;
+    }
+
+    .legalConsentCheckboxContainer, .reCaptcha {
+        position: absolute;
+        opacity: 0%;
+        transition: 2s;
+    }
+    
+    .legalConsentCheckboxContainer.active, .reCaptcha.active {
+        position: relative;
+        opacity: 100%;
+    }
 }
 
 .react-datepicker__time-list-item--disabled {

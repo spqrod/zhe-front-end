@@ -1,6 +1,4 @@
 import "../styles/home.css";
-import PhotoOutlinedIcon from "@mui/icons-material/PhotoOutlined";
-import PersonIcon from '@mui/icons-material/Person';
 import ConsultationBookingProcess from "../components/ConsultationBookingProcess"
 import { Link } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
@@ -20,11 +18,13 @@ export default function Home({consultationPrice, consultationLength, whatsAppLin
         
         function animateHeroPhotoOutlineAfterLoad() {
             const heroPhotoOutline = document.querySelector(".heroPhotoOutline");
-            heroPhotoOutline.classList.add("heroPhotoOutlineAfterLoad");
-            setTimeout(() => 
-                heroPhotoOutline.style.transition = "var(--transition)",
-                1500
-            );
+            if (heroPhotoOutline) {
+                heroPhotoOutline.classList.add("heroPhotoOutlineAfterLoad");
+                setTimeout(() => 
+                    heroPhotoOutline.style.transition = "var(--transition)",
+                    1500
+                );
+            }
         }
     });
 
@@ -34,14 +34,20 @@ export default function Home({consultationPrice, consultationLength, whatsAppLin
                 <div className="heroInfoContainer">
                     <h1>Психолог Дарья Жеребцова</h1>
                     <p>Провожу онлайн консультации для тех, кому трудно, кто запутался и не знает, как быть дальше. <br></br>И для тех, кто хочет спокойствия, гармонии и понимания.</p>
+
                     <HashLink className="buttonLink" smooth to="/#help">
                         <button className="button">
                             С чем я могу помочь
+                            <div className="buttonBorder"></div>
+                            <div className="buttonBorder"></div>
+                            <div className="buttonBorder"></div>
+                            <div className="buttonBorder"></div>
                         </button>
                         <svg className="arrowIconSVG">
                             <path className="arrowIconPath" d="M 0 0 L 25 25 L 50 0"/>
                         </svg>
                     </HashLink>
+                    
                 </div>
                 <div className="heroPhotoContainer">
                     <img className="heroPhoto" src={image1} alt="" />
