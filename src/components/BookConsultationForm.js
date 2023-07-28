@@ -109,7 +109,7 @@ export default function BookConsultationForm() {
                     selected={selectedDate}
                     onChange={handleDateChange}
                     dateFormat="dd MMMM yyyy, h:mm"
-                    timeCaption="Время"
+                    timeCaption="Время (по МСК)"
                     id="date"
                 />
                 <input className="inputField" type="text" placeholder="Имя" name="name" id="name" />

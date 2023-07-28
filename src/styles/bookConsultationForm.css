@@ -42,3 +42,19 @@
     border: var(--border)!important;
     border-radius: 0!important;
 }
+
+.react-datepicker__time-container {
+    width: 200px!important;
+}
+
+.react-datepicker__time-box {
+    width: 100%;
+}
+
+.react-datepicker__time-list {
+    width: 200px!important;
+}
+
+.react-datepicker__time-list-item {
+    width: 200px!important;
+}
