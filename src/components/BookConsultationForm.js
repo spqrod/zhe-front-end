@@ -119,11 +119,11 @@ export default function BookConsultationForm() {
                     <input type="checkbox" className="legalConsentCheckbox" name="legalConsentCheckbox" id="legalConsentCheckbox" required />
                     <label htmlFor="legalConsentCheckbox">Я принимаю <Link to="/terms-of-service">Условия использования</Link> и <Link to="/privacy-policy">Политику конфиденциальности</Link></label>
                 </div>
-                <ReCAPTCHA 
+                {/* <ReCAPTCHA 
                     className="reCaptcha"
                     sitekey={process.env.REACT_APP_GOOGLE_CAPTCHA_SITE_KEY} 
                     ref={captchaRef}
-                />
+                /> */}
                 <button className="button" type="submit">
                     Записаться
                     <div className="buttonBorder"></div>

@@ -16,7 +16,7 @@ export default function socialLinks() {
             {/* <div>
                 <EmailIcon className="socialLink"/>
             </div> */}
-            <a href='https://www.instagram.com/psychologistdarya/'>
+            <a href='https://www.instagram.com/zherebtsova_darya/'>
                 <InstagramIcon className="socialLink"/>
             </a>
         </div>
