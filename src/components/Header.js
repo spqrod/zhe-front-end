@@ -10,11 +10,11 @@ export default function Header() {
                 </Link>
             </div>
             <ul className="headerMenuContainer">
-                <li className="headerMenuItem">
+                {/* <li className="headerMenuItem">
                     <Link className="headerMenuLink" to="/blog">
                         Психологические заметки
                     </Link>
-                </li>
+                </li> */}
                 <li className="headerMenuItem">
                     <Link className="headerMenuLink" to="/methods">
                         Методы

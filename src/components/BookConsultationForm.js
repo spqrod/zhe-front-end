@@ -15,20 +15,20 @@ export default function BookConsultationForm() {
     const captchaRef = useRef(null);
 
     const availableDays = [
-        new Date(2023, 3, 27, 11, 0),
-        new Date(2023, 3, 27, 12, 0),
-        new Date(2023, 3, 27, 13, 30),
+        new Date(2023, 7, 27, 11, 0),
+        new Date(2023, 7, 27, 12, 0),
+        new Date(2023, 7, 27, 13, 30),
 
-        new Date(2023, 3, 28, 9, 0),
-        new Date(2023, 3, 28, 10, 0),
-        new Date(2023, 3, 28, 11, 0),
-        new Date(2023, 3, 28, 11, 30),
+        new Date(2023, 7, 28, 9, 0),
+        new Date(2023, 7, 28, 10, 0),
+        new Date(2023, 7, 28, 11, 0),
+        new Date(2023, 7, 28, 11, 30),
         
-        new Date(2023, 3, 29, 10, 0),
+        new Date(2023, 7, 29, 10, 0),
         
-        new Date(2023, 4, 2, 9, 0),
-        new Date(2023, 4, 7, 9, 0),
-        new Date(2023, 4, 15, 9, 0),
+        new Date(2023, 7, 2, 9, 0),
+        new Date(2023, 7, 7, 9, 0),
+        new Date(2023, 7, 15, 9, 0),
     ];
 
     const [selectedDate, setSelectedDate] = useState();
@@ -121,8 +121,8 @@ export default function BookConsultationForm() {
                 </button>
             </form>
             <div className="alternativeBookingMethodContainer">
-            <p>Вы также можете записаться, просто написав мне в:</p>
-            <SocialLinks />
+                <p>Вы также можете записаться, просто написав мне в:</p>
+                <SocialLinks />
             </div>
         </div>
     );

@@ -1,53 +1,351 @@
-.homePage .heroSection {
-    height: calc(100vh - var(--header-height));
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-}
+.homePage {
 
-.homePage .heroInfoContainer {
-    flex-basis: 60%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: var(--big-gap);
-}
+    .heroSection {
 
-.homePage h1 {
-    padding: 0;
-}
+        height: calc(100vh - var(--header-height));
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
 
-.homePage .heroInfoContainer .button {
-    width: max-content;
-    padding: var(--medium-gap);
-    background: var(--surface);
-    color: var(--on-surface);
-    border: var(--border);
-}
+        .heroPhotoContainer {
+            flex-basis: 30%;
+            display: flex;
+            position: relative;
+        }
 
-.homePage .heroInfoContainer .buttonLink {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    gap: var(--small-gap);
-    position: relative;
-}
+        .heroPhoto {
+            width: 100%;
+            z-index: 1;
+        }
 
-.homePage .arrowIconSVG {
-    position: relative;
-    width: 50px;
-    height: 25px;
-    animation-name: heroArrowIconAnimation;
-    animation-duration: 1.5s;
-    animation-iteration-count: infinite;
-    animation-timing-function: ease-it;
-    animation-direction: alternate;
-}
+        .heroPhotoOutline {
+            border: var(--border);
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            z-index: 0;
+            transition: var(--transition-slow);
+            top: 0;
+            left: 0;
+        }
 
-.homePage .arrowIconPath {
-    stroke: var(--outline);
-    stroke-width: 1px;
-    fill: none;
+        .heroPhotoOutlineAfterLoad {
+            top: 14px;
+            left: 14px;
+        }
+
+        .heroPhotoContainer:hover .heroPhotoOutline {
+            top: 24px;
+            left: 24px;
+        }
+
+        .heroInfoContainer {
+            flex-basis: 60%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: var(--big-gap);
+        }
+
+        h1 {
+            padding: 0;
+        }
+
+        .heroInfoContainer .button {
+            width: max-content;
+            padding: var(--medium-gap);
+            background: var(--surface);
+            color: var(--on-surface);
+            border: var(--border);
+        }
+        
+    }
+
+    .problemsSection {
+
+        .problemsContainer {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: var(--big-gap);
+        }
+
+        .problemContainer {
+            width: 200px;
+            height: 200px;
+            
+            background-size: 250%;
+            
+            animation: backgroundAnimationVariation1 300s ease-in-out infinite alternate;
+
+            /* border: var(--border); */
+            overflow: hidden;
+        }
+
+        .problemContentContainer {
+            color: white;
+            text-align: center;
+            
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            
+            padding: var(--medium-gap);
+
+            width: 100%;
+            height: 100%;
+
+            backdrop-filter: grayscale(100%) brightness(70%);
+            transition: var(--transition);
+
+            z-index: 1;
+        }
+
+
+        .problemContentContainer:hover {
+            backdrop-filter: grayscale(30%) brightness(80%);
+        }
+
+        .problemContainer.irritation {
+            background-image: url("../images/desert.jpeg");
+            animation-direction: alternate-reverse;
+            border-radius: 49% 51% 40% 60% / 51% 33% 67% 49%;
+        }
+
+        .problemContainer.selfRespect {
+            background-image: url("../images/waves.jpeg");
+            animation-direction: alternate-reverse;
+            border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+        }
+
+        .problemContainer.depression {
+            background-image: url("../images/desert-2.jpeg");
+            animation-name: backgroundAnimationVariation2;
+            border-radius: 47% 53% 70% 30% / 78% 34% 66% 22%;
+        }
+
+        .problemContainer.perfectionism {
+            background-image: url("../images/stars.jpeg");
+            border-radius: 19% 81% 54% 46% / 31% 23% 77% 69%;
+        }
+        .problemContainer.selfDissatisfaction {
+            background-image: url("../images/forest.jpeg");
+            animation-name: backgroundAnimationVariation2;
+            border-radius: 33% 67% 53% 47% / 63% 47% 53% 37%;
+        }
+
+        .problemContainer.negativeFeelings {
+            background-image: url("../images/rocks.jpeg");
+            animation-name: backgroundAnimationVariation2;
+            animation-direction: alternate-reverse;
+            border-radius: 22% 78% 50% 50% / 45% 42% 58% 55%;
+        }
+        .problemContainer.communicationProblems {
+            background-image: url("../images/clouds.jpeg");
+            border-radius: 60% 40% 38% 62% / 47% 41% 59% 53%;
+        }
+        .problemContainer.relationshipProblems {
+            background-image: url("../images/winter.jpeg");
+            animation-direction: alternate-reverse;
+            border-radius: 65% 35% 21% 79% / 55% 64% 36% 45%;
+        }
+        .problemContainer.loss {
+            background-image: url("../images/forest-2.jpeg");
+            border-radius: 62% 38% 37% 63% / 34% 51% 49% 66%;
+        }
+    }
+
+    .methodsSection {
+
+        .methodsContainer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: var(--big-gap);
+        }
+
+        .methodContainer {
+            padding: var(--big-gap);
+
+            color: var(--on-surface);
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            gap: var(--big-gap);
+        }
+
+        .methodInfoContainer {
+            border-left: var(--border);
+            padding-left: var(--big-gap);
+        }
+    }
+
+    .educationSection {
+        .educationsContainer {
+            display: grid;
+            grid-template-columns: 1fr 1fr;    
+            gap: var(--big-gap);
+        }
+    }
+ 
+    .formatSection {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: var(--big-gap);
+
+        .formatIcon {
+            font-size: 200px;
+            float: left;
+        }
+    }
+
+    .afterSection {
+
+        .afterInfoContainer {
+            display: flex;
+            flex-direction: column;
+    
+            .afterInfoItem {
+                max-width: 600px;
+                /* border: var(--border); */
+                padding: 64px;
+                background-color: var(--surface);
+                color: var(--on-surface);
+        
+                &:nth-of-type(1) {
+                    border-radius: 44% 56% 41% 59% / 36% 44% 56% 64% ;
+                }
+        
+                &:nth-of-type(2) {
+                    border-radius: 35% 65% 39% 61% / 51% 41% 59% 49% ;
+                }
+        
+                &:nth-of-type(3) {
+                    border-radius: 61% 39% 54% 46% / 73% 24% 76% 27% ;
+                }
+        
+                &:nth-of-type(2n) {
+                    align-self: end;
+                }
+            }
+        }
+    }
+
+    .reviewsSection {
+        display: grid;
+        place-items: center;
+
+        .reviewsContainer {
+            max-width: min(100vw, 800px);
+            columns: 2;
+            column-gap: var(--big-gap);
+        }
+
+        .reviewContainer {
+            break-inside: avoid;
+            margin-bottom: var(--big-gap);
+            transition: var(--transition);
+        }
+
+        .reviewContainer:hover {
+            transform: scale(1.04);
+        }
+
+        .reviewImage {
+            width: 100%;
+        }
+    }
+
+    .aboutSection {
+
+        .aboutContainer {
+            display: flex;
+            gap: var(--big-gap);
+        }
+
+        .aboutImageContainer {
+            flex: 0 0 400px;
+            position: relative;
+            display: flex;
+        }
+
+        .aboutImage {
+            width: 100%;
+            position: relative;
+            z-index: 1;
+        }
+
+        .aboutImageOutline {
+            border: var(--border);
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            transition: var(--transition);
+            top: 14px;
+            left: -14px;
+            z-index: 0;
+        }
+
+        .aboutImageContainer:hover .aboutImageOutline  {
+            top: 24px;
+            left: -24px;
+        }
+
+        .aboutInfoContainer {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+    }
+
+    .blogSection {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: var(--small-gap);
+
+            .blogPostsContainer {
+                display: flex;
+                justify-content: center;
+                gap: var(--small-gap);
+                flex-wrap: wrap;
+            }
+
+            .blogPostContainer {
+                width: 280px;
+                height: 280px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                border: 1px solid black;
+            }
+
+            .blogPostIcon {
+                font-size: 100px;
+            }
+
+            .blogPostName {
+                text-align: center;
+            }
+
+            .bookSection {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .bookForm {
+                width: 300px;
+                height: 300px;
+                border: 1px solid black;
+            }
+    }
+    
 }
 
 @keyframes heroArrowIconAnimation {
@@ -58,130 +356,6 @@
     100% {
         top: 10px;
     }
-}
-
-.homePage .heroPhotoContainer {
-    flex-basis: 30%;
-    display: flex;
-    position: relative;
-}
-
-.homePage .heroPhoto {
-    width: 100%;
-    z-index: 1;
-}
-
-.homePage .heroPhotoOutline {
-    border: var(--border);
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    z-index: 0;
-    transition: var(--transition-slow);
-    top: 0;
-    left: 0;
-}
-
-.homePage .heroPhotoOutlineAfterLoad {
-    top: 14px;
-    left: 14px;
-}
-
-.homePage .heroPhotoContainer:hover .heroPhotoOutline {
-    top: 24px;
-    left: 24px;
-}
-
-
-.homePage .problemsContainer {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: var(--big-gap);
-}
-
-.homePage .problemContainer {
-    width: 200px;
-    height: 200px;
-    
-    background-size: 250%;
-    
-    animation: backgroundAnimationVariation1 300s ease-in-out infinite alternate;
-
-    /* border: var(--border); */
-    overflow: hidden;
-}
-
-.homePage .problemContentContainer {
-    color: white;
-    text-align: center;
-    
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    
-    padding: var(--medium-gap);
-
-    width: 100%;
-    height: 100%;
-
-    backdrop-filter: grayscale(100%) brightness(70%);
-    transition: var(--transition);
-
-    z-index: 1;
-}
-
-
-.homePage .problemContentContainer:hover {
-    backdrop-filter: grayscale(30%) brightness(80%);
-}
-
-.homePage .problemContainer.irritation {
-    background-image: url("../images/desert.jpeg");
-    animation-direction: alternate-reverse;
-    border-radius: 49% 51% 40% 60% / 51% 33% 67% 49%;
-}
-
-.homePage .problemContainer.selfRespect {
-    background-image: url("../images/waves.jpeg");
-    animation-direction: alternate-reverse;
-    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
-}
-
-.homePage .problemContainer.depression {
-    background-image: url("../images/desert-2.jpeg");
-    animation-name: backgroundAnimationVariation2;
-    border-radius: 47% 53% 70% 30% / 78% 34% 66% 22%;
-}
-
-.homePage .problemContainer.perfectionism {
-    background-image: url("../images/stars.jpeg");
-    border-radius: 19% 81% 54% 46% / 31% 23% 77% 69%;
-}
-.homePage .problemContainer.selfDissatisfaction {
-    background-image: url("../images/forest.jpeg");
-    animation-name: backgroundAnimationVariation2;
-    border-radius: 33% 67% 53% 47% / 63% 47% 53% 37%;
-}
-
-.homePage .problemContainer.negativeFeelings {
-    background-image: url("../images/rocks.jpeg");
-    animation-name: backgroundAnimationVariation2;
-    animation-direction: alternate-reverse;
-    border-radius: 22% 78% 50% 50% / 45% 42% 58% 55%;
-}
-.homePage .problemContainer.communicationProblems {
-    background-image: url("../images/clouds.jpeg");
-    border-radius: 60% 40% 38% 62% / 47% 41% 59% 53%;
-}
-.homePage .problemContainer.relationshipProblems {
-    background-image: url("../images/winter.jpeg");
-    animation-direction: alternate-reverse;
-    border-radius: 65% 35% 21% 79% / 55% 64% 36% 45%;
-}
-.homePage .problemContainer.loss {
-    background-image: url("../images/forest-2.jpeg");
-    border-radius: 62% 38% 37% 63% / 34% 51% 49% 66%;
 }
 
 @keyframes backgroundAnimationVariation1 {
@@ -238,264 +412,28 @@
     }
 }
 
-.homePage .methodsContainer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: var(--big-gap);
-}
 
-.homePage .methodContainer {
-    padding: var(--big-gap);
-
-    /* border: var(--border); */
-
-    /* background-color: var(--surface); */
-    color: var(--on-surface);
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    gap: var(--big-gap);
-}
-
-.methodInfoContainer {
-    border-left: var(--border);
-    padding-left: var(--big-gap);
-
-}
-
-.homePage .crystalImageContainer {
-    flex-shrink: 0;
-
-    border: var(--border);
-}
-
-.homePage {
-    .crystalImageContainer {
-        display: none;
-        animation-duration: 180s;
-        animation-iteration-count: infinite;
-        animation-timing-function: linear; 
-        width: 50px;
-        height: 50px;
-        &.client {
-
-            animation-name: rotateShapeAlongZ;
-        }
-        &.dereflexy {
-
-            border-radius: 50%;
-            animation-name: rotateShapeAlongVector;
-        }
-        &.intention {
-            height: 35px;
-            transform: skew(20deg);
-            animation-name: rotateShapeAlongVector;
-            animation-direction: reverse;
-        }
-        &.art {
-
-            border-radius: 50% 50% 0 0;
-            animation-name: rotateShapeAlongZ;
-        }
-        &.positive {
-            height: 16px;
-            animation-name: rotateShapeAlongVector;
-        }
-
-    }
-
-    .educationsContainer {
-        display: grid;
-        grid-template-columns: 1fr 1fr;    
-        gap: var(--big-gap);
-    }
-}
-
-@keyframes rotateShapeAlongVector {
-    0% {
-        rotate: 0deg;
-    }
-    100% {
-        rotate: 0.3 0 1 360deg;
-        
-    }
-}
-
-@keyframes rotateShapeAlongZ {
-    0% {
-        rotate: 0deg;
-    }
-    100% {
-        rotate: 360deg;
-        
-    }
-}
-
-@keyframes rotateX {
-    0% {
-        rotate: x 0deg;
-    }
-    100% {
-        rotate: x 45deg;
-    }
-}
-
-.homePage .formatIcon {
-    font-size: 200px;
-    float: left;
-}
-
-.homePage .formatSection {
+.homePage .heroInfoContainer .buttonLink {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    gap: var(--big-gap);
-}
-
-.homePage .afterInfoContainer {
-    display: flex;
-    flex-direction: column;
-    gap: var(--big-gap);
-
-}
-
-.homePage .afterInfoItem {
-    max-width: 600px;
-    /* border: var(--border); */
-    padding: 64px;
-    background-color: var(--surface);
-    color: var(--on-surface);
-
-    &:nth-of-type(1) {
-        border-radius: 44% 56% 41% 59% / 36% 44% 56% 64% ;
-    }
-
-    &:nth-of-type(2) {
-        border-radius: 35% 65% 39% 61% / 51% 41% 59% 49% ;
-    }
-
-    &:nth-of-type(3) {
-        border-radius: 61% 39% 54% 46% / 73% 24% 76% 27% ;
-    }
-
-
-}
-
-
-
-.homePage .afterInfoItem:nth-of-type(2n) {
-    align-self: end;
-
-}
-
-.homePage .reviewsSection {
-    display: grid;
-    place-items: center;
-}
-
-.homePage .reviewsContainer {
-    max-width: min(100vw, 800px);
-    columns: 2;
-    column-gap: var(--big-gap);
-}
-
-.homePage .reviewContainer {
-    break-inside: avoid;
-    margin-bottom: var(--big-gap);
-    transition: var(--transition);
-}
-
-.homePage .reviewContainer:hover {
-    transform: scale(1.04);
-}
-
-.homePage .reviewImage {
-    width: 100%;
-}
-
-.homePage .aboutContainer {
-    display: flex;
-    gap: var(--big-gap);
-}
-
-.homePage .aboutImageContainer {
-    flex: 0 0 400px;
-    position: relative;
-    display: flex;
-}
-
-.homePage .aboutImage {
-    width: 100%;
-    position: relative;
-    z-index: 1;
-}
-
-.homePage .aboutImageOutline {
-    border: var(--border);
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    transition: var(--transition);
-    top: 14px;
-    left: -14px;
-    z-index: 0;
-}
-
-.homePage .aboutImageContainer:hover .aboutImageOutline  {
-    top: 24px;
-    left: -24px;
-}
-
-.homePage .aboutInfoContainer {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.homePage .blogSection {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
+    justify-content: space-between;
     gap: var(--small-gap);
+    position: relative;
 }
 
-.homePage .blogPostsContainer {
-    display: flex;
-    justify-content: center;
-    gap: var(--small-gap);
-    flex-wrap: wrap;
+.homePage .arrowIconSVG {
+    position: relative;
+    width: 50px;
+    height: 25px;
+    animation-name: heroArrowIconAnimation;
+    animation-duration: 1.5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-it;
+    animation-direction: alternate;
 }
 
-.homePage .blogPostContainer {
-    width: 280px;
-    height: 280px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    border: 1px solid black;
-}
-
-.homePage .blogPostIcon {
-    font-size: 100px;
-}
-
-.homePage .blogPostName {
-    text-align: center;
-}
-
-.homePage .bookSection {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.homePage .bookForm {
-    width: 300px;
-    height: 300px;
-    border: 1px solid black;
+.homePage .arrowIconPath {
+    stroke: var(--outline);
+    stroke-width: 1px;
+    fill: none;
 }
