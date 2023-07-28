@@ -10,7 +10,7 @@
     --on-primary: #ffffff;
     --primary-container: #facae0;
     --on-primary-container: #3d0026;
-    --background: #f4f4f4;
+    --background: #ebebeb;
     --on-background: #1f1a1c;
     --surface: #ffffff;
     --on-surface: #1f1a1c;
@@ -172,7 +172,7 @@ textarea {
 /* Button */
 
 .button {
-    min-width: 209px;
+    min-width: 229px;
     height: 50px;
     padding: var(--small-gap);
     position: relative;
@@ -188,8 +188,9 @@ textarea {
     cursor: pointer;
 
     font-family: var(--font-family-2);
-    letter-spacing: 3px;
+    /* letter-spacing: 3px; */
     font-size: 20px;
+    text-transform: uppercase;
 }
 
 .buttonLink {

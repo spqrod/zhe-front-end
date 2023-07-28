@@ -9,9 +9,7 @@ import "react-datepicker/dist/react-datepicker.css";
 import ConsultationBookingProcess from "../components/ConsultationBookingProcess";
 import BookConsultationForm from "../components/BookConsultationForm";
 
-
 export default function BookConsultation({consultationPrice, consultationLength}) {
-
 
     return (
         <main className="bookConsultationPage">

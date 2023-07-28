@@ -1,17 +1,10 @@
 import "../styles/home.css";
-import PhotoOutlinedIcon from "@mui/icons-material/PhotoOutlined";
-import PersonIcon from '@mui/icons-material/Person';
 import ConsultationBookingProcess from "../components/ConsultationBookingProcess"
 import { Link } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
 import image1 from "../images/3.JPG";
 import image2 from "../images/4.jpg";
 import { useEffect } from "react";
-import crystal1 from "../images/crystal-1.png"
-import crystal2 from "../images/crystal-2.png"
-import crystal6 from "../images/crystal-6.png"
-import crystal9 from "../images/crystal-9.png"
-import crystal13 from "../images/crystal-13.png"
 import review1 from "../images/review-1.png"
 import review2 from "../images/review-2.png"
 import review3 from "../images/review-3.png"
@@ -25,11 +18,13 @@ export default function Home({consultationPrice, consultationLength, whatsAppLin
         
         function animateHeroPhotoOutlineAfterLoad() {
             const heroPhotoOutline = document.querySelector(".heroPhotoOutline");
-            heroPhotoOutline.classList.add("heroPhotoOutlineAfterLoad");
-            setTimeout(() => 
-                heroPhotoOutline.style.transition = "var(--transition)",
-                1500
-            );
+            if (heroPhotoOutline) {
+                heroPhotoOutline.classList.add("heroPhotoOutlineAfterLoad");
+                setTimeout(() => 
+                    heroPhotoOutline.style.transition = "var(--transition)",
+                    1500
+                );
+            }
         }
     });
 
@@ -39,14 +34,20 @@ export default function Home({consultationPrice, consultationLength, whatsAppLin
                 <div className="heroInfoContainer">
                     <h1>Психолог Дарья Жеребцова</h1>
                     <p>Провожу онлайн консультации для тех, кому трудно, кто запутался и не знает, как быть дальше. <br></br>И для тех, кто хочет спокойствия, гармонии и понимания.</p>
+
                     <HashLink className="buttonLink" smooth to="/#help">
                         <button className="button">
                             С чем я могу помочь
+                            <div className="buttonBorder"></div>
+                            <div className="buttonBorder"></div>
+                            <div className="buttonBorder"></div>
+                            <div className="buttonBorder"></div>
                         </button>
                         <svg className="arrowIconSVG">
                             <path className="arrowIconPath" d="M 0 0 L 25 25 L 50 0"/>
                         </svg>
                     </HashLink>
+                    
                 </div>
                 <div className="heroPhotoContainer">
                     <img className="heroPhoto" src={image1} alt="" />
@@ -109,45 +110,30 @@ export default function Home({consultationPrice, consultationLength, whatsAppLin
                 <h2>Методы работы</h2>
                 <div className="methodsContainer">
                     <div className="methodContainer">
-                        <div className="crystalImageContainer">
-                            <img className="crystalImage" src={crystal1} alt="" />
-                        </div>
                         <div className="methodInfoContainer">
                             <h3>Клиент-центрированная терапия</h3>
                             <p>Направление созданное К. Роджерсом на основе принципов гуманистической психологии. Психолог в консультировании ведет себя не директивно, рефлексивно по отношению к клиенту.  Главный принцип это «здесь и теперь». Нет никаких правил, не указаний и четного алгоритма к действию. Клиент самостоятельно решает свой запрос, но опираясь на принятие, доверие  и опыт специалиста.</p>
                         </div>
                     </div>
                     <div className="methodContainer">
-                        <div className="crystalImageContainer">
-                            <img className="crystalImage" src={crystal6} alt="" />
-                        </div>
                         <div className="methodInfoContainer">
                             <h3>Метод дерефлексии</h3>
                             <p>Снятие излишнего самоконтроля, чрезмерного самокопания. В некоторых случаях это не является продуктивным, а отнимает только силы и энергию. </p>
                         </div>
                     </div>
                     <div className="methodContainer">
-                        <div className="crystalImageContainer">
-                            <img className="crystalImage" src={crystal2} alt="" />
-                        </div>
                         <div className="methodInfoContainer">
                             <h3>Метод пародоксальной интенции</h3>
                             <p>Подведение клиента к тому, что вызывает страхи  и большее стремление  избежать. Благодаря этому достигается ощущение свободы. Прежние тревожности и страхи недосказывают такого негативного воздействия, что позволяет двигаться перед. </p>
                         </div>
                     </div>
                     <div className="methodContainer">
-                        <div className="crystalImageContainer">
-                            <img className="crystalImage" src={crystal9} alt="" />
-                        </div>
                         <div className="methodInfoContainer">
                             <h3>Арт-терапия</h3>
                             <p>Это направление в психотерапии, метод психологической коррекции, в основе которого лежит использование искусства и творчества. Своеобразное связующее звено между сознанием и подсознанием человека. Часто ее называют мостом, проложенным между разумом и душой.</p>
                         </div>
                     </div>
                     <div className="methodContainer">
-                        <div className="crystalImageContainer">
-                            <img className="crystalImage" src={crystal13} alt="" />
-                        </div>
                         <div className="methodInfoContainer">
                             <h3>Позитивная психология</h3>
                             <p>Отрасль психологической практики, в центре которой находится позитивный потенциал человека. Этот подход нацелен  оптимизацию функционирования человека, поиск факторов, которые способствовали бы благополучному существованию и расцвету индивида.</p>
@@ -223,7 +209,7 @@ export default function Home({consultationPrice, consultationLength, whatsAppLin
                             После одной консультации вы не станете непобедимым супер героем. Но репертуар того, что вы принимаете в себе и в жизни станет гораздо шире. Жить будет <strong>спокойнее и счастливее</strong>. 
                         </p>
                     </div>
-                    <div className="afterInfoItem">
+                    <div className="afterInfoItem ">
                         <p>
                             <strong>Консультации как уборки.</strong> Помогают все непонятное упорядочить, разложить по своим местам. Ведь в этой жизни все стремится к хаосу. Что будет, если перестать убирать дома, поливать цветы, проводить осмотр автомобиля? Конечно, всё запылиться, завянет и заскрипит.
                         </p>
@@ -257,7 +243,7 @@ export default function Home({consultationPrice, consultationLength, whatsAppLin
                     </div>
                 </div>
             </section>
-            <section className="blogSection">
+            {/* <section className="blogSection">
                 <h1 className="sectionName">Блог</h1>
                 <h2>Психологические заметки</h2>
                 <div className="blogPostsContainer">
@@ -287,7 +273,7 @@ export default function Home({consultationPrice, consultationLength, whatsAppLin
                     <div className="buttonBorder"></div>
                     <div className="buttonBorder"></div>
                 </button>
-            </section>
+            </section> */}
             <section className="bookSection">
                 <h1 className="sectionName">Запись</h1>
                 <h2>Записаться на консультацию</h2>

@@ -28,11 +28,11 @@ export default function Footer() {
                         Домой
                     </Link>
                 </li>
-                <li className="footerMenuItem">
+                {/* <li className="footerMenuItem">
                     <Link className="footerMenuLink" to="/blog">
                         Психологические заметки
                     </Link>
-                </li>
+                </li> */}
                 <li className="footerMenuItem">
                     <Link className="footerMenuLink" to="/methods">
                         Методы

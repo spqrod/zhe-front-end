@@ -15,20 +15,20 @@ export default function BookConsultationForm() {
     const captchaRef = useRef(null);
 
     const availableDays = [
-        new Date(2023, 8, 27, 11, 0),
-        new Date(2023, 8, 27, 12, 0),
-        new Date(2023, 8, 27, 13, 30),
+        new Date(2023, 7, 27, 11, 0),
+        new Date(2023, 7, 27, 12, 0),
+        new Date(2023, 7, 27, 13, 30),
 
-        new Date(2023, 8, 28, 9, 0),
-        new Date(2023, 8, 28, 10, 0),
-        new Date(2023, 8, 28, 11, 0),
-        new Date(2023, 8, 28, 11, 30),
+        new Date(2023, 7, 28, 9, 0),
+        new Date(2023, 7, 28, 10, 0),
+        new Date(2023, 7, 28, 11, 0),
+        new Date(2023, 7, 28, 11, 30),
         
-        new Date(2023, 8, 29, 10, 0),
+        new Date(2023, 7, 29, 10, 0),
         
-        new Date(2023, 8, 2, 9, 0),
-        new Date(2023, 8, 7, 9, 0),
-        new Date(2023, 8, 15, 9, 0),
+        new Date(2023, 7, 2, 9, 0),
+        new Date(2023, 7, 7, 9, 0),
+        new Date(2023, 7, 15, 9, 0),
     ];
 
     const [selectedDate, setSelectedDate] = useState();
@@ -77,6 +77,17 @@ export default function BookConsultationForm() {
         alert(result.status);
     }
 
+    function handleTelInputChange() {
+        revealConsentCheckboxAndReCaptcha();
+    }
+
+    function revealConsentCheckboxAndReCaptcha() {
+        const legalConsentCheckboxContainer = document.querySelector(".legalConsentCheckboxContainer");
+        legalConsentCheckboxContainer.classList.add("active");
+        const reCaptcha = document.querySelector(".reCaptcha");
+        reCaptcha.classList.add("active");
+    }
+
     return (
         <div className="bookConsultationForm">
             <form className="form" onSubmit={handleSubmit}>
@@ -103,12 +114,13 @@ export default function BookConsultationForm() {
                 />
                 <input className="inputField" type="text" placeholder="Имя" name="name" id="name" />
                 <input className="inputField" type="email" placeholder="E-mail" name="email" required />
-                <input className="inputField" type="tel" placeholder="Телефон" name="phone" />
+                <input className="inputField" type="tel" placeholder="Телефон" name="phone" required onChange={handleTelInputChange} />
                 <div className="legalConsentCheckboxContainer">
                     <input type="checkbox" className="legalConsentCheckbox" name="legalConsentCheckbox" id="legalConsentCheckbox" required />
                     <label htmlFor="legalConsentCheckbox">Я принимаю <Link to="/terms-of-service">Условия использования</Link> и <Link to="/privacy-policy">Политику конфиденциальности</Link></label>
                 </div>
                 <ReCAPTCHA 
+                    className="reCaptcha"
                     sitekey={process.env.REACT_APP_GOOGLE_CAPTCHA_SITE_KEY} 
                     ref={captchaRef}
                 />
