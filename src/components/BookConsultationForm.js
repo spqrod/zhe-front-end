@@ -37,21 +37,31 @@ export default function BookConsultationForm() {
                         dateItem = controller.correctDateUsingTimezoneOffset(dateItem);
                         temporaryArray.push(dateItem);
                     });
-    
+
                     setAvailableDates(temporaryArray);
                 });
         },
-        updateDateAsTakenInDB: function(date) {
-
+        updateDateAsTakenInDB: function(dateID) {
+            const fetchURL = "/api/dates/" + dateID;
+            const fetchOptions = {
+                method: "PUT",
+              };
+            return fetch(fetchURL, fetchOptions)
+                .then(response => response.json())
+                .then(data => {
+                    // console.log("data from fetch");
+                    console.log(data);
+                    if (data.isSuccessfullyUpdated) {
+                        return true;
+                    } else {
+                        return false;
+                    }
+                });
         }
     };
 
     const controller = {
-        getDateIDFromDB: function(dateFromForm) {
-            const document = dataFromDB.find(item => controller.formatDateToMatchTheForm(item.date) === dateFromForm);
-            console.log(document._id);
-            return document._id;
-        },
+
         handleDateSelect: function(selectedDate) {
             display.updateAvailableTimes(selectedDate);
         },
@@ -59,9 +69,9 @@ export default function BookConsultationForm() {
             e.preventDefault();
             // const token = captchaRef.current.getValue();
             // captchaRef.current.reset();
-    
+
             const { date, name, email, phone, message } = e.target.elements;
-    
+            
             const formData = {
                 date: date.value,
                 // name: name.value,
@@ -70,22 +80,16 @@ export default function BookConsultationForm() {
                 // message: message.value
             }
             
-            // console.log(dataFromDB);
-            // console.log(`date from DB ${availableDates}`);
-            // console.log(`formData.date = ${new Date(formData.date)}`);
-            // const formattedDate = formatDateFromFormToISOUTCString(formData.date);
-            // console.log(formattedDate);
-            controller.getDateIDFromDB(formData.date);
-            // updateDateAsTakenInDB(formattedDate);
-    
-            // const response = await fetch("https://website.com/book-consultation", {
-            //     method: "POST",
-            //     body: JSON.stringify(formData)
-            // });
-    
-            // const result = await response.json();
-            // alert(result.status);
-    
+            controller.updateDateAsTaken(formData.date).then((result) => {
+                controller.showDialog(result);
+            });
+            // controller.showDialog();
+        },
+        handleDateChange: function(date) {
+            setSelectedDate(date)
+        },
+        handleTelInputChange: function() {
+            // revealConsentCheckboxAndReCaptcha();
         },
         formatDateToMatchTheForm: function(date) {
             date = controller.correctDateUsingTimezoneOffset(date);
@@ -96,18 +100,28 @@ export default function BookConsultationForm() {
             const formattedDate = new Date(date).toLocaleString("ru-RU", options);
             return formattedDate;
         },
-        handleDateChange: function(date) {
-            setSelectedDate(date)
-        },
-        handleTelInputChange: function() {
-            // revealConsentCheckboxAndReCaptcha();
-        },
         correctDateUsingTimezoneOffset: function(date) {
             date = new Date(date);
             date = date.getTime() + date.getTimezoneOffset() * 1000 * 60;
             date = new Date(date);
             return date;
-        }
+        },
+        updateDateAsTaken: function(date) {
+            const dateID = controller.getDateID(date);
+            return api.updateDateAsTakenInDB(dateID);
+        },
+        getDateID: function(dateFromForm) {
+            const document = dataFromDB.find(item => controller.formatDateToMatchTheForm(item.date) === dateFromForm);
+            return document._id;
+        },
+        showDialog: function(result) {
+            const successMessage = "Спасибо за запись! Я свяжусь с Вами в ближайшее время.";
+            const failureMessage = "Простите. Что-то пошло не так. Пожалуйста, свяжитесь со мной другим способом";
+            if (result) 
+                display.showDialog(successMessage);
+            else 
+                display.showDialog(failureMessage);
+        },
     }
 
     const display = {
@@ -125,6 +139,12 @@ export default function BookConsultationForm() {
             legalConsentCheckboxContainer.classList.add("active");
             const reCaptcha = document.querySelector(".reCaptcha");
             reCaptcha.classList.add("active");
+        },
+        showDialog: function(message) {
+            const dialog = document.querySelector(".dialog");
+            const dialogText = document.querySelector(".dialogText");
+            dialogText.innerHTML = message;
+            dialog.showModal();
         }
     }
 
@@ -176,6 +196,18 @@ export default function BookConsultationForm() {
                 <p>Вы также можете записаться, просто написав мне в:</p>
                 <SocialLinks />
             </div>
+            <dialog className="dialog">
+                <p className="dialogText"></p>
+                <form method="dialog">
+                    <button className="button">
+                        Закрыть
+                        <div className="buttonBorder"></div>
+                        <div className="buttonBorder"></div>
+                        <div className="buttonBorder"></div>
+                        <div className="buttonBorder"></div>
+                    </button>
+                </form>
+            </dialog>
         </div>
     );
 };
