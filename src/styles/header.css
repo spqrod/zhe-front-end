@@ -9,52 +9,120 @@
     top: 0;
 
     z-index: 2;
+
+    .logoContainer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .logoLink {
+        font-family: var(--font-family-1);
+        font-size: 22px;
+        text-decoration: none;
+    }
+
+    .headerMenuContainer {
+        display: flex;
+        align-items: center;
+        gap: var(--small-gap);
+    }
+
+    .headerMenuItem {
+        list-style: none;
+    }
+
+    .headerMenuLink {
+        text-decoration: none;
+        position: relative;
+    }
+
+    /* Link hover underline animation */
+
+    .headerMenuLink::after {
+        position: absolute;
+        top: 0;
+        left: 0;
+        content: "";
+        width: 0;
+        height: 100%;
+        border-bottom: var(--border);
+        transition: var(--transition);
+    }
+
+    .headerMenuLink:hover::after {
+        width: 100%;
+    }
+
+    .button {
+        width: 209px;
+    }
+
+
+    .hamburgerContainer {
+        --hamburgerWidth: 50px;
+        --hamburgerHeight: 25px;
+        --hamburgerLineColor: var(--outline);
+        --hamburgerTransition: var(--transition);
+
+        .hamburgerIcon {
+            /* Increase the icon size to make the tappable area bigger.
+                This element itself is not visible */
+            height: var(--hamburgerHeight);
+            width: var(--hamburgerWidth);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+    
+            .hamburgerLine {
+                background: var(--hamburgerLineColor);
+                display: block;
+                height: 1px;
+                width: var(--hamburgerWidth);
+                transition: var(--hamburgerTransition);
+            }
+        }
+        .hamburgerCheckbox {
+            display: none;
+            &:checked ~ #headerMenu {
+                max-height: none;
+                height: 90vh;
+                position: absolute;
+                top: 10vh;
+                left: 0;
+                width: 100vw;
+                display: flex;
+                justify-content: center;
+                background-image: linear-gradient(white,#bbb5c3);
+            }
+            &:checked ~ .hamburgerIcon .hamburgerLine {
+                &.two {
+                    background: transparent;
+                }
+                &.one {
+                    transform: translateY(calc(var(--hamburgerHeight) / 2 - 1px)) rotate(45deg);
+                }
+                &.three {
+                    transform: translateY(calc(var(--hamburgerHeight) / 2 * (-1))) rotate(-45deg);
+                }
+            }
+        }
+    }
+
+
+
+
 }
 
-.header .logoContainer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
 
-.header .logoLink {
-    font-family: var(--font-family-1);
-    font-size: 22px;
-    text-decoration: none;
-}
 
-.header .headerMenuContainer {
-    display: flex;
-    align-items: center;
-    gap: var(--small-gap);
-}
-
-.header .headerMenuItem {
-    list-style: none;
-}
-
-.header .headerMenuLink {
-    text-decoration: none;
-    position: relative;
-}
-
-/* Link hover underline animation */
-
-.header .headerMenuLink::after {
-    position: absolute;
-    top: 0;
-    left: 0;
-    content: "";
-    width: 0;
-    height: 100%;
-    border-bottom: var(--border);
-    transition: var(--transition);
-}
-
-.header .headerMenuLink:hover::after {
-    width: 100%;
-}
-
-.header .button {
-    width: 209px;
+@media only screen and (max-width: 768px) {
+    .header {
+        .headerMenuContainer {
+            display: none;
+        }
+        .button {
+            display: none;
+        }
+    }
 }

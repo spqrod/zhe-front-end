@@ -49,14 +49,28 @@ export default function BookConsultationForm() {
             return fetch(fetchURL, fetchOptions)
                 .then(response => response.json())
                 .then(data => {
-                    // console.log("data from fetch");
-                    console.log(data);
                     if (data.isSuccessfullyUpdated) {
                         return true;
                     } else {
                         return false;
                     }
                 });
+            },
+        sendEmail: function(data) {
+            const fetchURL = "/api/email/booking";
+            const fetchOptions = {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(data)
+            };
+            return fetch(fetchURL, fetchOptions)
+                .then(response => response.json())
+                .then(data => {
+                    console.log("data from fetch");
+                    console.log(data);
+            });
         }
     };
 
@@ -70,20 +84,20 @@ export default function BookConsultationForm() {
             // const token = captchaRef.current.getValue();
             // captchaRef.current.reset();
 
-            const { date, name, email, phone, message } = e.target.elements;
+            const { date, name, email, phone } = e.target.elements;
             
             const formData = {
                 date: date.value,
-                // name: name.value,
-                // email: email.value,
-                // phone: phone.value,
-                // message: message.value
+                name: name.value,
+                email: email.value,
+                phone: phone.value,
             }
             
+            controller.sendEmail(formData);
             controller.updateDateAsTaken(formData.date).then((result) => {
                 controller.showDialog(result);
+                display.resetFormAfterSubmit();
             });
-            // controller.showDialog();
         },
         handleDateChange: function(date) {
             setSelectedDate(date)
@@ -122,6 +136,9 @@ export default function BookConsultationForm() {
             else 
                 display.showDialog(failureMessage);
         },
+        sendEmail: function(data) {
+            api.sendEmail(data);
+        }
     }
 
     const display = {
@@ -143,8 +160,14 @@ export default function BookConsultationForm() {
         showDialog: function(message) {
             const dialog = document.querySelector(".dialog");
             const dialogText = document.querySelector(".dialogText");
-            dialogText.innerHTML = message;
+            dialogText.innerText = message;
             dialog.showModal();
+        },
+        resetFormAfterSubmit() {
+            const form = document.querySelector(".form");
+            form.reset();
+            const datePicker = document.querySelector(".datePicker");
+            datePicker.value = "";
         }
     }
 
@@ -155,7 +178,7 @@ export default function BookConsultationForm() {
                 {/* ADD IDs TO INPUT FIELDS */}
 
                 <DatePicker 
-                    className="inputField"
+                    className="inputField datePicker"
                     withPortal
                     minDate={tomorrow}
                     maxDate={todayPlus30Days}
