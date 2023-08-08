@@ -57,64 +57,11 @@
     .button {
         width: 209px;
     }
-
-
-    .hamburgerContainer {
-        --hamburgerWidth: 50px;
-        --hamburgerHeight: 25px;
-        --hamburgerLineColor: var(--outline);
-        --hamburgerTransition: var(--transition);
-
-        .hamburgerIcon {
-            /* Increase the icon size to make the tappable area bigger.
-                This element itself is not visible */
-            height: var(--hamburgerHeight);
-            width: var(--hamburgerWidth);
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
     
-            .hamburgerLine {
-                background: var(--hamburgerLineColor);
-                display: block;
-                height: 1px;
-                width: var(--hamburgerWidth);
-                transition: var(--hamburgerTransition);
-            }
-        }
-        .hamburgerCheckbox {
-            display: none;
-            &:checked ~ #headerMenu {
-                max-height: none;
-                height: 90vh;
-                position: absolute;
-                top: 10vh;
-                left: 0;
-                width: 100vw;
-                display: flex;
-                justify-content: center;
-                background-image: linear-gradient(white,#bbb5c3);
-            }
-            &:checked ~ .hamburgerIcon .hamburgerLine {
-                &.two {
-                    background: transparent;
-                }
-                &.one {
-                    transform: translateY(calc(var(--hamburgerHeight) / 2 - 1px)) rotate(45deg);
-                }
-                &.three {
-                    transform: translateY(calc(var(--hamburgerHeight) / 2 * (-1))) rotate(-45deg);
-                }
-            }
-        }
+    .hamburgerContainer {
+        display: none;
     }
-
-
-
-
 }
-
-
 
 @media only screen and (max-width: 768px) {
     .header {
@@ -123,6 +70,54 @@
         }
         .button {
             display: none;
+        }
+        .hamburgerContainer {
+            --hamburgerWidth: 50px;
+            --hamburgerHeight: 25px;
+            --hamburgerLineColor: var(--outline);
+            --hamburgerTransition: var(--transition);
+            display: block;
+            
+            .hamburgerIcon {
+                height: var(--hamburgerHeight);
+                width: var(--hamburgerWidth);
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+    
+                .hamburgerLine {
+                    background: var(--hamburgerLineColor);
+                    display: block;
+                    height: 1px;
+                    width: var(--hamburgerWidth);
+                    transition: var(--hamburgerTransition);
+                }
+            }
+            .hamburgerCheckbox {
+                display: none;
+                &:checked ~ #headerMenu {
+                    max-height: none;
+                    height: 90vh;
+                    position: absolute;
+                    top: 10vh;
+                    left: 0;
+                    width: 100vw;
+                    display: flex;
+                    justify-content: center;
+                    background-image: linear-gradient(white,#bbb5c3);
+                }
+                &:checked ~ .hamburgerIcon .hamburgerLine {
+                    &.two {
+                        background: transparent;
+                    }
+                    &.one {
+                        transform: translateY(calc(var(--hamburgerHeight) / 2 - 1px)) rotate(45deg);
+                    }
+                    &.three {
+                        transform: translateY(calc(var(--hamburgerHeight) / 2 * (-1))) rotate(-45deg);
+                    }
+                }
+            }
         }
     }
 }

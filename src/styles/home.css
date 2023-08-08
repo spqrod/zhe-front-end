@@ -1,5 +1,7 @@
 .homePage {
 
+    overflow: hidden;
+
     .heroSection {
 
         height: calc(100vh - var(--header-height));
@@ -47,6 +49,31 @@
             gap: var(--big-gap);
         }
 
+        .arrowIconSVG {
+            position: relative;
+            width: 50px;
+            height: 25px;
+            animation-name: heroArrowIconAnimation;
+            animation-duration: 1.5s;
+            animation-iteration-count: infinite;
+            animation-timing-function: ease-it;
+            animation-direction: alternate;
+        }
+        
+        .arrowIconPath {
+            stroke: var(--outline);
+            stroke-width: 1px;
+            fill: none;
+        }
+
+        .heroInfoContainer .buttonLink {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            gap: var(--small-gap);
+            position: relative;
+        }
+
         h1 {
             padding: 0;
         }
@@ -58,6 +85,8 @@
             color: var(--on-surface);
             border: var(--border);
         }
+
+
         
     }
 
@@ -411,27 +440,5 @@
 }
 
 
-.homePage .heroInfoContainer .buttonLink {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    gap: var(--small-gap);
-    position: relative;
-}
 
-.homePage .arrowIconSVG {
-    position: relative;
-    width: 50px;
-    height: 25px;
-    animation-name: heroArrowIconAnimation;
-    animation-duration: 1.5s;
-    animation-iteration-count: infinite;
-    animation-timing-function: ease-it;
-    animation-direction: alternate;
-}
 
-.homePage .arrowIconPath {
-    stroke: var(--outline);
-    stroke-width: 1px;
-    fill: none;
-}

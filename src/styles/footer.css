@@ -3,46 +3,67 @@
     flex-direction: column;
     gap: var(--small-gap);
     border-top: 1px solid black;
+
+    .footerMenuContainer {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: var(--small-gap);
+    }
+    
+    .footerMenuItem {
+        list-style: none;
+    }
+    
+    .footerMenuLink {
+        text-decoration: none;
+        position: relative;
+    }
+    
+    /* Link hover underline animation */
+    
+    .footerMenuLink::after {
+        position: absolute;
+        top: 0;
+        left: 0;
+        content: "";
+        width: 0;
+        height: 100%;
+        border-bottom: var(--border);
+        transition: var(--transition);
+    }
+    
+    .footerMenuLink:hover::after {
+        width: 100%;
+    }
+    
+    .footerContactsContainer {
+        display: flex;
+        justify-content: space-between;
+    }
+    
+    .footerAllRightsReservedLine {
+        text-align: center;
+    }
 }
 
-.footerMenuContainer {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: var(--small-gap);
+@media only screen and (max-width: 768px) {
+    .footer {
+
+        .footerMenuContainer {
+            display: none;
+        }
+
+        .footerContactsContainer {
+            display: flex;
+            justify-content: space-between;
+            flex-direction: column;
+        }
+
+        .footerButtonContainer {
+            display: flex;
+            justify-content: center;
+        }
+    }
 }
 
-.footerMenuItem {
-    list-style: none;
-}
-
-.footerMenuLink {
-    text-decoration: none;
-    position: relative;
-}
-
-/* Link hover underline animation */
-
-.footerMenuLink::after {
-    position: absolute;
-    top: 0;
-    left: 0;
-    content: "";
-    width: 0;
-    height: 100%;
-    border-bottom: var(--border);
-    transition: var(--transition);
-}
-
-.footerMenuLink:hover::after {
-    width: 100%;
-}
-
-.footerContactsContainer {
-    display: flex;
-    justify-content: space-between;
-}
-
-.footerAllRightsReservedLine {
-    text-align: center;
-}

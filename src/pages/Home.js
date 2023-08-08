@@ -34,7 +34,6 @@ export default function Home({consultationPrice, consultationLength, whatsAppLin
                 <div className="heroInfoContainer">
                     <h1>Психолог Дарья Жеребцова</h1>
                     <p>Провожу онлайн консультации для тех, кому трудно, кто запутался и не знает, как быть дальше. <br></br>И для тех, кто хочет спокойствия, гармонии и понимания.</p>
-
                     <HashLink className="buttonLink" smooth to="/#help">
                         <button className="button">
                             С чем я могу помочь
@@ -47,7 +46,6 @@ export default function Home({consultationPrice, consultationLength, whatsAppLin
                             <path className="arrowIconPath" d="M 0 0 L 25 25 L 50 0"/>
                         </svg>
                     </HashLink>
-                    
                 </div>
                 <div className="heroPhotoContainer">
                     <img className="heroPhoto" src={image1} alt="" />
