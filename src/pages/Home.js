@@ -34,6 +34,8 @@ export default function Home({consultationPrice, consultationLength, whatsAppLin
                 <div className="heroInfoContainer">
                     <h1>Психолог Дарья Жеребцова</h1>
                     <p>Провожу онлайн консультации для тех, кому трудно, кто запутался и не знает, как быть дальше. <br></br>И для тех, кто хочет спокойствия, гармонии и понимания.</p>
+                </div>
+                <div className="heroButtonContainer">
                     <HashLink className="buttonLink" smooth to="/#help">
                         <button className="button">
                             С чем я могу помочь
