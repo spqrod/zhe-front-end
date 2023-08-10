@@ -159,14 +159,6 @@ textarea {
     height: 30px;
 }
 
-.alternativeBookingMethodContainer {
-    padding-top: var(--big-gap);
-    border-top: var(--border);
-    display: flex;
-    flex-direction: column;
-    gap: var(--medium-gap);
-}
-
 .socialLinksContainer {
     justify-content: center;
     gap: var(--big-gap);

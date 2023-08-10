@@ -10,17 +10,6 @@ export default function Footer() {
         <footer className="footer main">
             <div className="footerContactsContainer">
                 <SocialLinks />
-                <div className="footerButtonContainer">
-                    <button className="button">
-                        <Link className="buttonLink" to="/book-consultation">
-                            Записаться
-                        </Link>
-                        <div className="buttonBorder"></div>
-                        <div className="buttonBorder"></div>
-                        <div className="buttonBorder"></div>
-                        <div className="buttonBorder"></div>
-                    </button>
-                </div>
             </div>
             <ul className="footerMenuContainer">
                 <li className="footerMenuItem">
@@ -33,6 +22,11 @@ export default function Footer() {
                         Психологические заметки
                     </Link>
                 </li> */}
+                <li className="footerMenuItem">
+                    <Link className="footerMenuLink bookingMenuLink" to="/book-consultation">
+                        Запись
+                    </Link>
+                </li>
                 <li className="footerMenuItem">
                     <Link className="footerMenuLink" to="/methods">
                         Методы
@@ -59,9 +53,15 @@ export default function Footer() {
                     </Link>
                 </li>
             </ul>
-            <p className="footerAllRightsReservedLine">
-                Психолог Дарья Жеребцова © { year }. Все права защищены
-            </p>
+            <div className="allRightsReservedContainer">
+                <p>
+                    Психолог Дарья Жеребцова 
+                </p>
+                <p>
+                    Все права защищены © 2020 - { year }
+                </p>
+
+            </div>
         </footer>
     );
 }

@@ -173,6 +173,10 @@ export default function BookConsultationForm() {
 
     return (
         <div className="bookConsultationForm">
+            <div className="alternativeBookingMethodContainer">
+                <p>Вы можете записаться, просто написав мне в мессенджере, или с помощью формы онлайн-записи:</p>
+                <SocialLinks />
+            </div>
             <form className="form" onSubmit={controller.handleSubmit}>
 
                 {/* ADD IDs TO INPUT FIELDS */}
@@ -215,10 +219,7 @@ export default function BookConsultationForm() {
                     <div className="buttonBorder"></div>
                 </button>
             </form>
-            <div className="alternativeBookingMethodContainer">
-                <p>Вы также можете записаться, просто написав мне в:</p>
-                <SocialLinks />
-            </div>
+
             <dialog className="dialog">
                 <p className="dialogText"></p>
                 <form method="dialog">
