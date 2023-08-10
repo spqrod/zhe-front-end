@@ -42,10 +42,6 @@
     
     .processesContainer {
 
-        .processContainer {
-            /* max-width: 100vw; */
-        }
-
         .processContainerSVG {
             left: calc(50vw - var(--side-padding-for-sections));
         }
