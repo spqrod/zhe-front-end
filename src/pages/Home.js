@@ -142,33 +142,6 @@ export default function Home({consultationPrice, consultationLength, whatsAppLin
                 </div>
                 
             </section>
-            {/* <section className="educationSection">
-                <h1 className="sectionName">Образование</h1>
-                <h2>Моё образование</h2>
-                <div className="educationsContainer">
-                    <div className="educationContainer">
-                            <h3>Образование 1</h3>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae sint commodi architecto incidunt mollitia nemo eos harum rem quae aspernatur.</p>
-                    </div>
-                    <div className="educationContainer">
-                            <h3>Образование 2</h3>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae sint commodi architecto incidunt mollitia nemo eos harum rem quae aspernatur.</p>
-                    </div>
-                    <div className="educationContainer">
-                            <h3>Образование 3</h3>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae sint commodi architecto incidunt mollitia nemo eos harum rem quae aspernatur.</p>
-                    </div>
-                    <div className="educationContainer">
-                            <h3>Образование 4</h3>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae sint commodi architecto incidunt mollitia nemo eos harum rem quae aspernatur.</p>
-                    </div>
-                    <div className="educationContainer">
-                            <h3>Образование 5</h3>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae sint commodi architecto incidunt mollitia nemo eos harum rem quae aspernatur.</p>
-                    </div>
-                </div>
-                
-            </section> */}
             <section className="reviewsSection">
                 <h1 className="sectionName">Отзывы</h1>
                 <h2>Отзывы</h2>
@@ -281,18 +254,6 @@ export default function Home({consultationPrice, consultationLength, whatsAppLin
                 <h2>Записаться на консультацию</h2>
                 <BookConsultationForm />
             </section>
-
-            <div className="container">
-                <div className="box one"></div>
-                <div className="box two"></div>
-                <div className="box three"></div>
-                <div className="box four"></div>
-                <div className="box five"></div>
-                <div className="box six"></div>
-                <div className="box seven"></div>
-
-
-            </div>
         </main>
     );
 }
