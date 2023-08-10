@@ -28,33 +28,37 @@
         position: relative;
         opacity: 100%;
     }
-}
 
-.react-datepicker__time-list-item--disabled {
-    display: none;
-}
+    .datePicker {
+        width: 350px;
+    }
 
-.react-datepicker__time-list-item {
-    list-style: none;
-}
+    .react-datepicker__time-list-item--disabled {
+        display: none;
+    }
 
-.react-datepicker {
-    border: var(--border)!important;
-    border-radius: 0!important;
-}
+    .react-datepicker__time-list-item {
+        list-style: none;
+    }
 
-.react-datepicker__time-container {
-    width: 200px!important;
-}
+    .react-datepicker {
+        border: var(--border)!important;
+        border-radius: 0!important;
+    }
 
-.react-datepicker__time-box {
-    width: 100%!important;
-}
+    .react-datepicker__time-container {
+        width: 200px!important;
+    }
 
-.react-datepicker__time-list {
-    width: 200px!important;
-}
+    .react-datepicker__time-box {
+        width: 100%!important;
+    }
 
-.react-datepicker__time-list-item {
-    width: 200px!important;
+    .react-datepicker__time-list {
+        width: 200px!important;
+    }
+
+    .react-datepicker__time-list-item {
+        width: 200px!important;
+    }
 }

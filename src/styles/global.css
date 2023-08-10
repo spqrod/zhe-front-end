@@ -120,7 +120,7 @@ input:focus, textarea:focus {
 }
 
 .inputField {
-    width: 500px;
+    width: 100%;
 }
 
 textarea {
@@ -173,7 +173,7 @@ textarea {
 }
 
 .form {
-    max-width: min(500px, 80vw);
+    width: min(100%, 350px);
     display: flex;
     flex-direction: column;
     align-items: center;
