@@ -1,20 +1,15 @@
 .homePage {
 
-    overflow: hidden;
-
     .heroSection {
 
         height: calc(100vh - var(--header-height));
-        /* display: flex; 
-        justify-content: space-around;
-        align-items: center; */
 
         display: grid;
         grid-template-columns: 1fr 1fr;
-        grid-template-rows: 1fr 1fr;
+        grid-template-rows: auto auto;
+        row-gap: var(--big-gap);
         justify-items: center;
         align-items: center;
-        row-gap: var(--big-gap);
 
         .heroInfoContainer {
             grid-column: 1 / 2;
@@ -52,15 +47,14 @@
         .heroPhotoContainer {
             grid-column: 2 / 3;
             grid-row: 1 / 3;
-
-            display: flex;
+            max-width: 350px;
             position: relative;
-
-            max-width: fit-content;
+            display: flex;
 
             .heroPhoto {
-                height: 70vh;
+                width: 100%;
                 z-index: 1;
+                position: relative;
             }
     
             .heroPhotoOutline {
@@ -85,9 +79,6 @@
             }
         }
 
-        
-
-
         .arrowIconSVG {
             position: relative;
             width: 50px;
@@ -104,8 +95,6 @@
             stroke-width: 1px;
             fill: none;
         }
-
-        
     }
 
     .problemsSection {
@@ -411,15 +400,21 @@
     .homePage {
 
         .heroSection {
-            flex-wrap: wrap;
+            grid-template-columns: 1fr;
+            grid-template-rows: auto 1fr auto;
+            height: auto;
 
             .heroInfoContainer {
-                flex-basis: auto;
+
             }
 
             .heroPhotoContainer {
-                flex-basis: 100%;
-                width: 80vw;
+                grid-column: 1 / 2;
+                grid-row: 2 / 3;
+            }
+
+            .heroButtonContainer {
+                grid-row: 3 / 4;
             }
         }
 

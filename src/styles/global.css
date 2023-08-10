@@ -16,7 +16,7 @@
     --medium-gap: 16px;
     --small-gap: 8px;
     --max-content-width: 1200px;
-    --side-padding-for-sections: max(5vw, calc((100vw - var(--max-content-width)) / 2));
+    --side-padding-for-sections: max(7vw, calc((100vw - var(--max-content-width)) / 2));
 
     --primary: #95416d;
     --on-primary: #ffffff;
@@ -128,27 +128,6 @@ textarea {
     min-height: 200px;
 }
 
-.inputContainer {
-    /* position: relative; */
-}
-
-.inputContainer::after {
-    /* position: absolute;
-    top: 0;
-    left: 0;
-    content: "";
-    width: 0;
-    height: 100%;
-    border-bottom: 1px solid var(--primary);
-    transition: var(--transition); */
-}
-
-
-.inputContainer:has(input:focus)::after {
-    /* width: 100%; */
-}
-
-
 .legalConsentCheckboxContainer {
     display: flex;
     gap: var(--medium-gap);
@@ -165,7 +144,7 @@ textarea {
 }
 
 .form {
-    width: min(100%, 350px);
+    width: min(100%, 300px);
     display: flex;
     flex-direction: column;
     align-items: center;
