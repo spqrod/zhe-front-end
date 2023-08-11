@@ -7,12 +7,6 @@ import { useRef } from "react";
 export default function Contact() {
     const captchaRef = useRef(null);
 
-
-
-
-
-
-
     const api = {
         sendEmail: function(data) {
             const fetchURL = "/api/email/contact";
@@ -84,15 +78,6 @@ export default function Contact() {
             form.reset();
         }
     }
-
-
-
-
-
-
-
-
-
 
     return (
         <main className="contactPage">

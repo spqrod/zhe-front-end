@@ -154,5 +154,6 @@
 }
 
 body:has(.hamburgerCheckbox:checked) {
-    overflow: hidden;
+    /* overflow: hidden; */
+    position: fixed;
 }

@@ -1,31 +1,36 @@
-.aboutPage .infoContainer {
-    background-color: var(--surface);
-    border: var(--border);
-    padding: var(--big-gap);
-}
+.aboutPage {
+    
+    .infoContainer {
+        background-color: var(--surface);
+        border: var(--border);
+        padding: var(--big-gap);
+    }
 
-.aboutPage .generalInfoContainer {
-    display: flex;
-    align-items: center;
-    gap: var(--big-gap);
-}
+    .generalInfoContainer {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: var(--big-gap);
+    }
 
-.aboutPage .generalInfoImageContainer {
-    flex: 0 0 400px;
-}
+    .generalInfoImageContainer {
+        width: min(400px, 100%);
+    }
 
-.aboutPage .generalInfoImage {
-    width: 100%;
-    border: var(--border);
-}
+    .generalInfoImage {
+        width: 100%;
+        border: var(--border);
+    }
 
-.aboutPage .personalLifeContainer {
-    display: flex;
-    gap: var(--big-gap);
-    align-items: center;
-}
+    .personalLifeContainer {
+        display: flex;
+        gap: var(--big-gap);
+        flex-wrap: wrap;
+        align-items: center;
+    }
 
-.aboutPage .personalInfoImage {
-    max-width: 400px;
-    border: var(--border);
+    .personalInfoImage {
+        width: min(400px, 100%);
+        border: var(--border);
+    }
 }

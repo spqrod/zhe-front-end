@@ -2,6 +2,13 @@ import { Link } from "react-router-dom";
 import "../styles/header.css";
 
 export default function Header() {
+
+    function closeMobileMenuOnLinkClick() {
+        const checkbox = document.querySelector(".hamburgerCheckbox");
+        if (checkbox.checked) 
+            checkbox.checked = false;
+    }
+
     return (
         <header className="header main">
             <div className="logoContainer">
@@ -10,28 +17,23 @@ export default function Header() {
                 </Link>
             </div>
             <ul className="headerMenuContainer">
-                {/* <li className="headerMenuItem">
-                    <Link className="headerMenuLink" to="/blog">
-                        Психологические заметки
-                    </Link>
-                </li> */}
                 <li className="headerMenuItem bookConsultation">
-                    <Link className="headerMenuLink" to="/book-consultation">
+                    <Link className="headerMenuLink" to="/book-consultation" onClick={closeMobileMenuOnLinkClick}>
                         Запись
                     </Link>
                 </li>
                 <li className="headerMenuItem">
-                    <Link className="headerMenuLink" to="/methods">
+                    <Link className="headerMenuLink" to="/methods" onClick={closeMobileMenuOnLinkClick}>
                         Методы
                     </Link>
                 </li>
                 <li className="headerMenuItem">
-                    <Link className="headerMenuLink" to="/contact">
+                    <Link className="headerMenuLink" to="/contact" onClick={closeMobileMenuOnLinkClick}>
                         Связаться
                     </Link>
                 </li>
                 <li className="headerMenuItem">
-                    <Link className="headerMenuLink" to="/about">
+                    <Link className="headerMenuLink" to="/about" onClick={closeMobileMenuOnLinkClick}>
                         Обо мне
                     </Link>
                 </li>

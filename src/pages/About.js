@@ -9,7 +9,6 @@ export default function About() {
             <section className='generalInfoSection'>
                 <h1>Обо мне</h1>
                 <div className='infoContainer generalInfoContainer'>
-
                     <div className="generalInfoTextContainer">
                         <p>
                             Меня зовут Дарья Жеребцова. Я дипломированный психолог-консультант. Имею высшее психологическое образование по специальности «Психолог». Постоянно обучаюсь на разных курсах по повышению квалификации, развиваюсь и совершенствуюсь.
