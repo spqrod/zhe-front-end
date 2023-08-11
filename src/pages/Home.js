@@ -164,7 +164,7 @@ export default function Home({consultationPrice, consultationLength, whatsAppLin
                 <h2>Как попасть на консультацию?</h2>
                 <ConsultationBookingProcess consultationPrice={consultationPrice} consultationLength={consultationLength} whatsAppLink={whatsAppLink}/>
                 <button className="button">
-                    <Link className="buttonLink" to="">
+                    <Link className="buttonLink" to="/book-consultation">
                         Записаться
                     </Link>
                     <div className="buttonBorder"></div>

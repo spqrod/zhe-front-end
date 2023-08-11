@@ -15,6 +15,11 @@ export default function Header() {
                         Психологические заметки
                     </Link>
                 </li> */}
+                <li className="headerMenuItem bookConsultation">
+                    <Link className="headerMenuLink" to="/book-consultation">
+                        Запись
+                    </Link>
+                </li>
                 <li className="headerMenuItem">
                     <Link className="headerMenuLink" to="/methods">
                         Методы

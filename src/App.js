@@ -11,6 +11,7 @@ import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsOfService from "./pages/TermsOfService";
 import "./styles/global.css";
 import ScrollToTop from "./components/ScrollToTop";
+import CloseMobileHeaderMenu from "./components/CloseMobileHeaderMenu";
 
 function App() {
   const consultationPrice = 1200;
@@ -19,6 +20,7 @@ function App() {
 
   return (
     <div>
+      <CloseMobileHeaderMenu />
       <ScrollToTop />
       <Header />
       <Routes>

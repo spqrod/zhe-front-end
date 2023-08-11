@@ -32,6 +32,10 @@
         list-style: none;
     }
 
+    .headerMenuItem.bookConsultation {
+        display: none;
+    }
+
     .headerMenuLink {
         text-decoration: none;
         position: relative;
@@ -65,18 +69,45 @@
 
 @media only screen and (max-width: 768px) {
     .header {
+        position: relative;
+
         .headerMenuContainer {
             display: none;
         }
+        
+        /* Reveal menu on hamburger click */
+        &:has(.hamburgerCheckbox:checked) .headerMenuContainer {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            width: 100vw;
+            height: 100vh;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 2;
+            background-color: var(--background);
+        }
+        
+        &:has(.hamburgerCheckbox:checked) .headerMenuContainer .headerMenuLink {
+            font-size: 34px;
+        }
+
+        .headerMenuItem.bookConsultation {
+            display: block;
+        }
+
         .button {
             display: none;
         }
+
         .hamburgerContainer {
             --hamburgerWidth: 50px;
             --hamburgerHeight: 25px;
             --hamburgerLineColor: var(--outline);
             --hamburgerTransition: var(--transition);
             display: block;
+            z-index: 3;
             
             .hamburgerIcon {
                 height: var(--hamburgerHeight);
@@ -120,4 +151,8 @@
             }
         }
     }
+}
+
+body:has(.hamburgerCheckbox:checked) {
+    overflow: hidden;
 }
