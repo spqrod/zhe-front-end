@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import "../styles/header.css";
 
 export default function Header() {
@@ -17,25 +17,30 @@ export default function Header() {
                 </Link>
             </div>
             <ul className="headerMenuContainer">
-                <li className="headerMenuItem bookConsultation">
-                    <Link className="headerMenuLink" to="/book-consultation" onClick={closeMobileMenuOnLinkClick}>
+                <li className="headerMenuItem visibleForMobileOnly">
+                    <NavLink className="headerMenuLink" to="/" onClick={closeMobileMenuOnLinkClick}>
+                        Домой
+                    </NavLink>
+                </li>
+                <li className="headerMenuItem visibleForMobileOnly">
+                    <NavLink className="headerMenuLink" to="/book-consultation" onClick={closeMobileMenuOnLinkClick}>
                         Запись
-                    </Link>
+                    </NavLink>
                 </li>
                 <li className="headerMenuItem">
-                    <Link className="headerMenuLink" to="/methods" onClick={closeMobileMenuOnLinkClick}>
+                    <NavLink className="headerMenuLink" to="/methods" onClick={closeMobileMenuOnLinkClick}>
                         Методы
-                    </Link>
+                    </NavLink>
                 </li>
                 <li className="headerMenuItem">
-                    <Link className="headerMenuLink" to="/contact" onClick={closeMobileMenuOnLinkClick}>
+                    <NavLink className="headerMenuLink" to="/contact" onClick={closeMobileMenuOnLinkClick}>
                         Связаться
-                    </Link>
+                    </NavLink>
                 </li>
                 <li className="headerMenuItem">
-                    <Link className="headerMenuLink" to="/about" onClick={closeMobileMenuOnLinkClick}>
+                    <NavLink className="headerMenuLink" to="/about" onClick={closeMobileMenuOnLinkClick}>
                         Обо мне
-                    </Link>
+                    </NavLink>
                 </li>
             </ul>
             <button className="button">

@@ -13,7 +13,7 @@ import "./styles/global.css";
 import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
-  const consultationPrice = 1200;
+  const consultationPrice = 1500;
   const consultationLength = 40;
   const whatsAppLink = "https://wa.me/79788110255";
 

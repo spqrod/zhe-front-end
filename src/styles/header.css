@@ -32,13 +32,17 @@
         list-style: none;
     }
 
-    .headerMenuItem.bookConsultation {
+    .headerMenuItem.visibleForMobileOnly {
         display: none;
     }
 
     .headerMenuLink {
         text-decoration: none;
         position: relative;
+    }
+
+    .headerMenuLink.active {
+        font-weight: 600;
     }
 
     /* Link hover underline animation */
@@ -93,7 +97,7 @@
             font-size: 34px;
         }
 
-        .headerMenuItem.bookConsultation {
+        .headerMenuItem.visibleForMobileOnly {
             display: block;
         }
 
