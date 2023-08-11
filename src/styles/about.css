@@ -4,33 +4,47 @@
         background-color: var(--surface);
         border: var(--border);
         padding: var(--big-gap);
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        gap: var(--big-gap);
     }
 
     .generalInfoContainer {
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-        gap: var(--big-gap);
-    }
 
-    .generalInfoImageContainer {
-        width: min(400px, 100%);
-    }
-
-    .generalInfoImage {
-        width: 100%;
-        border: var(--border);
+        .generalInfoTextContainer {
+            flex-basis: 500px;
+            flex-grow: 2;
+        }
+        
+        .generalInfoImageContainer {
+            flex-basis: min(300px, 100%);
+            flex-grow: 1;
+            
+            .generalInfoImage {
+                width: 100%;
+                border: var(--border);
+            }
+        }
     }
 
     .personalLifeContainer {
-        display: flex;
-        gap: var(--big-gap);
-        flex-wrap: wrap;
-        align-items: center;
+
+        .personalInfoTextContainer {
+            flex-basis: 500px;
+            flex-grow: 2;
+        }
+
+        .personalInfoImageContainer {
+            flex-basis: min(300px, 100%);
+            flex-grow: 1;
+
+            .personalInfoImage {
+                max-width: 100%;
+            }
+        }
     }
 
-    .personalInfoImage {
-        width: min(400px, 100%);
-        border: var(--border);
-    }
+
 }
