@@ -1,9 +1,4 @@
 import "../styles/bookConsultation.css";
-import dayjs from "dayjs";
-import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
-import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
-import { MobileDatePicker } from '@mui/x-date-pickers/MobileDatePicker';
-import { StaticDatePicker } from '@mui/x-date-pickers/StaticDatePicker';
 import "react-datepicker/dist/react-datepicker.css";
 
 import ConsultationBookingProcess from "../components/ConsultationBookingProcess";

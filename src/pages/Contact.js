@@ -2,14 +2,16 @@ import "../styles/contact.css";
 import SocialLinks from "../components/SocialLinks";
 import { Link } from "react-router-dom";
 import ReCAPTCHA from "react-google-recaptcha";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 
 export default function Contact() {
     const captchaRef = useRef(null);
+    const [dialogTextForMessageResult, setDialogTextForMessageResult] = useState("");
 
     const api = {
+        
         sendEmail: function(data) {
-            const fetchURL = "/api/email/contact";
+            const fetchURL = "/api/contact";
             const fetchOptions = {
                 method: "POST",
                 headers: {
@@ -19,10 +21,6 @@ export default function Contact() {
             };
             return fetch(fetchURL, fetchOptions)
                 .then(response => response.json())
-                .then(data => {
-                    console.log("data from fetch");
-                    console.log(data);
-            });
         }
     };
 
@@ -33,30 +31,48 @@ export default function Contact() {
             // const token = captchaRef.current.getValue();
             // captchaRef.current.reset();
 
-            const { name, email, phone, message } = e.target.elements;
+            // const fetchURL = "/api/contact";
+            // const fetchOptions = {
+            //     method: "POST",
+            //     headers: {
+            //         "Content-Type": "application/json"
+            //     },
+            //     body: JSON.stringify({ token })
+            // };
+
+            // fetch(fetchURL, fetchOptions)
+            //     .then(response => response.json())
+            //     .then(data => console.log(data));
+
+
+            const { name, email, phone, formMessage } = e.target.elements;
             
             const formData = {
                 name: name.value,
                 email: email.value,
                 phone: phone.value,
-                message: message.value
+                formMessage: formMessage.value
             }
             
             controller.sendEmail(formData);
-                // controller.showDialog(result);
-                // display.resetFormAfterSubmit();
         },
-        showDialog: function(result) {
+        updateDialogTextWithMessageResult: function(result) {
             const successMessage = "Спасибо за сообщение! Я свяжусь с Вами в ближайшее время.";
             const failureMessage = "Простите. Что-то пошло не так. Пожалуйста, свяжитесь со мной другим способом";
             if (result) 
-                display.showDialog(successMessage);
+                setDialogTextForMessageResult(successMessage);
             else 
-                display.showDialog(failureMessage);
+                setDialogTextForMessageResult(failureMessage);
         },
         sendEmail: function(data) {
-            api.sendEmail(data);
-        }
+            setDialogTextForMessageResult("Отправляю сообщение...");
+            display.showDialog();
+            api.sendEmail(data)
+                .then((response) => {
+                    display.resetFormAfterSubmit();
+                    controller.updateDialogTextWithMessageResult(response.success);
+                });
+        },
     }
 
     const display = {
@@ -67,10 +83,8 @@ export default function Contact() {
             const reCaptcha = document.querySelector(".reCaptcha");
             reCaptcha.classList.add("active");
         },
-        showDialog: function(message) {
+        showDialog: function() {
             const dialog = document.querySelector(".dialog");
-            const dialogText = document.querySelector(".dialogText");
-            dialogText.innerText = message;
             dialog.showModal();
         },
         resetFormAfterSubmit() {
@@ -88,28 +102,38 @@ export default function Contact() {
                 <form className="form" onSubmit={controller.handleSubmit}>
                     <input className="inputField" type="text" placeholder="Имя" name="name" />
                     <input className="inputField" type="email" placeholder="E-mail" name="email" required />
-                    <input className="inputField" type="tel" placeholder="Телефон" name="phone" />
-                    <textarea className="textArea" placeholder="Ваше сообщение" name="message" />
+                    <input className="inputField" type="tel" placeholder="Телефон" name="phone" required/>
+                    <textarea className="textArea" placeholder="Ваше сообщение" name="formMessage" />
                     <div className="legalConsentCheckboxContainer">
                         <input type="checkbox" className="legalConsentCheckbox" name="legalConsentCheckbox" id="legalConsentCheckbox" required />
                         <label htmlFor="legalConsentCheckbox">
                             Я принимаю <Link to="/terms-of-service">Условия использования</Link> и <Link to="/privacy-policy">Политику конфиденциальности</Link>
                         </label>
                     </div>
-                    <ReCAPTCHA 
+                    {/* <ReCAPTCHA 
                         sitekey={process.env.REACT_APP_GOOGLE_CAPTCHA_SITE_KEY} 
                         ref={captchaRef}
-                    />
-                    <button className="button">
-                        <Link className="buttonLink">
-                            Отправить сообщение
-                        </Link>
+                    /> */}
+                    <button className="button" type="submit">
+                        Отправить сообщение
                         <div className="buttonBorder"></div>
                         <div className="buttonBorder"></div>
                         <div className="buttonBorder"></div>
                         <div className="buttonBorder"></div>
                     </button>
                 </form>
+                <dialog className="dialog">
+                    <p className="dialogText">{dialogTextForMessageResult}</p>
+                    <form method="dialog">
+                        <button className="button">
+                            Закрыть
+                            <div className="buttonBorder"></div>
+                            <div className="buttonBorder"></div>
+                            <div className="buttonBorder"></div>
+                            <div className="buttonBorder"></div>
+                        </button>
+                    </form>
+                </dialog>
             </section>
         </main>
     );

@@ -73,7 +73,6 @@
 
 @media only screen and (max-width: 768px) {
     .header {
-        position: relative;
 
         .headerMenuContainer {
             display: none;
@@ -158,6 +157,5 @@
 }
 
 body:has(.hamburgerCheckbox:checked) {
-    /* overflow: hidden; */
-    position: fixed;
+    overflow: hidden;
 }
