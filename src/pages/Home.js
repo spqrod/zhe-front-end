@@ -14,7 +14,7 @@ import BookConsultationForm from "../components/BookConsultationForm";
 export default function Home({consultationPrice, consultationLength, whatsAppLink}) {
     useEffect(() => {
 
-        setTimeout(animateHeroPhotoOutlineAfterLoad, 1000);
+        setTimeout(animateHeroPhotoOutlineAfterLoad, 500);
         
         function animateHeroPhotoOutlineAfterLoad() {
             const heroPhotoOutline = document.querySelector(".heroPhotoOutline");
@@ -26,6 +26,11 @@ export default function Home({consultationPrice, consultationLength, whatsAppLin
                 );
             }
         }
+
+        // const response = fetch("/test")
+        //     .then(res => res.json())
+        //     .then(data => console.log(data))
+        //     .catch((error) => console.log(error));
     });
 
     return (

@@ -20,10 +20,6 @@ export default function BookConsultationForm() {
     const [availableDates, setAvailableDates] = useState();
     const [dataFromDB, setDataFromDB] = useState([]);
 
-    useEffect(() => {
-        api.getAvailableDatesFromDB();
-    }, []);
-
     const api = {
         getAvailableDatesFromDB: function() {
             fetch("/api/dates")
@@ -76,11 +72,15 @@ export default function BookConsultationForm() {
 
     const controller = {
 
+        handleDatePickerClick: function() {
+            api.getAvailableDatesFromDB();
+        },
         handleDateSelect: function(selectedDate) {
             display.updateAvailableTimes(selectedDate);
         },
         handleSubmit: async function(e) {
             e.preventDefault();
+
             // const token = captchaRef.current.getValue();
             // captchaRef.current.reset();
 
@@ -138,7 +138,7 @@ export default function BookConsultationForm() {
         },
         sendEmail: function(data) {
             api.sendEmail(data);
-        }
+        },
     }
 
     const display = {
@@ -193,6 +193,7 @@ export default function BookConsultationForm() {
                     timeFormat="p"
                     placeholderText="Выбрать день"
                     onSelect={controller.handleDateSelect}
+                    onFocus={controller.handleDatePickerClick}
                     selected={selectedDate}
                     onChange={controller.handleDateChange}
                     dateFormat="dd.MM.yyyy, HH:mm"

@@ -1,5 +1,7 @@
-.bookConsultationPage .bookingSection {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.bookConsultationPage {
+    .bookingSection, .processSection {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
 }

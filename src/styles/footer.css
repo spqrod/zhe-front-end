@@ -20,11 +20,6 @@
         position: relative;
     }
     
-    .bookingMenuLink {
-        font-weight: 600;
-
-    }
-    
     /* Link hover underline animation */
     
     .footerMenuLink::after {

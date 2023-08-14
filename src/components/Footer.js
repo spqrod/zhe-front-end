@@ -17,11 +17,6 @@ export default function Footer() {
                         Домой
                     </Link>
                 </li>
-                {/* <li className="footerMenuItem">
-                    <Link className="footerMenuLink" to="/blog">
-                        Психологические заметки
-                    </Link>
-                </li> */}
                 <li className="footerMenuItem">
                     <Link className="footerMenuLink bookingMenuLink" to="/book-consultation">
                         Запись
