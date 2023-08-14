@@ -1,13 +1,15 @@
 @font-face {
-    font-family: 'Playfair Display SC';
-    src: local('Playfair Display SC'),
-            url('../fonts/PlayfairDisplaySC-Regular.ttf') format('ttf');
-}
-
-@font-face {
+    font-family: 'PlayfairDisplaySC';
+    src: 
+        local('PlayfairDisplaySC'),
+        url('../fonts/PlayfairDisplaySC-Regular.ttf') format('truetype');
+    }
+    
+    @font-face {
     font-family: 'Jost';
-    src: local('Jost'),
-            url('../fonts/Jost-Regular.ttf') format('ttf');
+    src: 
+        local('Jost'),
+        url('../fonts/Jost-Regular.ttf') format('truetype');
 }
 
 :root {
@@ -33,7 +35,7 @@
     --border: 1px solid var(--outline);
     --border-radius: 0;
 
-    --font-family-1: 'Playfair Display SC', cursive;
+    --font-family-1: 'PlayfairDisplaySC';
     --font-family-2: 'Jost', sans-serif;
 
     --transition: all .5s ease-in-out;

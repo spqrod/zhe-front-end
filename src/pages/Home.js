@@ -226,37 +226,6 @@ export default function Home({consultationPrice, consultationLength, whatsAppLin
                     </div>
                 </div>
             </section>
-            {/* <section className="blogSection">
-                <h1 className="sectionName">Блог</h1>
-                <h2>Психологические заметки</h2>
-                <div className="blogPostsContainer">
-                    <div className="blogPostContainer">
-                        <PhotoOutlinedIcon className="blogPostIcon" />
-                        <p className="blogPostName">Заметка 1</p>
-                    </div>
-                    <div className="blogPostContainer">
-                        <PhotoOutlinedIcon className="blogPostIcon" />
-                        <p className="blogPostName">Заметка 2</p>
-                    </div>
-                    <div className="blogPostContainer">
-                        <PhotoOutlinedIcon className="blogPostIcon" />
-                        <p className="blogPostName">Заметка 3</p>
-                    </div>
-                    <div className="blogPostContainer">
-                        <PhotoOutlinedIcon className="blogPostIcon" />
-                        <p className="blogPostName">Заметка 4</p>
-                    </div>
-                </div>
-                <button className="button">
-                    <Link className="buttonLink" to="/blog">
-                        Смотреть все заметки
-                    </Link>
-                    <div className="buttonBorder"></div>
-                    <div className="buttonBorder"></div>
-                    <div className="buttonBorder"></div>
-                    <div className="buttonBorder"></div>
-                </button>
-            </section> */}
             <section className="bookSection">
                 <h1 className="sectionName">Запись</h1>
                 <h2>Записаться на консультацию</h2>
