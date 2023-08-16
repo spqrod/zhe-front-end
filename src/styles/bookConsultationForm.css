@@ -25,19 +25,6 @@
         min-width: 300px;
     }
 
-    .legalConsentCheckboxContainer, .reCaptcha {
-        position: absolute;
-        opacity: 0%;
-        transition: 2s;
-        pointer-events: none;
-    }
-    
-    .legalConsentCheckboxContainer.active, .reCaptcha.active {
-        pointer-events: all;
-        position: relative;
-        opacity: 100%;
-    }
-
     .datePicker {
         width: 300px;
     }

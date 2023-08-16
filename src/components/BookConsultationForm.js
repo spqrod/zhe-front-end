@@ -9,11 +9,12 @@ import "../styles/bookConsultationForm.css";
 
 export default function BookConsultationForm() {
 
+    const captchaRef = useRef(null);
+    const [dialogTextForMessageResult, setDialogTextForMessageResult] = useState("");
+
     const today = new Date();
     const tomorrow = new Date(today).setDate(today.getDate() + 1);
     const todayPlus30Days = new Date(today).setDate(today.getDate() + 30);
-
-    const captchaRef = useRef(null);
 
     const [selectedDate, setSelectedDate] = useState();
     const [availableTimes, setAvailableTimes] = useState([]);
@@ -63,10 +64,6 @@ export default function BookConsultationForm() {
             };
             return fetch(fetchURL, fetchOptions)
                 .then(response => response.json())
-                .then(data => {
-                    console.log("data from fetch");
-                    console.log(data);
-            });
         }
     };
 
@@ -80,10 +77,8 @@ export default function BookConsultationForm() {
         },
         handleSubmit: async function(e) {
             e.preventDefault();
-
-            // const token = captchaRef.current.getValue();
-            // captchaRef.current.reset();
-
+            const captchaToken = captchaRef.current.getValue();
+            captchaRef.current.reset();
             const { date, name, email, phone } = e.target.elements;
             
             const formData = {
@@ -93,11 +88,7 @@ export default function BookConsultationForm() {
                 phone: phone.value,
             }
             
-            controller.sendEmail(formData);
-            controller.updateDateAsTaken(formData.date).then((result) => {
-                controller.showDialog(result);
-                display.resetFormAfterSubmit();
-            });
+            controller.sendEmailAndUpdateDateAsTaken(captchaToken, formData);
         },
         handleDateChange: function(date) {
             setSelectedDate(date)
@@ -128,20 +119,41 @@ export default function BookConsultationForm() {
             const document = dataFromDB.find(item => controller.formatDateToMatchTheForm(item.date) === dateFromForm);
             return document._id;
         },
-        showDialog: function(result) {
-            const successMessage = "Спасибо за запись! Я свяжусь с Вами в ближайшее время.";
+        sendEmailAndUpdateDateAsTaken: function(captchaToken, formData) {
+            setDialogTextForMessageResult("Отправляю сообщение...");
+            display.showDialog();
+            api.sendEmail({ captchaToken, ...formData })
+                .then((response) => {
+                    display.resetFormAfterSubmit();
+                    display.makeButtonInactive();
+                    controller.updateDialogTextWithMessageResult(response.success);
+                })
+                .then(() => {
+                    controller.updateDateAsTaken(formData.date);
+                }).catch(error => console.log(error));
+
+        },
+        updateDialogTextWithMessageResult: function(result) {
+            const successMessage = "Спасибо за запись! Я свяжусь с Вами в ближайшее время для подтверждения.";
             const failureMessage = "Простите. Что-то пошло не так. Пожалуйста, свяжитесь со мной другим способом";
             if (result) 
-                display.showDialog(successMessage);
+                setDialogTextForMessageResult(successMessage);
             else 
-                display.showDialog(failureMessage);
-        },
-        sendEmail: function(data) {
-            api.sendEmail(data);
+                setDialogTextForMessageResult(failureMessage);
         },
     }
 
     const display = {
+        makeButtonActive: function() {
+            const button = document.querySelector(".form .button");
+            button.classList.remove("inactive");
+            button.disabled = false;
+        },
+        makeButtonInactive: function() {
+            const button = document.querySelector(".form .button");
+            button.classList.add("inactive");
+            button.disabled = true;
+        },
         updateAvailableTimes: function(selectedDate) {
             let newArray = [];
             newArray = availableDates.filter(date => 
@@ -157,10 +169,8 @@ export default function BookConsultationForm() {
             const reCaptcha = document.querySelector(".reCaptcha");
             reCaptcha.classList.add("active");
         },
-        showDialog: function(message) {
+        showDialog: function() {
             const dialog = document.querySelector(".dialog");
-            const dialogText = document.querySelector(".dialogText");
-            dialogText.innerText = message;
             dialog.showModal();
         },
         resetFormAfterSubmit() {
@@ -168,7 +178,7 @@ export default function BookConsultationForm() {
             form.reset();
             const datePicker = document.querySelector(".datePicker");
             datePicker.value = "";
-        }
+        },
     }
 
     return (
@@ -178,8 +188,6 @@ export default function BookConsultationForm() {
                 <SocialLinks />
             </div>
             <form className="form" onSubmit={controller.handleSubmit}>
-
-                {/* ADD IDs TO INPUT FIELDS */}
 
                 <DatePicker 
                     className="inputField datePicker"
@@ -204,15 +212,15 @@ export default function BookConsultationForm() {
                 <input className="inputField" type="email" placeholder="E-mail" name="email"  />
                 <input className="inputField" type="tel" placeholder="Телефон" name="phone"  onChange={controller.handleTelInputChange} />
                 <div className="legalConsentCheckboxContainer">
-                    <input type="checkbox" className="legalConsentCheckbox" name="legalConsentCheckbox" id="legalConsentCheckbox"  />
+                    <input type="checkbox" className="legalConsentCheckbox" name="legalConsentCheckbox" id="legalConsentCheckbox" required/>
                     <label htmlFor="legalConsentCheckbox">Я принимаю <Link to="/terms-of-service">Условия использования</Link> и <Link to="/privacy-policy">Политику конфиденциальности</Link></label>
                 </div>
-                {/* <ReCAPTCHA 
-                    className="reCaptcha"
+                <ReCAPTCHA 
                     sitekey={process.env.REACT_APP_GOOGLE_CAPTCHA_SITE_KEY} 
                     ref={captchaRef}
-                /> */}
-                <button className="button" type="submit">
+                    onChange={display.makeButtonActive}
+                />
+                <button className="button inactive" disabled type="submit">
                     Записаться
                     <div className="buttonBorder"></div>
                     <div className="buttonBorder"></div>
@@ -222,7 +230,7 @@ export default function BookConsultationForm() {
             </form>
 
             <dialog className="dialog">
-                <p className="dialogText"></p>
+                <p className="dialogText">{dialogTextForMessageResult}</p>
                 <form method="dialog">
                     <button className="button">
                         Закрыть

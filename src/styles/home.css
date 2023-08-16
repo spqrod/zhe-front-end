@@ -32,15 +32,34 @@
             .buttonLink {
                 display: flex;
                 flex-direction: column;
+                align-items: center;
                 justify-content: space-between;
                 gap: var(--small-gap);
                 position: relative;
+                text-decoration: none;
             }
 
             .button {
                 width: max-content;
                 padding: var(--medium-gap);
                 color: var(--on-surface);
+            }
+
+            .arrowIconSVG {
+                position: relative;
+                width: 50px;
+                height: 25px;
+                animation-name: heroArrowIconAnimation;
+                animation-duration: 1.5s;
+                animation-iteration-count: infinite;
+                animation-timing-function: ease-it;
+                animation-direction: alternate;
+            }
+            
+            .arrowIconPath {
+                stroke: var(--outline);
+                stroke-width: 1px;
+                fill: none;
             }
         }
 
@@ -77,23 +96,6 @@
                 top: 24px;
                 left: 24px;
             }
-        }
-
-        .arrowIconSVG {
-            position: relative;
-            width: 50px;
-            height: 25px;
-            animation-name: heroArrowIconAnimation;
-            animation-duration: 1.5s;
-            animation-iteration-count: infinite;
-            animation-timing-function: ease-it;
-            animation-direction: alternate;
-        }
-        
-        .arrowIconPath {
-            stroke: var(--outline);
-            stroke-width: 1px;
-            fill: none;
         }
     }
 

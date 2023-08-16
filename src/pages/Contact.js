@@ -28,22 +28,8 @@ export default function Contact() {
 
         handleSubmit: async function(e) {
             e.preventDefault();
-            // const token = captchaRef.current.getValue();
-            // captchaRef.current.reset();
-
-            // const fetchURL = "/api/contact";
-            // const fetchOptions = {
-            //     method: "POST",
-            //     headers: {
-            //         "Content-Type": "application/json"
-            //     },
-            //     body: JSON.stringify({ token })
-            // };
-
-            // fetch(fetchURL, fetchOptions)
-            //     .then(response => response.json())
-            //     .then(data => console.log(data));
-
+            const token = captchaRef.current.getValue();
+            captchaRef.current.reset();
 
             const { name, email, phone, formMessage } = e.target.elements;
             
@@ -51,10 +37,10 @@ export default function Contact() {
                 name: name.value,
                 email: email.value,
                 phone: phone.value,
-                formMessage: formMessage.value
+                formMessage: formMessage.value,
             }
             
-            controller.sendEmail(formData);
+            controller.sendEmail({ token, ...formData });
         },
         updateDialogTextWithMessageResult: function(result) {
             const successMessage = "Спасибо за сообщение! Я свяжусь с Вами в ближайшее время.";
@@ -70,6 +56,7 @@ export default function Contact() {
             api.sendEmail(data)
                 .then((response) => {
                     display.resetFormAfterSubmit();
+                    display.makeButtonInactive();
                     controller.updateDialogTextWithMessageResult(response.success);
                 });
         },
@@ -77,6 +64,16 @@ export default function Contact() {
 
     const display = {
        
+        makeButtonActive: function() {
+            const button = document.querySelector(".form .button");
+            button.classList.remove("inactive");
+            button.disabled = false;
+        },
+        makeButtonInactive: function() {
+            const button = document.querySelector(".form .button");
+            button.classList.add("inactive");
+            button.disabled = true;
+        },
         revealConsentCheckboxAndReCaptcha: function() {
             const legalConsentCheckboxContainer = document.querySelector(".legalConsentCheckboxContainer");
             legalConsentCheckboxContainer.classList.add("active");
@@ -105,16 +102,17 @@ export default function Contact() {
                     <input className="inputField" type="tel" placeholder="Телефон" name="phone" required/>
                     <textarea className="textArea" placeholder="Ваше сообщение" name="formMessage" />
                     <div className="legalConsentCheckboxContainer">
-                        <input type="checkbox" className="legalConsentCheckbox" name="legalConsentCheckbox" id="legalConsentCheckbox" required />
+                        <input type="checkbox" className="legalConsentCheckbox" name="legalConsentCheckbox" id="legalConsentCheckbox" required onChange={display.makeButtonActive}/>
                         <label htmlFor="legalConsentCheckbox">
                             Я принимаю <Link to="/terms-of-service">Условия использования</Link> и <Link to="/privacy-policy">Политику конфиденциальности</Link>
                         </label>
                     </div>
-                    {/* <ReCAPTCHA 
+                    <ReCAPTCHA 
                         sitekey={process.env.REACT_APP_GOOGLE_CAPTCHA_SITE_KEY} 
                         ref={captchaRef}
-                    /> */}
-                    <button className="button" type="submit">
+                        onChange={display.makeButtonActive}
+                    />
+                    <button className="button inactive" type="submit" disabled>
                         Отправить сообщение
                         <div className="buttonBorder"></div>
                         <div className="buttonBorder"></div>
