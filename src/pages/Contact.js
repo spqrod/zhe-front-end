@@ -103,7 +103,7 @@ export default function Contact() {
                     <textarea className="textArea" placeholder="Ваше сообщение" name="formMessage" />
                     <div className="legalConsentCheckboxContainer">
                         <input type="checkbox" className="legalConsentCheckbox" name="legalConsentCheckbox" id="legalConsentCheckbox" required onChange={display.makeButtonActive}/>
-                        <label htmlFor="legalConsentCheckbox">
+                        <label className="legalConsentLabel" htmlFor="legalConsentCheckbox">
                             Я принимаю <Link to="/terms-of-service">Условия использования</Link> и <Link to="/privacy-policy">Политику конфиденциальности</Link>
                         </label>
                     </div>

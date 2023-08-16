@@ -213,7 +213,9 @@ export default function BookConsultationForm() {
                 <input className="inputField" type="tel" placeholder="Телефон" name="phone"  onChange={controller.handleTelInputChange} />
                 <div className="legalConsentCheckboxContainer">
                     <input type="checkbox" className="legalConsentCheckbox" name="legalConsentCheckbox" id="legalConsentCheckbox" required/>
-                    <label htmlFor="legalConsentCheckbox">Я принимаю <Link to="/terms-of-service">Условия использования</Link> и <Link to="/privacy-policy">Политику конфиденциальности</Link></label>
+                    <label htmlFor="legalConsentCheckbox" className="legalConsentLabel">
+                        Я принимаю <Link to="/terms-of-service">Условия использования</Link> и <Link to="/privacy-policy">Политику конфиденциальности</Link>
+                    </label>
                 </div>
                 <ReCAPTCHA 
                     sitekey={process.env.REACT_APP_GOOGLE_CAPTCHA_SITE_KEY} 
