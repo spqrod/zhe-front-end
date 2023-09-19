@@ -2,7 +2,7 @@ import SocialLinks from "../components/SocialLinks";
 import DatePicker from "react-datepicker";
 import { Link } from "react-router-dom";
 import ReCAPTCHA from "react-google-recaptcha";
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 import ru from 'date-fns/locale/ru';
 import { useState } from "react";
 import "../styles/bookConsultationForm.css";
