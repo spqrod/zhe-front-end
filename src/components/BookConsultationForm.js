@@ -1,9 +1,9 @@
 import SocialLinks from "../components/SocialLinks";
-import DatePicker from "react-datepicker";
+// import DatePicker from "react-datepicker";
 import { Link } from "react-router-dom";
 import ReCAPTCHA from "react-google-recaptcha";
 import { useRef } from "react";
-import ru from 'date-fns/locale/ru';
+// import ru from 'date-fns/locale/ru';
 import { useState } from "react";
 import "../styles/bookConsultationForm.css";
 
@@ -131,7 +131,6 @@ export default function BookConsultationForm() {
                 .then(() => {
                     controller.updateDateAsTaken(formData.date);
                 }).catch(error => console.log(error));
-
         },
         updateDialogTextWithMessageResult: function(result) {
             const successMessage = "Спасибо за запись! Я свяжусь с Вами в ближайшее время для подтверждения.";
@@ -188,7 +187,7 @@ export default function BookConsultationForm() {
                 <SocialLinks />
             </div>
             <form className="form" onSubmit={controller.handleSubmit}>
-
+{/* 
                 <DatePicker 
                     className="inputField datePicker"
                     withPortal
@@ -207,10 +206,11 @@ export default function BookConsultationForm() {
                     dateFormat="dd.MM.yyyy, HH:mm"
                     timeCaption="Время (по МСК)"
                     id="date"
-                />
+                /> */}
                 <input className="inputField" type="text" placeholder="Имя" name="name" id="name" />
                 <input className="inputField" type="email" placeholder="E-mail" name="email"  />
                 <input className="inputField" type="tel" placeholder="Телефон" name="phone"  onChange={controller.handleTelInputChange} />
+                <input className="inputField" type="date" placeholder="Желаемый день" name="date" id="date" />
                 <div className="legalConsentCheckboxContainer">
                     <input type="checkbox" className="legalConsentCheckbox" name="legalConsentCheckbox" id="legalConsentCheckbox" required/>
                     <label htmlFor="legalConsentCheckbox" className="legalConsentLabel">

@@ -7,16 +7,16 @@ import "../styles/socialLinks.css";
 export default function socialLinks() {
     return (
         <div className="socialLinksContainer">
-            <a href="https://wa.me/79788110255">
+            <a href="https://wa.me/79788110255" target="_blank" rel="noopener noreferrer">
                 <WhatsAppIcon className="socialLink"/>
             </a>
-            <a href='https://t.me/daryazerebtsova'>
+            <a href='https://t.me/zherebtsovadaria' target="_blank" rel="noopener noreferrer">
                 <TelegramIcon className="socialLink"/>
             </a>
             {/* <div>
                 <EmailIcon className="socialLink"/>
             </div> */}
-            <a href='https://www.instagram.com/zherebtsova_darya/'>
+            <a href='https://www.instagram.com/darinpsy/' target="_blank" rel="noopener noreferrer">
                 <InstagramIcon className="socialLink"/>
             </a>
         </div>

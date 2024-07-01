@@ -102,7 +102,7 @@ li {
 
 /* Input fields */
 
-input[type=text], input[type=tel], input[type=email], textarea {
+input[type=text], input[type=tel], input[type=email], input[type=date], textarea {
     padding: var(--small-gap);
     font-size: 20px;
     font-family: var(--font-family-2);

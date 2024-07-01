@@ -9,7 +9,6 @@ export default function Contact() {
     const [dialogTextForMessageResult, setDialogTextForMessageResult] = useState("");
 
     const api = {
-        
         sendEmail: function(data) {
             const fetchURL = "/api/contact";
             const fetchOptions = {
