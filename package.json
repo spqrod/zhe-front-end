@@ -29,7 +29,7 @@
     "start": "react-scripts start",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
-    "build": "BUILD_PATH='../server/build' react-scripts build",
+    "buildforserver": "BUILD_PATH='../server/build' react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },

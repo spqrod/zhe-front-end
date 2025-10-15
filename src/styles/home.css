@@ -74,6 +74,13 @@
                 width: 100%;
                 z-index: 1;
                 position: relative;
+                box-shadow: var(--shadow);
+                transition: var(--transition);
+
+                &:hover {
+                    box-shadow: var(--shadow-active);
+
+                }
             }
     
             .heroPhotoOutline {
@@ -92,7 +99,7 @@
                 left: 14px;
             }
     
-            .heroPhotoContainer:hover .heroPhotoOutline {
+            &:hover .heroPhotoOutline {
                 top: 24px;
                 left: 24px;
             }
@@ -100,6 +107,9 @@
     }
 
     .problemsSection {
+
+        background-color: white;
+
 
         .problemsContainer {
             display: flex;
@@ -118,6 +128,13 @@
 
             /* border: var(--border); */
             overflow: hidden;
+            transition: var(--transition);
+            box-shadow: var(--shadow);
+            
+            &:hover {
+                box-shadow: var(--shadow-active);
+                transform: scale(1.05);
+            }
         }
 
         .problemContentContainer {
@@ -195,6 +212,7 @@
 
     .methodsSection {
 
+
         .methodsContainer {
             display: flex;
             justify-content: center;
@@ -202,7 +220,7 @@
             flex-wrap: wrap;
             gap: var(--big-gap);
         }
-
+        
         .methodContainer {
             color: var(--on-surface);
 
@@ -250,6 +268,14 @@
                 padding: 64px;
                 background-color: var(--surface);
                 color: var(--on-surface);
+                box-shadow: var(--shadow);
+                transition: var(--transition);
+                
+                &:hover {
+                    box-shadow: var(--shadow-active);
+                    transform: scale(1.05);
+
+                }
         
                 &:nth-of-type(1) {
                     border-radius: 44% 56% 41% 59% / 36% 44% 56% 64% ;
@@ -273,6 +299,8 @@
     .reviewsSection {
         display: grid;
         place-items: center;
+        background-color: white;
+
 
         .reviewsContainer {
             max-width: min(100vw, 800px);
@@ -323,6 +351,12 @@
                 max-height: 100%;
                 position: relative;
                 z-index: 1;
+                box-shadow: var(--shadow);
+                transition: var(--transition);
+
+                &:hover {
+                    box-shadow: var(--shadow-active);
+                }
             }
 
             .aboutImageOutline {

@@ -37,7 +37,7 @@ export default function ConsultationBookingProcess({consultationPrice, consultat
             <div className="processContainer">
                 <h3>I. Запись</h3>
                 <p>Вы записываетесь на бесплатную 15-ти минутную онлайн беседу.</p>
-                <p>Выбрать время можно <Link to="/book-consultation">онлайн</Link> или написав в <Link to={whatsAppLink}>WhatsApp</Link>.</p>
+                <p>Это можно сделать <Link to="/book-consultation">онлайн</Link> или в <Link to={whatsAppLink} target="_blank" rel="noopener noreferrer">WhatsApp</Link>.</p>
             </div>
             <div className="processContainer">
                 <h3>II. Ознакомительная беседа</h3>
@@ -53,7 +53,7 @@ export default function ConsultationBookingProcess({consultationPrice, consultat
             <div className="processContainer">
                 <h3>III. Консультация</h3>
                 <p>Ваш путь к гармонии начинается здесь.</p>
-                <p>Встречи проходят онлайн в видео-формате с помощью WhatsApp, Telegram или Viber.</p>
+                <p>Встречи проходят онлайн в видео-формате с помощью WhatsApp или Telegram.</p>
                 <p>Продолжительность 1-й сессии от 40 до 60 мин.</p>
             </div>
             <div className="processContainer" id="test">

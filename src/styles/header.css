@@ -20,6 +20,7 @@
         font-family: var(--font-family-1);
         font-size: 22px;
         text-decoration: none;
+        text-transform: uppercase;
     }
 
     .headerMenuContainer {
@@ -64,6 +65,9 @@
 
     .button {
         width: 209px;
+        * {
+            font-family: var(--font-family-1);
+        }
     }
     
     .hamburgerContainer {
