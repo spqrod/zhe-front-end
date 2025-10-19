@@ -6,7 +6,7 @@
     gap: var(--big-gap);
 
     .alternativeBookingMethodContainer {
-        border-bottom: var(--border);
+        /* border-bottom: var(--border); */
         padding-bottom: var(--medium-gap);
         display: flex;
         flex-direction: column;

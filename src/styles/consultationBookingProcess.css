@@ -21,11 +21,12 @@
 
     .processContainer {
         width: min(500px, calc(100vw - var(--side-padding-for-sections) * 2));
-        border: var(--border);
+        /* border: var(--border); */
         padding: var(--medium-gap);
         background-color: var(--surface);
         color: var(--on-surface);
         z-index: 1;
+        box-shadow: var(--shadow);
     }
 
     .processLine {

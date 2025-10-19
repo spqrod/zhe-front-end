@@ -94,6 +94,7 @@ export default function Contact() {
             <section className="contactSection">
                 <h1>Поговорим?</h1>
                 <SocialLinks />
+{/*                 
                 <div className="dividerLine"></div>
                 <form className="form" onSubmit={controller.handleSubmit}>
                     <input className="inputField" type="text" placeholder="Имя" name="name" />
@@ -130,7 +131,8 @@ export default function Contact() {
                             <div className="buttonBorder"></div>
                         </button>
                     </form>
-                </dialog>
+                </dialog> */}
+                
             </section>
         </main>
     );

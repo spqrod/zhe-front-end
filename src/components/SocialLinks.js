@@ -7,11 +7,11 @@ import "../styles/socialLinks.css";
 export default function socialLinks() {
     return (
         <div className="socialLinksContainer">
-            <a href="https://wa.me/79788110255" target="_blank" rel="noopener noreferrer">
-                <WhatsAppIcon className="socialLink"/>
-            </a>
             <a href='https://t.me/zherebtsovadaria' target="_blank" rel="noopener noreferrer">
                 <TelegramIcon className="socialLink"/>
+            </a>
+            <a href="https://wa.me/79788110255" target="_blank" rel="noopener noreferrer">
+                <WhatsAppIcon className="socialLink"/>
             </a>
             {/* <div>
                 <EmailIcon className="socialLink"/>

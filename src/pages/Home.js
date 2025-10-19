@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
 import image1 from "../images/3.JPG";
 import image2 from "../images/4.jpg";
-import { useEffect } from "react";
+import { useEffect, useState, useRef } from "react";
 import review1 from "../images/review-1.png"
 import review2 from "../images/review-2.png"
 import review3 from "../images/review-3.png"
@@ -12,8 +12,15 @@ import review4 from "../images/review-4.png"
 import BookConsultationForm from "../components/BookConsultationForm";
  
 export default function Home({consultationPrice, consultationLength, whatsAppLink}) {
-    useEffect(() => {
+    const [counts, setCounts] = useState({
+        hours: 500,
+        years: 3,
+        successfulConsultations: 95
+    });
+    const [hasAnimated, setHasAnimated] = useState(false);
+    const statsRef = useRef(null);
 
+    useEffect(() => {
         setTimeout(animateHeroPhotoOutlineAfterLoad, 500);
         
         function animateHeroPhotoOutlineAfterLoad() {
@@ -26,8 +33,68 @@ export default function Home({consultationPrice, consultationLength, whatsAppLin
                 );
             }
         }
-
     });
+
+    useEffect(() => {
+        const currentRef = statsRef.current;
+        const observer = new IntersectionObserver(
+            (entries) => {
+                if (entries[0].isIntersecting && !hasAnimated) {
+                    setHasAnimated(true);
+                    animateCounters();
+                }
+            },
+            { threshold: 0.5 }
+        );
+
+        if (currentRef) {
+            observer.observe(currentRef);
+        }
+
+        return () => {
+            if (currentRef) {
+                observer.unobserve(currentRef);
+            }
+        };
+    }, [hasAnimated]);
+
+    const animateCounters = () => {
+        const duration = 1000;
+        const steps = 100;
+        const stepDuration = duration / steps;
+
+        const targets = {
+            hours: 500,
+            years: 3,
+            successfulConsultations: 95
+        };
+
+        const starts = {
+            hours: Math.floor(targets.hours * 0.9),
+            years: Math.floor(targets.years * 0.9),
+            successfulConsultations: Math.floor(targets.successfulConsultations * 0.9)
+        };
+
+        let currentStep = 0;
+
+        const easeOutCubic = (t) => 1 - Math.pow(1 - t, 3);
+
+        const interval = setInterval(() => {
+            currentStep++;
+            const progress = easeOutCubic(currentStep / steps);
+
+            setCounts({
+                hours: Math.floor(starts.hours + (targets.hours - starts.hours) * progress),
+                years: Math.floor(starts.years + (targets.years - starts.years) * progress),
+                successfulConsultations: Math.floor(starts.successfulConsultations + (targets.successfulConsultations - starts.successfulConsultations) * progress)
+            });
+
+            if (currentStep >= steps) {
+                setCounts(targets);
+                clearInterval(interval);
+            }
+        }, stepDuration);
+    };
 
     return (
         <main className="homePage">
@@ -35,8 +102,8 @@ export default function Home({consultationPrice, consultationLength, whatsAppLin
                 <div className="heroInfoContainer">
                     <h1>Психолог Дарья Жеребцова</h1>
                     <p>
-                        Онлайн консультации, когда тебе трудно и когда легко.<br></br>
-                        С заботой о тебе и твоём спокойствии, на пути к достижению удовольствия от жизни!
+                        Я специалист, который заботится о вашем  благополучии.
+                        Моя главная цель - улучшить качество жизни, достичь внутренней и внешней гармонии, а также в поддержании баланса между ментальным, эмоциональным и физическим.
                     </p>
                 </div>
                 <div className="heroButtonContainer">
@@ -58,6 +125,46 @@ export default function Home({consultationPrice, consultationLength, whatsAppLin
                     <div className="heroPhotoOutline"></div>
                 </div>
             </section>
+
+            <section className="aboutSection">
+                <h2>Пару слов обо мне</h2>
+                <div className="aboutContainer">
+                    <div className="aboutImageContainer">
+                        <img className="aboutImage" src={image2} alt="" />
+                        <div className="aboutImageOutline"></div>
+                    </div>
+                    <div className="aboutInfoContainer1">
+                        <p>
+                            Меня зовут Дарья Жеребцова, я психолог-консультант. Я верю, что каждый рождается цельным, но жизнь — ожидания, опыт, боль, страх «неправильности» — отрывает нас от себя. Моя работа — помочь восстановить эту связь. Опираюсь на научную психологию и философию осознанности (wellness).<br></br><br></br>
+
+                            Психология для меня — не только о травмах, но и о возврате радости жизни, тела, чувств, удовольствия быть собой. Не верю в мгновенные изменения, но верю в процесс: постепенные изменения для устойчивости, ясности и внутреннего стержня. Интересно, как мы устроены: как прошлое эхом в реакциях, почему непрожитые эмоции живут внутри, и как понимание рождает свободу.<br></br><br></br>
+
+                            В консультациях создаю пространство для аутентичности — без оценок, спешки, масок. Здесь начинается истинный контакт с собой.<br></br><br></br>
+                        </p>
+                    </div>
+                    <div className="aboutInfoContainer2">
+ 
+                    </div>
+                </div>
+            </section>
+
+            <section className="statsSection" ref={statsRef}>
+                <div className="statsContainer">
+                    <div className="statItem">
+                        <h3>{counts.hours}+</h3>
+                        <p>часов консультаций</p>
+                    </div>
+                    <div className="statItem">
+                        <h3>{counts.years}+</h3>
+                        <p>года работы</p>
+                    </div>
+                    <div className="statItem">
+                        <h3>{counts.successfulConsultations}%</h3>
+                        <p>успешных консультаций</p>
+                    </div>
+                </div>
+            </section>
+
             <section className="problemsSection" id="help">
                 <h1 className="sectionName">Проблемы</h1>
                 <h2>С чем я могу помочь</h2>
@@ -110,42 +217,60 @@ export default function Home({consultationPrice, consultationLength, whatsAppLin
                     </div>
                 </div>
             </section>
+
+            <section className="suitableForSection">
+                <h1 className="sectionName">Для кого</h1>
+                <h2>Кому подходит</h2>
+                <div className="suitableForContainer">
+                    <div className="suitableForItem">
+                        <li>Тем, кто чувствует хроническую усталость или потерю интереса к жизни, но не имеет клинических диагнозов.</li>
+                    </div>
+                    <div className="suitableForItem">
+                        <li>Людям, стремящимся к личностному росту и профилактике проблем.</li>
+                    </div>
+                    <div className="suitableForItem">
+                        <li>Людям с высоким уровнем стресса.</li>
+                    </div>
+                    <div className="suitableForItem">
+                        <li>Тем, кто хочет улучшить физическое здоровье через психологическую работу (например, мотивация к спорту).</li>
+                    </div>
+                    <div className="suitableForItem">
+                        <li>Тем, кто хочет выстроить долгие и эмоционально близкие отношения.</li>
+                    </div>
+                    <div className="suitableForItem">
+                        <li>Всем, кто ищет гармонию и хочет «жить лучше», но не знает, с чего начать.</li>
+                    </div>
+                </div>
+            </section>
+
             <section className="methodsSection">
-                <h2>Методы работы</h2>
+                <h2>Подход</h2>
                 <div className="methodsContainer">
                     <div className="methodContainer">
                         <div className="methodInfoContainer">
-                            <h3>Клиент-центрированная терапия</h3>
-                            <p>Направление, созданное К. Роджерсом на основе принципов гуманистической психологии. Психолог в консультировании ведет себя не директивно, а рефлексивно по отношению к клиенту.  Главный принцип это «здесь и теперь». Нет никаких правил, указаний и чёткого алгоритма к действию. Клиент самостоятельно решает свой запрос, но опираясь на принятие, доверие  и опыт специалиста.</p>
+                            <p>Опираясь на классическую психологическую базу и человеко-центрированный подход Роджерса, я осознала, что мои интересы и практика давно вышли за эти рамки.
+                            </p>
                         </div>
                     </div>
                     <div className="methodContainer">
                         <div className="methodInfoContainer">
-                            <h3>Метод дерефлексии</h3>
-                            <p>Снятие излишнего самоконтроля, чрезмерного самокопания. В некоторых случаях это не является продуктивным, а отнимает только силы и энергию. </p>
+                            <p>Я исследую целостную парадигму – интеграцию ментального, эмоционального и физического благополучия.
+                            Это не просто консультации, а терапия. Путь к устойчивому развитию личности.</p>
                         </div>
                     </div>
                     <div className="methodContainer">
                         <div className="methodInfoContainer">
-                            <h3>Метод пародоксальной интенции</h3>
-                            <p>Подведение клиента к тому, что вызывает страхи  и стремление их избежать. Благодаря этому достигается ощущение свободы. Прежние тревожности и страхи не оказывают негативного воздействия, что позволяет двигаться вперёд. </p>
+                            <p>
+                                Основа моего подхода - диалог!
+                                Искренний, эмоционально близкий, безопасный и непредвзятый.
+                                Я создаю уникально теплую атмосферу, которая способствует раскрытию личностного потенциала – мыслей, эмоций, чувств и поведения.</p>
                         </div>
                     </div>
-                    <div className="methodContainer">
-                        <div className="methodInfoContainer">
-                            <h3>Арт-терапия</h3>
-                            <p>Это направление в психотерапии, метод психологической коррекции, в основе которого лежит использование искусства и творчества. Своеобразное связующее звено между сознанием и подсознанием человека. Часто ее называют мостом, проложенным между разумом и душой.</p>
-                        </div>
-                    </div>
-                    <div className="methodContainer">
-                        <div className="methodInfoContainer">
-                            <h3>Позитивная психология</h3>
-                            <p>Отрасль психологической практики, в центре которой находится позитивный потенциал человека. Этот подход нацелен на оптимизацию функционирования человека, поиск факторов, которые могут способствовать благополучному существованию и расцвету индивида.</p>
-                        </div>
-                    </div>
+       
                 </div>
                 
             </section>
+
             <section className="reviewsSection">
                 <h1 className="sectionName">Отзывы</h1>
                 <h2>Отзывы</h2>
@@ -164,6 +289,34 @@ export default function Home({consultationPrice, consultationLength, whatsAppLin
                     </div>
                 </div>
             </section>
+
+            <section className="afterSection">
+                <h1 className="sectionName">После консультаций</h1>
+                <h2>Что будет после консультаций?</h2>
+                <div className="afterInfoContainer">
+                    <div className="afterInfoItem">
+                        <p>
+                            <strong>Осознание</strong>. Ты начнёшь лучше понимать, что с тобой происходит — где твои истинные чувства, а где автоматические реакции или старые сценарии.
+                            Появится ясность и ощущение, что внутри стало немного больше воздуха.
+                        </p>
+                    </div>
+                    <div className="afterInfoItem ">
+                        <p>
+                            <strong>Опора</strong>. Через осмысление и проживание эмоций формируется внутренняя устойчивость.
+                            Ты перестаёшь искать подтверждение своей ценности снаружи — и начинаешь ощущать её изнутри.
+                        </p>
+                    </div>
+                    <div className="afterInfoItem">
+                        <p>
+                            <strong>Изменение</strong>. Мир вокруг остаётся тем же,
+                            но твои реакции, решения и границы становятся другими — спокойными, зрелыми и осознанными.
+                            Это не волшебство, а естественный результат внутренней работы и честного диалога с собой.
+                        </p>
+                    </div>
+
+                </div>
+            </section>
+
             <section className="formatSection">
                 <h2>Как попасть на консультацию?</h2>
                 <ConsultationBookingProcess consultationPrice={consultationPrice} consultationLength={consultationLength} whatsAppLink={whatsAppLink}/>
@@ -177,51 +330,9 @@ export default function Home({consultationPrice, consultationLength, whatsAppLin
                     <div className="buttonBorder"></div>
                 </button>
             </section>
-            <section className="afterSection">
-                <h1 className="sectionName">После консультаций</h1>
-                <h2>Что будет после консультаций?</h2>
-                <div className="afterInfoContainer">
-                    <div className="afterInfoItem">
-                        <p>
-                            После одной консультации вы не станете непобедимым супер героем. Но, репертуар того, что вы принимаете в себе и в жизни, станет гораздо шире. Жить будет <strong>спокойнее и счастливее</strong>. 
-                        </p>
-                    </div>
-                    <div className="afterInfoItem ">
-                        <p>
-                            <strong>Консультации как уборки.</strong> Помогают все непонятное упорядочить, разложить по своим местам. Ведь в этой жизни все стремится к хаосу. Что будет, если перестать убирать дома, поливать цветы, проводить осмотр автомобиля? Конечно, всё запылится, завянет и заскрипит.
-                        </p>
-                    </div>
-                    <div className="afterInfoItem">
-                        <p>
-                            То же самое и с нашим <strong>ментальным здоровьем</strong>. Поэтому, чтобы было приятно жить эту жизнь, уборки лучше проводить регулярно. 
-                        </p>
-                    </div>
 
-                </div>
-            </section>
-            <section className="aboutSection">
-                <h2>Пару слов обо мне</h2>
-                <div className="aboutContainer">
-                    <div className="aboutImageContainer">
-                        <img className="aboutImage" src={image2} alt="" />
-                        <div className="aboutImageOutline"></div>
-                    </div>
-                    <div className="aboutInfoContainer1">
-                        <p>
-                            Меня зовут Дарья Жеребцова. Я дипломированный психолог-консультант. 
-                            Имею высшее психологическое образование по специальности «Психолог». Постоянно обучаюсь на разных курсах по повышению квалификации, развиваюсь и совершенствуюсь.<br></br><br></br>
-                        </p>
-                    </div>
-                    <div className="aboutInfoContainer2">
-                        <p>
-                            Больше всего на свете меня поражает природа наших мыслей и чувств. Их глубина, разнообразие и развитие. В каждом из нас – огромный загадочный мир. И чем лучше мы его понимаем, тем приятней жить.
-                        </p><br />
-                        <p>
-                            Моя миссия – помочь разобраться в самом важном человеке в Вашей жизни – себе!
-                        </p>
-                    </div>
-                </div>
-            </section>
+
+
             <section className="bookSection">
                 <h1 className="sectionName">Запись</h1>
                 <h2>Записаться на консультацию</h2>

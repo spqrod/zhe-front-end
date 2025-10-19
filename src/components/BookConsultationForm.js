@@ -183,10 +183,11 @@ export default function BookConsultationForm() {
     return (
         <div className="bookConsultationForm">
             <div className="alternativeBookingMethodContainer">
-                <p>Вы можете записаться, просто написав мне в мессенджере, или с помощью формы онлайн-записи:</p>
+                <p>Вы можете записаться, написав мне в телеграмме, вотсапе или инстаграмме.</p>
                 <SocialLinks />
             </div>
-            <form className="form" onSubmit={controller.handleSubmit}>
+            
+            {/* <form className="form" onSubmit={controller.handleSubmit}> */}
 {/* 
                 <DatePicker 
                     className="inputField datePicker"
@@ -207,12 +208,12 @@ export default function BookConsultationForm() {
                     timeCaption="Время (по МСК)"
                     id="date"
                 /> */}
-                <input className="inputField" type="text" placeholder="Имя" name="name" id="name" />
+                {/* <input className="inputField" type="text" placeholder="Имя" name="name" id="name" />
                 <input className="inputField" type="email" placeholder="E-mail" name="email"  />
-                <input className="inputField" type="tel" placeholder="Телефон" name="phone"  onChange={controller.handleTelInputChange} />
+                <input className="inputField" type="tel" placeholder="Телефон" name="phone"  onChange={controller.handleTelInputChange} /> */}
                 {/* <input className="inputField" type="date" placeholder="Желаемый день" name="date" id="date" /> */}
 
-                <div className="legalConsentCheckboxContainer">
+                {/* <div className="legalConsentCheckboxContainer">
                     <input type="checkbox" className="legalConsentCheckbox" name="legalConsentCheckbox" id="legalConsentCheckbox" required/>
                     <label htmlFor="legalConsentCheckbox" className="legalConsentLabel">
                         Я принимаю <Link to="/terms-of-service">Условия использования</Link> и <Link to="/privacy-policy">Политику конфиденциальности</Link>
@@ -245,7 +246,7 @@ export default function BookConsultationForm() {
                         <div className="buttonBorder"></div>
                     </button>
                 </form>
-            </dialog>
+            </dialog> */}
         </div>
     );
 };
